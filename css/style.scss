@@ -1,4 +1,13 @@
 @charset "utf-8";
+@font-face {
+    font-family: 'SamsungOne';
+    src: url('../font/SamsungOne-400.ttf') format('truetype');
+    src: url('../font/SamsungOne-700.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'SamsungSharpSans';
+    src: url('../font/SamsungSharpSans-Bold.ttf')  format('truetype');
+}
 
 * {
     margin: 0;
@@ -19,11 +28,20 @@ html {
 }
 
 body {
-    font-family: 'SamsungOne', arial, sans-serif;
+    font-family: 'SamsungOne',Arial, sans-serif;
     font-size: 1.1rem;
     color: #000;
     line-height: 1.5;
     letter-spacing: 0.58;
+}
+
+.home-kv-carousel__slide-inner {
+    border: 2px solid blue;
+}
+
+
+.home-kv-carousel__text-wrap {
+    border: 2px solid red;
 }
 
 // 공통 클래스
@@ -80,7 +98,7 @@ body {
     height: 44.44444vw; // 너비가 1440부터 작아져야 함.
     max-height: 640px ;
     background-color: rgba(199, 6, 6, 0.411);
-    overflow: hidden; // 스와이퍼 적용할 때 활성화 ㄱㄱ
+    // overflow: hidden; // 스와이퍼 적용할 때 활성화 ㄱㄱ
     &__wrapper {
         position: relative;
         display: flex;
@@ -91,7 +109,7 @@ body {
         position: relative;
         display: block;
         width: 100%;
-        height: 640px;
+        height: 44.04444vw;
         overflow: hidden;
     }
     &__text-wrap {
@@ -104,12 +122,13 @@ body {
         }
         &--middle {
             left: 85px;
-            top: 190px;
+            // top: 190px;
+            top: 25%;
         }
         
     }
     &__headline {
-        // font-family: 'SamsungSharpSans',arial,sans-serif;
+        font-family: 'SamsungSharpSans', arial,sans-serif;
         font-weight: bold;
         font-size: 48px;
         line-height: 1.2;
@@ -122,6 +141,9 @@ body {
         line-height: 1.33;
         color: currentColor;
         word-wrap: break-word;
+        &-watch {
+            color: #eee;
+        }
     }
     &__cta {
         position: relative;
@@ -172,7 +194,7 @@ body {
             }
             &--now {
                 padding: 12px 22px;
-                border-radius: 20px;
+                border-radius: 25px;
                 transition: color 0.3s, background-color 0.3s;
                 &:hover {
                     color: #eee !important;
@@ -347,50 +369,117 @@ body {
 
 @media only screen and (max-width: 767px) {
     .d-bl{display: block !important;}
-    .w-no{white-space: nowrap;}
+    .d-ibl{display: inline-block !important;}
+    .white-nowrap{white-space: nowrap;}
+    .mb-30{margin-bottom: 3.9063vw;}
+    .mt-30{margin-top: 2.9063vw;}
+    .mt-40{margin-top: 5.2083vw;}
+
+
+    .main {
+        margin-top: 56px;
+    }
 
     .home-kv-carousel {
         max-height: 1100px ;
         height: 143.4159vw;
     }
+    
+    .home-kv-carousel__slide-inner {
+        height: 100%;
+    }
 
-    .home-kv-carousel__text-wrap--mobile-top {
+    // text-wrraper의 너비 설정
+    .home-kv-carousel__text-wrap {
+        width: 78vw !important;
+        height: 70vw;
         text-align: center;
-        top: 4.8611vw;
+    }
+
+
+    .home-kv-carousel__text-wrap--mobile-top-1 {
+        top: 10.8611vw;
+        left: 50%;
+        transform: translateX(-50%);
+        
+        // width: 78vw !important;
+    }
+
+    .home-kv-carousel__text-wrap--mobile-top-2 {
+        top: 3.3611vw;
         left: 50%;
         transform: translateX(-50%);
     }
-    
-    .home-kv-carousel__slide-inner {
-        height: 1500px;
+    .home-kv-carousel__text-wrap--mobile-bottom-center {
+        top: 63.3611vw;
+        left: 50%;
+        transform: translate(-50%);
     }
-
     .home-kv-carousel__headline {
-        font-size: 6.33333vw;
+        font-size: 8.33333333vw;
+        line-height: 1.4;
     }
     .home-kv-carousel__desc {
-        margin-top: 2.66666667vw;
-        font-size: 2.25vw;
+        font-size: 3.88888888vw;
     }
-    .home-kv-carousel__cta {
-        font-size: 2.97222222vw !important;
+    .home-kv-carousel__desc-watch {
+        margin-top: 2.22222222vw;
+        font-size: 3.33333333vw;
     }
 
-    .cta--now {
-        padding: 2.7333vw 5.5278vw !important;
+    // .home-kv-carousel__desc--mobile-type-1 {
+    //     margin-top: 5.66666667vw;
+    //     font-weight: bold;
+    //     font-size: 3.55vw;
+    //     line-height: 4.87vw;
+    // }
+
+    // .home-kv-carousel__desc--mobile-type-2 {
+    //     font-size: 14px;
+    // }
+
+    .home-kv-carousel__cta-mobile-type-1 {
+        margin-top: 13.7778vw;
+        font-size: 2.97222222vw !important;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        height: 15vw;
     }
+    .home-kv-carousel__cta-mobile-type-2 {
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .cta--now-mobile {
+        text-align: center;
+        font-size: 3.8vw;
+        border-radius: 6.2552vw !important;
+        padding: 3.77777778vw 6.66666667vw 4.05555556vw 6.66666667vw !important;
+    }
+
+    // .cta--now {
+    //     padding: 3.3333vw 6.5278vw !important;
+    // }
+    .cta--more {
+        font-size: 3.6vw;
+        padding-bottom: 1.8vw !important;
+    }
+    .cta--more::after {
+        height: 0.55555556vw !important;
+    }
+    .cta--more::before {
+        height: 0.55555556vw !important;
+    }
+
 
     .arrow-indicator {
         display: none ;
     }
     .home-kv-carousel__cta {
         // text-align: center;
-        flex-direction: column-reverse;
-        justify-content: space-between;
-        height: 15vw;
+        
         // align-items: center;
     }
     .home-kv-carousel__cta .cta:nth-child(2) {
-        margin: 0 !important;
     }
 }
