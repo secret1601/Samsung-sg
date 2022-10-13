@@ -97,6 +97,10 @@ body {
   color: red;
 }
 
+.pc-progress-active {
+  background-color: #929292 !important;
+}
+
 .clearfix::after {
   content: "";
   position: relative;
@@ -129,8 +133,8 @@ body {
 .home-kv-carousel {
   position: relative;
   display: block;
-  width: 100vw;
-  height: 44.4444444444vw;
+  width: 1440px;
+  height: 640px;
   max-width: 1440px;
   max-height: 640px;
   background-color: rgba(199, 6, 6, 0.411);
@@ -158,8 +162,8 @@ body {
   z-index: 10;
 }
 .home-kv-carousel__text-wrap--top {
-  left: 6.25vw;
-  top: 4.8611111111vw;
+  left: 90px;
+  top: 70px;
 }
 .home-kv-carousel__text-wrap--middle {
   left: 5.9027777778vw;
@@ -284,29 +288,68 @@ body {
   top: 4px;
   transform: translateX(-50%);
   display: block;
-  border: 1px solid burlywood;
 }
 .home-kv-carousel__indicator-wrap .indicator-wrap {
   position: relative;
   display: inline-block;
-  border: 1px solid greenyellow;
+  white-space: nowrap;
 }
 .home-kv-carousel__indicator-wrap .indicator__progress-wrap {
   display: inline-block;
-  border: 1px solid #555;
+  height: auto;
 }
 .home-kv-carousel__indicator-wrap .indicator__progress-list {
   position: relative;
   display: flex;
-  align-items: flex-end;
+  height: 45px;
 }
 .home-kv-carousel__indicator-wrap .indicator__progress-item {
+  display: inline-flex;
+  align-items: flex-end;
+  width: 150px;
+  min-height: 30px;
+  cursor: pointer;
   border: 0;
+  margin-right: 16px;
+  background-color: transparent;
+}
+.home-kv-carousel__indicator-wrap .indicator__progress-item:hover .indicator__product-name {
+  opacity: 1;
+}
+.home-kv-carousel__indicator-wrap .indicator__product-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 13px;
+}
+.home-kv-carousel__indicator-wrap .indicator__product-line {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.home-kv-carousel__indicator-wrap .indicator__product-name {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  padding-bottom: 9px;
+  font-size: 14px;
+  font-family: "SamsungOne";
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 .home-kv-carousel__indicator-wrap .indicator__controls {
+  width: 100%;
+  margin-bottom: -12px;
   display: inline-block;
-  margin-left: 16px;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .arrow-indicator-wrap {
@@ -344,11 +387,19 @@ body {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1440px) {
+  .home-kv-carousel {
+    width: 100vw;
+    height: 43.4444444444vw;
+  }
   .home-kv-carousel__indicator-wrap {
     height: 5.5555555556vw;
   }
   .home-kv-carousel__text-wrap {
     width: 43.0555555556vw;
+  }
+  .home-kv-carousel__text-wrap--top {
+    left: 6.25vw;
+    top: 4.8611111111vw;
   }
   .home-kv-carousel__headline {
     font-size: 3.3333333333vw;
@@ -368,6 +419,18 @@ body {
     height: 2.9166666667vw;
     font-size: 0.9256944444vw;
   }
+  .home-kv-carousel__indicator-wrap .indicator__progress-wrap {
+    height: 3.4722222222vw;
+  }
+  .home-kv-carousel__indicator-wrap .indicator__progress-list {
+    height: 3.125vw;
+  }
+  .home-kv-carousel__indicator-wrap .indicator__progress-item {
+    width: 10.4166666667vw;
+  }
+  .home-kv-carousel__indicator-wrap .indicator__product-name {
+    font-size: 0.9722222222vw;
+  }
 }
 @media only screen and (max-width: 767px) {
   .mb-30-mo {
@@ -384,6 +447,9 @@ body {
   }
   .font-size-14-m {
     font-size: 14px !important;
+  }
+  .mobile-progress-active {
+    background-color: #000 !important;
   }
   .main {
     margin-top: 56px;
@@ -453,7 +519,34 @@ body {
   .arrow-indicator {
     display: none;
   }
+  .home-kv-carousel__indicator-wrap .indicator-wrap {
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.9019607843);
+    border: 1px solid #e6e6e6;
+  }
+  .home-kv-carousel__indicator-wrap .indicator__progress-wrap {
+    padding-top: 2.0833333333vw;
+    padding-right: 2.2222222222vw;
+    padding-bottom: 5.5039583333vw;
+    padding-left: 2.6388888889vw;
+  }
+  .home-kv-carousel__indicator-wrap .indicator__progress-list {
+    height: 0px;
+  }
+  .home-kv-carousel__indicator-wrap .indicator__progress-item {
+    width: 2.3611111111vw;
+    min-height: 2.3611111111vw;
+    height: auto;
+    border-radius: 50%;
+    background-color: #757575;
+  }
   .home-kv-carousel__indicator-wrap .indicator__controls {
-    font-size: 2.0833333333vw;
+    font-size: 4.8611111111vw;
+    padding-top: 8px;
+    margin-left: -12px;
+    padding-right: 10px;
+  }
+  .indicator__product-wrap {
+    display: none !important;
   }
 }/*# sourceMappingURL=style.css.map */
