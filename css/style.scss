@@ -35,8 +35,18 @@ $mobile-width : 720px;
     #{$text}: calc($pixel * 100) / $mobile-width + vw;
 }
 
+// important
+@mixin calc-vw-pc-important($text, $pixel) {
+    #{$text}: calc($pixel * 100) / $pc-width + vw + !important;
+    // $text: calc($pixel * 100) / $pc-width + vw;
+}
+@mixin calc-vw-mo-important($text, $pixel) {
+    #{$text}: calc($pixel * 100) / $mobile-width + vw + !important;
+}
+
 .border-box1 {
-    @include calc-vw-pc(left, 30px);
+    @include calc-vw-pc-important(font-size, 30px);
+    font-size: 10px;
     border: 1px solid red;
 }
 .border-box2 {
@@ -97,11 +107,11 @@ body {
 .text-color--black{color:#000 !important}
 .text-color--white{color:#fff !important}
 .cta--black{color: white; background-color: #000 !important}
-.cta--white{background-color: #fff; color: #000;}
+.cta--white{background-color: #fff !important; color: #000 !important;}
 .more-white {color:#fff !important}
 .d-no{display: none !important}
 .rotate {transform: rotate( 45deg );color: red;}
-.pc-progress-active{background-color: #929292 !important;}
+.pc-progress-active{background-color: rgba(255,255,255,0.6) !important;}
 
 .clearfix::after {
     content: '';
@@ -151,7 +161,7 @@ body {
     max-width: 1440px;
     max-height: 640px;
     background-color: rgba(199, 6, 6, 0.411);
-    overflow: hidden; // 스와이퍼 적용할 때 활성화 ㄱㄱ
+    // overflow: hidden; // 스와이퍼 적용할 때 활성화 ㄱㄱ
     &__wrapper {
         position: relative;
         display: flex;
@@ -199,7 +209,10 @@ body {
         color: currentColor;
         word-wrap: break-word;
         &-watch {
-            color: #eee;
+            font-size: 13px; 
+            font-weight: 400;
+            display: block;
+            padding-top: 15px;
         }
     }
     &__cta {
@@ -207,7 +220,7 @@ body {
         display: flex;
         justify-content: flex-start;
         font-size: 14px;
-        margin-top: 40px;
+        margin-top: 28px;
         line-height: 19px;
         font-weight: bold;
         align-items: center;
@@ -362,9 +375,8 @@ body {
                 display: block;
                 width: 100%;
                 height: 2px;
-                background-color: rgba(0,0,0,0.2);
+                background-color: rgba(255,255,255,0.25);
             }
-
             &__product-name {
                 position: absolute;
                 left:0;
@@ -375,20 +387,30 @@ body {
                 font-size: 14px;
                 font-family: 'SamsungOne';
                 font-weight: 700;
+                text-align: center;
                 opacity: 0;
                 transition: opacity 0.2s;
+                color: #fff;
             }
             &__controls {
-                width: 100%;
-                margin-bottom: -12px;
-                display: inline-block;
-                font-size: 16px;
-                cursor: pointer;
+                position: absolute;
+                right: -15px;
+                bottom: 9px;
+                display: block;
+                border: 0;
+                background-color: transparent;
+                // pc 프로그레스 바
+                &-pc-progress {
+                    width: 16px;
+                    height: 16px;
+                }
+                // 모바일 닷
+                &__controls-dot {
+                    display: none !important;
+                }
             }
-
-
-
-
+            
+            
             
             // &__bar-wrap {
             //     position: relative;
@@ -476,6 +498,15 @@ body {
 
 // home-kv-carousel 반응형 
 @media only screen and (min-width: 768px) and (max-width: 1440px) {
+    .indicator__controls {
+        @include calc-vw-pc-important(right, -15px);
+        @include calc-vw-pc-important(bottom, 16px);
+    }
+    .home-kv-carousel__indicator-wrap .indicator__controls-pc-progress {
+        @include calc-vw-pc(width, 16px);
+        @include calc-vw-pc(height, 16px);
+    }
+    
     .home-kv-carousel {
         @include calc-vw-pc(width, 1440px);
         @include calc-vw-pc(height, 625.6px);
@@ -506,6 +537,9 @@ body {
     .home-kv-carousel__cta {
         @include calc-vw-pc(font-size, 14px);
     }
+
+    
+
     .cta--now {
         // @include calc-vw-pc(padding, 10.56px);
         padding: 0.7333vw 1.5278vw !important;
@@ -520,6 +554,11 @@ body {
         // font-size: 0.9257vw ;
     }
 
+    // .indicator__controls-progress {
+    //     @include calc-vw-pc(width, 16px);
+    //     @include calc-vw-pc(height, 16px);
+    // }
+
     .home-kv-carousel__indicator-wrap .indicator__progress-wrap {
         @include calc-vw-pc(height, 50px);
     }
@@ -532,15 +571,19 @@ body {
     .home-kv-carousel__indicator-wrap .indicator__product-name {
         @include calc-vw-pc(font-size, 14px);
     }
+
+    
+
 }
 
 @media only screen and (max-width: 767px) {
     .mb-30-mo{margin-bottom: 3.9063vw;}
-    .mt-30-mo{margin-top: 2.9063vw;}
+    // .mt-30-mo{margin-top: 2.9063vw;}
     .mt-40-mo{margin-top: 5.2083vw;}
     .font-size-20-m{font-size: 20px !important;}
     .font-size-14-m{font-size: 14px !important;}
     .mobile-progress-active{background-color: #000 !important;}
+
 
     .main {
         margin-top: 56px;
@@ -559,7 +602,7 @@ body {
 
     // text-wrraper의 너비 설정
     .home-kv-carousel__text-wrap {
-        width: 78vw !important;
+        width: 80vw !important;
         height: 70vw;
         text-align: center;
     }
@@ -581,11 +624,16 @@ body {
         font-weight: 400 ;
     }
     .home-kv-carousel__desc {
+        @include calc-vw-mo(margin-top, 26.5px);
         font-size: 3.88888888vw;
     }
     .home-kv-carousel__desc-watch {
         margin-top: 2.22222222vw;
         font-size: 3.33333333vw;
+    }
+
+    .home-kv-carousel__cta .cta:nth-child(2) {
+        @include calc-vw-pc(margin-left, 0px);
     }
 
     .home-kv-carousel__cta-mobile-type-1 {
@@ -625,43 +673,86 @@ body {
         display: none ;
     }
 
-    // 모바일 인디케이터 조절
-    .home-kv-carousel__indicator-wrap .indicator-wrap {
+
+    // 모바일 인디케이터 재생성
+    .indicator__dot-list {
+        position: relative;
+        display: block;
+        @include calc-vw-mo(width, 247px);
+        @include calc-vw-mo(height, 51px);
+        // width: 200px;
+        // height: 40px;
+        background-color: rgba(0,0,0,0.85);
         border-radius: 30px;
-        background-color: #ffffffe6;
-        border: 1px solid #e6e6e6;
-
+        @include calc-vw-mo(top, -17px);
+        // top: -17px;
     }
-    .home-kv-carousel__indicator-wrap .indicator__progress-wrap {
-        // max-height: 16px;
-        @include calc-vw-mo(padding-top, 15px);
-        @include calc-vw-mo(padding-right, 16px);
-        @include calc-vw-mo(padding-bottom, 39.6285px);
-        @include calc-vw-mo(padding-left, 19px);
-        // padding: 15px 16px 15px 19px;
-    }
-    .home-kv-carousel__indicator-wrap .indicator__progress-list {
-        height: 0px;
-    }
-
-    .home-kv-carousel__indicator-wrap .indicator__progress-item {
+    .indicator__dot-item {
+        position: relative;
+        display: inline-block;
+        white-space: nowrap;
         @include calc-vw-mo(width, 17px);
-        @include calc-vw-mo(min-height, 17px);
-        height: auto;
+        @include calc-vw-mo(height, 17px);
+        // width: 17px;
+        // height: 17px;
+        background-color: rgba(255,255,255,0.3);
         border-radius: 50%;
-        background-color: #757575;
-        // border-top-left-radius: 
+        @include calc-vw-mo(margin-top, 18px);
+        @include calc-vw-mo(margin-right, 12px);
+        @include calc-vw-mo(margin-bottom, 15px);
+        @include calc-vw-mo(margin-left, 15px);
+        cursor: pointer;
+        // margin: 19px;
+    }
+    .mo-dot-active {
+        background-color: rgba(255,255,255,0.9);
     }
 
-    .home-kv-carousel__indicator-wrap .indicator__controls{
-        @include calc-vw-mo(font-size, 35px);
-        padding-top: 8px;
-        margin-left: -12px;
-        padding-right: 10px;
-    }
+    // 모바일 인디케이터 조절
+    // .home-kv-carousel__indicator-wrap .indicator-wrap {
+    //     border-radius: 30px;
+    //     background-color: #ffffffe6;
+    //     border: 1px solid #e6e6e6;
 
-    .indicator__product-wrap {
+    // }
+    // .home-kv-carousel__indicator-wrap .indicator__progress-wrap {
+    //     // max-height: 16px;
+    //     @include calc-vw-mo(padding-top, 15px);
+    //     @include calc-vw-mo(padding-right, 16px);
+    //     @include calc-vw-mo(padding-bottom, 39.6285px);
+    //     @include calc-vw-mo(padding-left, 19px);
+    //     // padding: 15px 16px 15px 19px;
+    // }
+    // .home-kv-carousel__indicator-wrap .indicator__progress-list {
+    //     height: 0px;
+    // }
+
+    // .home-kv-carousel__indicator-wrap .indicator__progress-item {
+    //     @include calc-vw-mo(width, 17px);
+    //     @include calc-vw-mo(min-height, 17px);
+    //     height: auto;
+    //     border-radius: 50%;
+    //     background-color: #757575;
+    //     // border-top-left-radius: 
+    // }
+
+    // .home-kv-carousel__indicator-wrap .indicator__controls{
+    //     @include calc-vw-mo(font-size, 35px);
+    //     padding-top: 8px;
+    //     margin-left: -12px;
+    //     padding-right: 10px;
+    // }
+
+    .indicator__progress-list {
         display: none !important;
     }
 
+    .indicator__controls {
+        @include calc-vw-mo-important(right, 19px);
+        @include calc-vw-mo-important(bottom, 26px);
+    }
+    .indicator__controls-mo-progress {
+        @include calc-vw-mo-important(width, 31px);
+        @include calc-vw-mo-important(height, 31px);
+    }
 }

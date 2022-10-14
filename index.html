@@ -7,12 +7,14 @@
     <title>UI 구현 과제</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body>
     <div class="wrap">
         <header class="header">
-            <!-- <div class="border-box1">123 pc</div>
-            <div class="border-box2">456 mobile</div> -->
+            <div class="border-box1">123 pc</div>
+            <div class="border-box2">456 mobile</div>
         </header>
 
         <div class="main">
@@ -22,26 +24,51 @@
                 <div class="home-kv-carousel">
 
                     <div class="home-kv-carousel__slide-inner">
+                        <div class="home-kv-carousel__text-wrap home-kv-carousel__text-wrap--top home-kv-carousel__text-wrap--mobile-top text-color--white">
+                            <h2 class="home-kv-carousel__headline">
+                                <p>
+                                    Customise your big game experience with #YouMake
+                                </p>
+                            </h2>
+                            <p class="home-kv-carousel__desc">
+                                Get ready for the big match <br>
+                                with big offers.
+                            </p>
+                            <div class="home-kv-carousel__cta home-kv-carousel__cta-mobile-type-2 ">
+                                <a href="#" class="cta cta--now cta--black cta--now-mobile cta--white">Buy now</a>
+                            </div>
+                        </div>
+
+                        <div class="home-kv-carousel__background-wrap">
+                            <figure class="thumbnail">
+                                <picture>
+                                    <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/home/2022-kv/22_ym_oct_homepage_kv_carousel_banner_mo_720x1080.jpg?imwidth=720 1.5x">
+                                    <img src="https://images.samsung.com/is/image/samsung/assets/sg/home/2022-kv/22_ym_oct_homepage_kv_carousel_banner_pc_1440x640.jpg?imwidth=1366" alt="galaxy-z-flip4">
+                                    <!-- <figcaption>galaxy-z-flip4</figcaption> -->
+                                </picture>
+                            </figure>
+                        </div>
+
+                    </div>
+
+                    <div class="home-kv-carousel__slide-inner">
 
                         <div class="home-kv-carousel__text-wrap home-kv-carousel__text-wrap--top home-kv-carousel__text-wrap--mobile-top">
                             <h2 class="home-kv-carousel__headline">
                                 Galaxy Z Fold4 5G
                             </h2>
-                            <p class="home-kv-carousel__desc" style="font-weight: 700;">
-                                <span style="word-wrap: break-word; word-break: keep-all;">
+                            <p class="home-kv-carousel__desc">
+                                <span style="font-weight: 700;">
                                     Free gifts and trade-in savings
                                     worth up to $1,276
                                     <sup>2</sup>
                                     . <br>
-                                </span>
-                                <span>
                                     Plus, get 50%
                                     <sup>3</sup>
                                     off 2-year
                                     Samsung Care+ Screen Care.
-                                    <br>
                                 </span> 
-                                <span style="font-size: 13px; font-weight: 400 !important;">
+                                <span class="home-kv-carousel__desc-watch">
                                     While stocks last. T&Cs apply.
                                 </span>
                             </p>
@@ -72,51 +99,11 @@
                     </div>
 
                     <div class="home-kv-carousel__slide-inner">
-                        <div class="home-kv-carousel__text-wrap home-kv-carousel__text-wrap--top home-kv-carousel__text-wrap--mobile-top">
-                            <h2 class="home-kv-carousel__headline font-size-20-m">
-                                <p>
-                                    <span class="d-ibl" style="display: block;">Great Singapore</span>
-                                    Samsung Sale
-                                </p>
-                            </h2>
-                            <p class="home-kv-carousel__desc font-size-14-m">
-                                <b>
-                                    Enjoy up to S$320* off and 
-                                    <br>
-                                    receive~ a pair of JJ Lin Concert 
-                                    <br>
-                                    tickets worth S$704!
-                                    <br><br>
-                                </b>
-                                <span style="line-height: 10px; line-height: 1;">
-                                    9 Sep - 10 Oct 2022
-                                    <br><br>
-                                    <span style="font-size: 14px;">T&Cs Apply.</span>
-                                </span>
-                            </p>
-                            <div class="home-kv-carousel__cta home-kv-carousel__cta-mobile-type-2">
-                                <a href="#" class="cta cta--now cta--black cta--now-mobile mt-30-mo">Buy now</a>
-                            </div>
-                        </div>
-
-                        <div class="home-kv-carousel__background-wrap">
-                            <figure class="thumbnail">
-                                <picture>
-                                    <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/home/2022/kv/Main-KV-MO--720x1080-100-e.jpg?imwidth=720">
-                                    <img src="./images/Main-KV-PC--1440x640-100-e.jpg" alt="galaxy-z-flip4">
-                                    <!-- <figcaption>galaxy-z-flip4</figcaption> -->
-                                </picture>
-                            </figure>
-                        </div>
-
-                    </div>
-
-                    <div class="home-kv-carousel__slide-inner">
-                        <div class="home-kv-carousel__text-wrap home-kv-carousel__text-wrap--middle home-kv-carousel__text-wrap--mobile-top">
-                            <h2 class="home-kv-carousel__headline text-color--white">
+                        <div class="home-kv-carousel__text-wrap home-kv-carousel__text-wrap--middle home-kv-carousel__text-wrap--mobile-top text-color--white">
+                            <h2 class="home-kv-carousel__headline">
                                 Watch the legend unfold <br> on Neo QLED 8K
                             </h2>
-                            <p class="home-kv-carousel__desc-watch white-nowrap">
+                            <p class="home-kv-carousel__desc">
                                 Image simulated. Subscription service not included.
                             </p>
                             <div class="home-kv-carousel__cta home-kv-carousel__cta-mobile-type-1">
@@ -183,8 +170,8 @@
                             <div class="indicator-wrap">
 
                                 <div class="indicator__progress-wrap">
-                                    <div class="indicator__progress-list">
-                                        <button class="indicator__progress-item mobile-progress-active">
+                                    <ul class="indicator__progress-list">
+                                        <li class="indicator__progress-item">
 
                                             <!-- PC indicator -->
                                             <div class="indicator__product-wrap">
@@ -194,16 +181,8 @@
                                                 </span>
                                             </div>
 
-                                            <!-- 모바일 indicator -->
-                                            <div class="indicator__dot-wrap">
-                                                <span class="indicator__product-dot"></span>
-                                                <!-- <span class="indicator__dot-name">
-                                                    Customise your big game experience with #YouMake
-                                                </span> -->
-                                            </div>
-
-                                        </button>
-                                        <button class="indicator__progress-item">
+                                        </li>
+                                        <li class="indicator__progress-item">
 
                                             <!-- PC indicator -->
                                             <div class="indicator__product-wrap">
@@ -213,16 +192,8 @@
                                                 </span>
                                             </div>
                                             
-                                            <!-- 모바일 indicator -->
-                                            <div class="indicator__dot-wrap">
-                                                <span class="indicator__product-dot"></span>
-                                                <!-- <span class="indicator__dot-name">
-                                                    Customise your big game experience with #YouMake
-                                                </span> -->
-                                            </div>
-                                            
-                                        </button>
-                                        <button class="indicator__progress-item">
+                                        </li>
+                                        <li class="indicator__progress-item">
 
                                             <!-- PC indicator -->
                                             <div class="indicator__product-wrap">
@@ -232,16 +203,8 @@
                                                 </span>
                                             </div>
                                             
-                                            <!-- 모바일 indicator -->
-                                            <div class="indicator__dot-wrap">
-                                                <span class="indicator__product-dot"></span>
-                                                <!-- <span class="indicator__dot-name">
-                                                    Customise your big game experience with #YouMake
-                                                </span> -->
-                                            </div>
-                                            
-                                        </button>
-                                        <button class="indicator__progress-item">
+                                        </li>
+                                        <li class="indicator__progress-item">
 
                                             <!-- PC indicator -->
                                             <div class="indicator__product-wrap">
@@ -251,19 +214,40 @@
                                                 </span>
                                             </div>
                                             
-                                            <!-- 모바일 indicator -->
-                                            <div class="indicator__dot-wrap">
-                                                <span class="indicator__product-dot"></span>
-                                                <!-- <span class="indicator__dot-name">
-                                                    Customise your big game experience with #YouMake
-                                                </span> -->
-                                            </div>
-                                            
-                                        </button>
-                                    </div>
+                                        </li>
+                                        
+                                    </ul>
+
+                                    <ul class="indicator__dot-list">
+                                        <li class="indicator__dot-item mo-dot-active"></li>
+                                        <li class="indicator__dot-item"></li>
+                                        <li class="indicator__dot-item"></li>
+                                        <li class="indicator__dot-item"></li>
+                                    </ul>
+
+                                    <button class="indicator__controls">
+                                        <svg class="indicator__controls-pc-progress indicator__controls-mo-progress" id="changeColor" fill="#DC7633" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" zoomAndPan="magnify" viewBox="0 0 375 374.9999" height="200" preserveAspectRatio="xMidYMid meet" version="1.0" transform="rotate(90)">
+                                            <defs>
+                                                <path id="pathAttribute" d="M 17 39 L 358 39 L 358 337.5 L 17 337.5 Z M 17 39 " fill="#ffffff"></path>
+                                            </defs>
+                                            <g>
+                                                <path id="pathAttribute" d="M 19.492188 317.324219 L 175.816406 46.46875 C 180.980469 37.5 193.882812 37.5 199.042969 46.46875 L 355.371094 317.390625 C 360.53125 326.359375 354.082031 337.5 343.757812 337.5 L 31.101562 337.5 C 20.78125 337.433594 14.328125 326.292969 19.492188 317.324219 Z M 19.492188 317.324219 " fill-opacity="1" fill-rule="nonzero" fill="#ffffff"></path>
+                                            </g>
+                                            <g id="inner-icon" transform="translate(85, 115)"> 
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="IconChangeColor" height="0" width="0">
+                                                    <rect width="256" height="256" fill="none">
+                                                    </rect>
+                                                    <rect x="156" y="40" width="52" height="176" rx="8" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="24">
+                                                    </rect><rect x="48" y="40" width="52" height="176" rx="8" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></rect>
+                                                </svg>
+                                            </g>
+                                        </svg>
+                                    </button>
+
                                 </div>
 
-                                <div class="indicator__controls">►</div>
+                                
+
                             </div>
                             
                                 
