@@ -100,7 +100,6 @@ body {
 }
 
 .home-kv-carousel__text-wrap {
-    border: 1px solid red;
 }
 
 // 공통 클래스
@@ -108,10 +107,11 @@ body {
 .text-color--white{color:#fff !important}
 .cta--black{color: white; background-color: #000 !important}
 .cta--white{background-color: #fff !important; color: #000 !important;}
+
 .more-white {color:#fff !important}
 .d-no{display: none !important}
 .rotate {transform: rotate( 45deg );color: red;}
-.pc-progress-active{background-color: rgba(255,255,255,0.6) !important;}
+.pc-product-name-active{opacity: 1 !important;};
 
 .clearfix::after {
     content: '';
@@ -160,8 +160,7 @@ body {
     // height: 44.44444vw; // 너비가 1440부터 작아져야 함.
     max-width: 1440px;
     max-height: 640px;
-    background-color: rgba(199, 6, 6, 0.411);
-    // overflow: hidden; // 스와이퍼 적용할 때 활성화 ㄱㄱ
+    overflow: hidden; // 스와이퍼 적용할 때 활성화 ㄱㄱ
     &__wrapper {
         position: relative;
         display: flex;
@@ -276,7 +275,7 @@ body {
             }
         }
         
-    }
+    } 
     &__video-wrap {
         position: relative;
         display: block;
@@ -323,6 +322,7 @@ body {
         width: 100%; // 1440px
         max-width: 1440px;
         height: 80px;
+        z-index: 1;
         .indicator {
             position: absolute;
             left: 50%;
@@ -366,6 +366,9 @@ body {
                 display: block;
                 width: 100%;
                 margin-bottom: 13px;
+                // pc 프로그레스 액티브 (선 채우기 )
+                .pc-progress-active{background-color: rgba(255,255,255,0.6) !important;}
+                .pc-progress-active-black{background-color: rgba(0,0,0,0.4) !important}
             }
 
             &__product-line {
@@ -399,6 +402,7 @@ body {
                 display: block;
                 border: 0;
                 background-color: transparent;
+                cursor: pointer;
                 // pc 프로그레스 바
                 &-pc-progress {
                     width: 16px;
@@ -459,7 +463,14 @@ body {
             // }
         }
     }
+    // cta--white 호버효과
+    .cta--white:hover{
+        color: #313131 !important;
+        background-color: #ddd !important;
+    }   
 }
+
+
 
 // 화살표
 .arrow-indicator-wrap {
