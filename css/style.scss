@@ -81,7 +81,7 @@ body {
     font-family: 'SamsungOne', Arial, sans-serif;
     font-size: 1.1rem;
     color: #000;
-    line-height: 1.5;
+    line-height: 1.50;
     letter-spacing: 0.58;
     font-weight: 400;
 }
@@ -550,10 +550,15 @@ body {
 }
 
 
-
-
 // home-kv-carousel 반응형 
 @media only screen and (min-width: 768px) and (max-width: 1440px) {
+    .container {
+        position: relative;
+        display: block;
+        @include calc-vw-pc(width, 1440px);
+        margin: 0 auto;
+    }
+
     .indicator__controls {
         @include calc-vw-pc-important(right, -15px);
         @include calc-vw-pc-important(bottom, 16px);

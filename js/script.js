@@ -56,7 +56,6 @@ window.onload = function() {
                 dotList.classList.add("dot-background-black-mo");
                 dotItem[k].classList.add("dot-color-black-mo");
                 dotItem[sw_carousel.realIndex].classList.add("mo-dot-active-black");
-
             } else {
                 productLine[k].classList.remove("line-background-black-pc");
                 productName[k].classList.remove("line-color-black-pc");
@@ -66,7 +65,6 @@ window.onload = function() {
                 dotList.classList.remove("dot-background-black-mo");
                 dotItem[k].classList.remove("dot-color-black-mo");
                 dotItem[k].classList.remove("mo-dot-active-black");
-
             }
         }
     }
