@@ -63,17 +63,28 @@ body {
   overflow: hidden;
 }
 
+.height-test {
+  height: 1000px;
+}
+
 .text-color--black {
   color: #000 !important;
 }
 
-.text-color--white {
-  color: #fff !important;
+.home-kv-carousel__slide-inner--black {
+  color: #000 !important;
 }
 
 .cta--black {
-  color: white;
-  background-color: #000 !important;
+  padding: 12px 22px;
+  border-radius: 25px;
+  background-color: #000;
+  color: #fff;
+  transition: color 0.3s, background-color 0.3s;
+}
+.cta--black:hover {
+  color: #eee !important;
+  background-color: #555 !important;
 }
 
 .cta--white {
@@ -106,14 +117,17 @@ body {
   clear: both;
 }
 
-.container {
+.container, .half-teaser-list__inner {
   position: relative;
   display: block;
+  width: 1440px;
+  margin: 0 auto;
 }
 
 .wrap {
   position: relative;
   display: block;
+  z-index: 10000;
 }
 
 .header {
@@ -147,6 +161,7 @@ body {
   display: block;
   width: 100%;
   max-width: 1440px;
+  color: white;
   height: 43.4444444444vw;
   max-height: 640px;
   overflow: hidden;
@@ -180,11 +195,20 @@ body {
   color: currentColor;
   word-wrap: break-word;
 }
-.home-kv-carousel__desc-watch {
+.home-kv-carousel__desc-header {
+  font-weight: 700;
+}
+.home-kv-carousel__desc-footer {
   font-size: 13px;
   font-weight: 400;
   display: block;
   padding-top: 15px;
+}
+.home-kv-carousel__desc-watch {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.33;
+  word-wrap: break-word;
 }
 .home-kv-carousel__cta {
   position: relative;
@@ -196,6 +220,10 @@ body {
   font-weight: bold;
   align-items: center;
   text-align: center;
+}
+.home-kv-carousel__cta .cta {
+  position: relative;
+  display: block;
 }
 .home-kv-carousel__cta .cta--more {
   position: relative;
@@ -234,6 +262,8 @@ body {
 .home-kv-carousel__cta .cta--now {
   padding: 12px 22px;
   border-radius: 25px;
+  background-color: #fff;
+  color: #000;
   transition: color 0.3s, background-color 0.3s;
 }
 .home-kv-carousel__cta .cta--now:hover {
@@ -368,9 +398,17 @@ body {
 .home-kv-carousel__indicator-wrap .indicator__controls__controls-dot {
   display: none !important;
 }
-.home-kv-carousel .cta--white:hover {
+.home-kv-carousel .cta--now:hover {
   color: #313131 !important;
   background-color: #ddd !important;
+}
+
+.line-background-black-pc {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.line-color-black-pc {
+  color: #000 !important;
 }
 
 .arrow-indicator-wrap {
@@ -407,6 +445,23 @@ body {
   color: #fff;
 }
 
+.half-teaser-list__inner {
+  padding-top: 50px;
+  display: block;
+}
+.half-teaser-list__headline {
+  font-size: 38px;
+  font-family: "SamsungSharpSans", arial, sans-serif;
+  line-height: 1.2;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid red;
+}
+.half-teaser-list__content {
+  position: relative;
+  display: flex;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1440px) {
   .indicator__controls {
     right: -1.0416666667vw!important;
@@ -437,6 +492,10 @@ body {
     margin-top: 1.6666666667vw;
     font-size: 1.25vw;
   }
+  .home-kv-carousel__desc-watch {
+    margin-top: 1.1111111111vw;
+    font-size: 0.9722222222vw;
+  }
   .home-kv-carousel__cta {
     font-size: 0.9722222222vw;
   }
@@ -462,18 +521,6 @@ body {
   }
 }
 @media only screen and (max-width: 767px) {
-  .mb-30-mo {
-    margin-bottom: 3.9063vw;
-  }
-  .mt-40-mo {
-    margin-top: 5.2083vw;
-  }
-  .font-size-20-m {
-    font-size: 20px !important;
-  }
-  .font-size-14-m {
-    font-size: 14px !important;
-  }
   .mobile-progress-active {
     background-color: #000 !important;
   }
@@ -482,7 +529,7 @@ body {
   }
   .home-kv-carousel {
     max-height: 1100px;
-    height: 143.4159vw;
+    height: 150.4159vw;
   }
   .home-kv-carousel__slide-inner {
     height: 100%;
@@ -509,24 +556,21 @@ body {
     font-weight: 400;
   }
   .home-kv-carousel__desc {
-    margin-top: 3.6805555556vw;
     font-size: 3.88888888vw;
+    margin-top: 2.680556vw;
   }
   .home-kv-carousel__desc-watch {
-    margin-top: 2.22222222vw;
-    font-size: 3.33333333vw;
+    margin-top: 2.2222222222vw;
+    font-size: 3.0555555556vw;
   }
   .home-kv-carousel__cta .cta:nth-child(2) {
     margin-left: 0vw;
   }
-  .home-kv-carousel__cta-mobile-type-1 {
-    margin-top: 13.7778vw;
-    font-size: 2.97222222vw !important;
+  .home-kv-carousel__cta-mobile {
     flex-direction: column-reverse;
     justify-content: space-between;
-    height: 15vw;
   }
-  .home-kv-carousel__cta-mobile-type-2 {
+  .home-kv-carousel__cta-mobile--horizontal {
     justify-content: space-between;
     flex-direction: column;
   }
@@ -535,6 +579,7 @@ body {
     font-size: 3.8vw;
     border-radius: 6.2552vw !important;
     padding: 3.77777778vw 6.66666667vw 4.05555556vw 6.66666667vw !important;
+    margin-bottom: 4.1666666667vw;
   }
   .cta--more {
     font-size: 3.6vw;
@@ -552,8 +597,8 @@ body {
   .indicator__dot-list {
     position: relative;
     display: block;
-    width: 34.3055555556vw;
-    height: 7.0833333333vw;
+    width: 32.2222222222vw;
+    height: 6.6666666667vw;
     background-color: rgba(0, 0, 0, 0.85);
     border-radius: 30px;
     top: -2.3611111111vw;
@@ -562,28 +607,37 @@ body {
     position: relative;
     display: inline-block;
     white-space: nowrap;
-    width: 2.3611111111vw;
-    height: 2.3611111111vw;
+    width: 2.1005555556vw;
+    height: 2.1005555556vw;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    margin-top: 2.5vw;
-    margin-right: 1.6666666667vw;
-    margin-bottom: 2.0833333333vw;
-    margin-left: 2.0833333333vw;
+    margin-top: 2.1805555556vw;
+    margin-bottom: 2.2194444444vw;
+    margin-left: 3.2313888889vw;
     cursor: pointer;
   }
   .mo-dot-active {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+  .mo-dot-active-black {
+    background-color: rgb(0, 0, 0) !important;
+  }
+  .dot-background-black-mo {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .dot-color-black-mo {
+    background-color: rgba(0, 0, 0, 0.55);
   }
   .indicator__progress-list {
     display: none !important;
   }
   .indicator__controls {
-    right: 2.6388888889vw!important;
-    bottom: 3.6111111111vw!important;
+    right: 2.5vw!important;
+    bottom: 3.3611111111vw!important;
   }
   .indicator__controls-mo-progress {
-    width: 4.3055555556vw!important;
-    height: 4.3055555556vw!important;
+    width: 4.0277777778vw!important;
+    height: 4.0277777778vw!important;
   }
 }/*# sourceMappingURL=style.css.map */
