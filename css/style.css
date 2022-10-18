@@ -55,6 +55,14 @@ body {
   font-weight: 400;
 }
 
+*:focus {
+  outline: 2px dotted black !important;
+}
+
+li:focus {
+  outline: 2px dotted black;
+}
+
 .textarea {
   border: none;
   outline: none;
