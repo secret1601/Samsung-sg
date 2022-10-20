@@ -395,9 +395,6 @@ body {
   width: 16px;
   height: 16px;
 }
-.home-kv-carousel__indicator-wrap .indicator__controls__controls-dot {
-  display: none !important;
-}
 .home-kv-carousel .cta--now:hover {
   color: #313131 !important;
   background-color: #ddd !important;
@@ -542,7 +539,7 @@ body {
     max-height: 1080px;
   }
   .home-kv-carousel__text-wrap {
-    width: 80vw !important;
+    width: 84vw !important;
     height: 70vw;
     text-align: center;
   }
@@ -600,50 +597,50 @@ body {
   .arrow-indicator {
     display: none;
   }
-  .indicator__dot-list {
-    position: relative;
-    display: block;
-    width: 32.2222222222vw;
-    height: 6.6666666667vw;
-    background-color: rgba(0, 0, 0, 0.85);
-    border-radius: 30px;
-    top: -2.3611111111vw;
-  }
-  .indicator__dot-item {
-    position: relative;
-    display: inline-block;
-    white-space: nowrap;
-    width: 2.1005555556vw;
-    height: 2.1005555556vw;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    margin-top: 2.1805555556vw;
-    margin-bottom: 2.2194444444vw;
-    margin-left: 3.2313888889vw;
-    cursor: pointer;
-  }
-  .mo-dot-active {
-    background-color: rgba(255, 255, 255, 0.9) !important;
-  }
-  .mo-dot-active-black {
-    background-color: rgb(0, 0, 0) !important;
-  }
-  .dot-background-black-mo {
-    background-color: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  .dot-color-black-mo {
-    background-color: rgba(0, 0, 0, 0.55);
-  }
-  .indicator__progress-list {
-    display: none !important;
-  }
   .indicator__controls {
     right: 2.5vw!important;
-    bottom: 3.3611111111vw!important;
+    bottom: 4.0555555556vw!important;
   }
   .indicator__controls-mo-progress {
     width: 4.0277777778vw!important;
     height: 4.0277777778vw!important;
+  }
+  .indicator__progress-list {
+    width: 32.2222222222vw;
+    height: 6.6666666667vw!important;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    top: -3vw !important;
+  }
+  .home-kv-carousel__indicator-wrap .indicator__progress-item {
+    display: block;
+    width: 0px;
+    margin-left: 4.0277777778vw;
+    margin-right: 1.5833333333vw;
+  }
+  .home-kv-carousel__indicator-wrap .indicator__product-line {
+    top: 2.09vw;
+    left: -6px;
+    width: 2.2152777778vw;
+    height: 2.2152777778vw;
+    border-radius: 50%;
+    background-color: #8f8f8f;
+  }
+  .home-kv-carousel__indicator-wrap .indicator__product-name {
+    display: none;
+  }
+  .home-kv-carousel__indicator-wrap .indicator__product-wrap .pc-progress-active {
+    background-color: #fff !important;
+  }
+  .home-kv-carousel__indicator-wrap .indicator__product-wrap .pc-progress-active-black {
+    background-color: #000 !important;
+  }
+  .line-background-black-pc {
+    background-color: #757575 !important;
+  }
+  .mobile-pagination-backgorund-white {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
   }
 }/*# sourceMappingURL=style.css.map */

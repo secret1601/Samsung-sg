@@ -424,59 +424,7 @@ body {
                     width: 16px;
                     height: 16px;
                 }
-                // 모바일 닷
-                &__controls-dot {
-                    display: none !important;
-                }
             }
-            
-            
-            
-            // &__bar-wrap {
-            //     position: relative;
-            //     display: block;
-            //     // width: 100%;
-            //     // align-items: flex-end;
-            //     height: 60px;
-            //     margin-bottom: 20px;
-            //     // background-color: rgb(110, 110, 150);
-            // }
-            // &__bar-list {
-            //     position: relative;
-            //     display: block;
-            //     margin-top: 30px;
-            //     float: left;
-            // }
-            // &__bar {
-            //     position: relative;
-            //     display: block;
-            //     cursor: pointer;
-            //     border: 0;
-            //     margin-right: 10px;
-            //     white-space: nowrap;
-            //     float: left;
-            //     &-line {
-            //         background-color: rgba(0,0,0,0.2);
-            //         // width: 10vw;
-            //         @include calc-vw-pc(width, 144px);
-            //         max-width: 170px;
-            //         height: 2px;
-            //         white-space: nowrap;
-            //     }
-            //     &-text {
-                    
-            //     }
-            // }
-            // &__toggle {
-            //     position: absolute;
-            //     right: -30px;
-            //     top:50%;
-            //     transform: translateY(-50%);
-            //     display: block;
-            //     margin-left: 16px;
-            //     cursor: pointer;
-            //     float: right;
-            // }
         }
     }
     // cta--white 호버효과
@@ -661,7 +609,7 @@ body {
 
     // text-wrraper의 너비 설정
     .home-kv-carousel__text-wrap {
-        width: 80vw !important;
+        width: 84vw !important;
         height: 70vw;
         text-align: center;
     }
@@ -732,64 +680,61 @@ body {
     .arrow-indicator {
         display: none ;
     }
-
-
-    // 모바일 인디케이터 재생성
-    .indicator__dot-list {
-        position: relative;
-        display: block;
-        @include calc-vw-mo(width, 232px);
-        @include calc-vw-mo(height, 48px);
-        // width: 200px;
-        // height: 40px;
-        background-color: rgba(0,0,0,0.85);
-        border-radius: 30px;
-        @include calc-vw-mo(top, -17px);
-        // top: -17px;
-    }
-    .indicator__dot-item {
-        position: relative;
-        display: inline-block;
-        white-space: nowrap;
-        @include calc-vw-mo(width, 15.124px);
-        @include calc-vw-mo(height, 15.124px);
-        // width: 17px;
-        // height: 17px;
-        background-color: rgba(255,255,255,0.3);
-        border-radius: 50%;
-        @include calc-vw-mo(margin-top, 15.7px);
-        // @include calc-vw-mo(margin-right, 5.13px);
-        @include calc-vw-mo(margin-bottom, 15.98px);
-        @include calc-vw-mo(margin-left, 23.266px);
-        cursor: pointer;
-        // margin: 19px;
-    }
-    .mo-dot-active {
-        background-color: rgba(255,255,255,0.9) !important;
-    }
-    .mo-dot-active-black {
-        background-color: rgba(0, 0, 0, 1) !important;
-    }
-
-    // realIndex == 1, Mobile dot style change
-    .dot-background-black-mo {
-        background-color: rgba(255, 255, 255, 0.85);
-        border: 1px solid rgba(0,0,0,0.1);
-    }
-    .dot-color-black-mo {
-        background-color: rgba(0, 0, 0, 0.55);
-    }
-
-    .indicator__progress-list {
-        display: none !important;
-    }
-
     .indicator__controls {
         @include calc-vw-mo-important(right, 18px);
-        @include calc-vw-mo-important(bottom, 24.2px);
+        @include calc-vw-mo-important(bottom, 29.2px);
     }
     .indicator__controls-mo-progress {
         @include calc-vw-mo-important(width, 29px);
         @include calc-vw-mo-important(height, 29px);
+    }
+
+    // 새로 커스텀 모바일 + pc 페이지네이션 합치기
+    .indicator__progress-list {
+        // width: 161px;
+        @include calc-vw-mo(width, 232px);
+        @include calc-vw-mo-important(height, 48px);
+        // height: 33px !important;
+        background-color: rgba(0, 0, 0, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 30px;
+        top: -3vw !important;
+    }
+    .home-kv-carousel__indicator-wrap .indicator__progress-item {
+        display: block;
+        width: 0px;
+        // margin-left: 20px;
+        @include calc-vw-mo(margin-left, 29px);
+        @include calc-vw-mo(margin-right, 11.4px);
+        // margin-right: 7px;
+    }
+    .home-kv-carousel__indicator-wrap .indicator__product-line {
+        top: 2.09vw;
+        // bottom: -2px;
+        left: -6px;
+        @include calc-vw-mo(width, 15.95px);
+        @include calc-vw-mo(height, 15.95px);
+        // width: 11px;
+        // height: 11px;
+        border-radius: 50%;
+        background-color: #8f8f8f;
+    }
+    .home-kv-carousel__indicator-wrap .indicator__product-name {
+        display: none;
+    }
+
+    // active 변경
+    .home-kv-carousel__indicator-wrap .indicator__product-wrap .pc-progress-active {
+        background-color: #fff !important;
+    }
+    .home-kv-carousel__indicator-wrap .indicator__product-wrap .pc-progress-active-black {
+        background-color: #000 !important;
+    }
+    .line-background-black-pc {
+        background-color: #757575 !important;
+    }
+    .mobile-pagination-backgorund-white {
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        background-color: rgba(255,255,255,0.9) !important;
     }
 }
