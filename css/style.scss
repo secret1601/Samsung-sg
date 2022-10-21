@@ -584,7 +584,7 @@ body {
             position: relative;
             display: block;
             width: 685px;
-            border: 1px solid red;
+            // border: 1px solid red;
             &-list {
                 width: 100%;
                 padding-top: 83px;
@@ -596,25 +596,20 @@ body {
                 align-items: center;
                 // border: 1px solid brown;
                 transition: all 0.2s;
-                // &:first-child {
-                //     margin-top: 0 !important;
-                // }
+                font-family: 'SamsungSharpSans',arial,sans-serif;
+                font-weight: bold;
                 &--active {
                     height: 170px !important;
                     margin-top: -40px;
                 }
                 h4 {
                     width: 90px;
-                    font-family: 'SamsungSharpSans',arial,sans-serif;
-                    font-weight: bold;
                     font-size: 16px;
                     line-height: 1.33;
                     padding-left: 24px;
                 }
                 span {
                     font-size: 24px;
-                    font-family: 'SamsungSharpSans',arial,sans-serif;
-                    font-weight: bold;
                 }
                 .half-teaser-list__before {
                     // content: '';
@@ -648,7 +643,7 @@ body {
 
                     height: 1px;
                     background-color: rgba(0,0,0,0.2);
-                    transition: all 0.2s;
+                    transition: opacity 0.2s;
                     &--active {
                         opacity: 1;
                         visibility: visible;
@@ -661,9 +656,12 @@ body {
                     padding-top: 78px;
                     padding-left: 93px;
                     opacity: 0;
-                    transition: all 0.2s;
+                    transition: opacity 0.2s;
                     &--active {
                         opacity: 1;
+                    }
+                    .cta__inner {
+                        font-family: "SamsungOne";
                     }
                 }
             }
@@ -727,7 +725,6 @@ body {
         @include calc-vw-pc(font-size, 14px);
     }
 
-    
 
     .cta--now {
         // @include calc-vw-pc(padding, 10.56px);
@@ -738,15 +735,7 @@ body {
         @include calc-vw-pc(width, 42px);
         @include calc-vw-pc(height, 42px);
         @include calc-vw-pc(font-size, 13.33px);
-        // width: 2.9167vw ;
-        // height: 2.9167vw ;
-        // font-size: 0.9257vw ;
     }
-
-    // .indicator__controls-progress {
-    //     @include calc-vw-pc(width, 16px);
-    //     @include calc-vw-pc(height, 16px);
-    // }
 
     .home-kv-carousel__indicator-wrap .indicator__progress-wrap {
         @include calc-vw-pc(height, 50px);
@@ -761,9 +750,71 @@ body {
         @include calc-vw-pc(font-size, 14px);
     }
 
-    // half-teaser-list
-
-
+    // half-teaser-list 반응형 768 ~ 1440
+    .half-teaser-list__inner {
+        @include calc-vw-pc(padding-right, 24px);
+        @include calc-vw-pc(padding-left, 24px);
+    }
+    .half-teaser-list__headline {
+        @include calc-vw-pc(font-size, 38px);
+    }
+    .half-teaser-list__visual {
+        @include calc-vw-pc(column-gap, 14.6px);
+        @include calc-vw-pc(padding-top, 45px);
+        img {
+            width: 100%;
+        }
+    }
+    .half-teaser-list__visual-img-box {
+        @include calc-vw-pc(width, 684px);
+        @include calc-vw-pc(height, 684px);
+    }
+    .half-teaser-list__visual-content {
+        @include calc-vw-pc(width, 685px);
+    }
+    .half-teaser-list__visual-content-list {
+        @include calc-vw-pc(padding-top, 83px);
+    }
+    .half-teaser-list__visual-content-item {
+        @include calc-vw-pc(height, 80px);
+    }
+    .half-teaser-list__visual-content-item--active {
+        @include calc-vw-pc-important(height, 234px);
+    }
+    .half-teaser-list__visual-content-item h4 {
+        @include calc-vw-pc(width, 90px);
+        @include calc-vw-pc(padding-left, 24px);
+        @include calc-vw-pc(font-size, 16px);
+    }
+    .half-teaser-list__visual-content-item span {
+        @include calc-vw-pc(font-size, 24px);
+    }
+    .half-teaser-list__visual-content-item .half-teaser-list__button {
+        @include calc-vw-pc(padding-top, 78px);
+        @include calc-vw-pc(padding-left, 93px);
+    }
+    .half-teaser-list__visual-content-item .half-teaser-list__before {
+        @include calc-vw-pc(margin-bottom, 95px);
+    }
+    .half-teaser-list__visual-content-item .half-teaser-list__after {
+        width: 40.97222222vw;
+        @include calc-vw-pc(margin-top, 225px);
+        // @include calc-vw-pc(width, 574px);
+    }
+    .half-teaser-list__button  {
+        .cta__inner {
+            @include calc-vw-pc(font-size, 14px);
+        }
+        .cta--more::after {
+            @include calc-vw-pc(bottom, 3px);
+            @include calc-vw-pc(height, 2.1px);
+        }
+        .cta--more::before {
+            @include calc-vw-pc(bottom, 3px);
+            @include calc-vw-pc(height, 2.1px);
+        }
+    }
+    // end half-teaser-list
 }
 
 @media only screen and (max-width: 767px) {
@@ -915,7 +966,7 @@ body {
         background-color: rgba(255,255,255,0.9) !important;
     }
 
-    // half-teaser-list
+    // half-teaser-list 반응형 767
     .half-teaser-list__inner {
         @include calc-vw-mo(width, 700px);
         padding: 0
@@ -923,4 +974,6 @@ body {
     .half-teaser-list__headline {
         width: 490px;
     }
+
+    // end half-teaser-list
 }

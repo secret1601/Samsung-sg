@@ -545,7 +545,6 @@ body {
   position: relative;
   display: block;
   width: 685px;
-  border: 1px solid red;
 }
 .half-teaser-list__visual-content-list {
   width: 100%;
@@ -557,6 +556,8 @@ body {
   height: 80px;
   align-items: center;
   transition: all 0.2s;
+  font-family: "SamsungSharpSans", arial, sans-serif;
+  font-weight: bold;
 }
 .half-teaser-list__visual-content-item--active {
   height: 170px !important;
@@ -564,16 +565,12 @@ body {
 }
 .half-teaser-list__visual-content-item h4 {
   width: 90px;
-  font-family: "SamsungSharpSans", arial, sans-serif;
-  font-weight: bold;
   font-size: 16px;
   line-height: 1.33;
   padding-left: 24px;
 }
 .half-teaser-list__visual-content-item span {
   font-size: 24px;
-  font-family: "SamsungSharpSans", arial, sans-serif;
-  font-weight: bold;
 }
 .half-teaser-list__visual-content-item .half-teaser-list__before {
   position: absolute;
@@ -601,7 +598,7 @@ body {
   visibility: hidden;
   height: 1px;
   background-color: rgba(0, 0, 0, 0.2);
-  transition: all 0.2s;
+  transition: opacity 0.2s;
 }
 .half-teaser-list__visual-content-item .half-teaser-list__after--active {
   opacity: 1;
@@ -612,10 +609,13 @@ body {
   padding-top: 78px;
   padding-left: 93px;
   opacity: 0;
-  transition: all 0.2s;
+  transition: opacity 0.2s;
 }
 .half-teaser-list__visual-content-item .half-teaser-list__button--active {
   opacity: 1;
+}
+.half-teaser-list__visual-content-item .half-teaser-list__button .cta__inner {
+  font-family: "SamsungOne";
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1440px) {
@@ -680,6 +680,67 @@ body {
   }
   .home-kv-carousel__indicator-wrap .indicator__product-name {
     font-size: 0.9722222222vw;
+  }
+  .half-teaser-list__inner {
+    padding-right: 1.6666666667vw;
+    padding-left: 1.6666666667vw;
+  }
+  .half-teaser-list__headline {
+    font-size: 2.6388888889vw;
+  }
+  .half-teaser-list__visual {
+    -moz-column-gap: 1.0138888889vw;
+         column-gap: 1.0138888889vw;
+    padding-top: 3.125vw;
+  }
+  .half-teaser-list__visual img {
+    width: 100%;
+  }
+  .half-teaser-list__visual-img-box {
+    width: 47.5vw;
+    height: 47.5vw;
+  }
+  .half-teaser-list__visual-content {
+    width: 47.5694444444vw;
+  }
+  .half-teaser-list__visual-content-list {
+    padding-top: 5.7638888889vw;
+  }
+  .half-teaser-list__visual-content-item {
+    height: 5.5555555556vw;
+  }
+  .half-teaser-list__visual-content-item--active {
+    height: 16.25vw!important;
+  }
+  .half-teaser-list__visual-content-item h4 {
+    width: 6.25vw;
+    padding-left: 1.6666666667vw;
+    font-size: 1.1111111111vw;
+  }
+  .half-teaser-list__visual-content-item span {
+    font-size: 1.6666666667vw;
+  }
+  .half-teaser-list__visual-content-item .half-teaser-list__button {
+    padding-top: 5.4166666667vw;
+    padding-left: 6.4583333333vw;
+  }
+  .half-teaser-list__visual-content-item .half-teaser-list__before {
+    margin-bottom: 6.5972222222vw;
+  }
+  .half-teaser-list__visual-content-item .half-teaser-list__after {
+    width: 40.97222222vw;
+    margin-top: 15.625vw;
+  }
+  .half-teaser-list__button .cta__inner {
+    font-size: 0.9722222222vw;
+  }
+  .half-teaser-list__button .cta--more::after {
+    bottom: 0.2083333333vw;
+    height: 0.1458333333vw;
+  }
+  .half-teaser-list__button .cta--more::before {
+    bottom: 0.2083333333vw;
+    height: 0.1458333333vw;
   }
 }
 @media only screen and (max-width: 767px) {

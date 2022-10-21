@@ -84,27 +84,41 @@ window.onload = function() {
         speed: 300,
         touchRatio: 0
     });
+
     const contentItem = document.querySelectorAll(".half-teaser-list__visual-content-item");
     const listButton = document.querySelectorAll(".half-teaser-list__button");
     const listBefore = document.querySelectorAll(".half-teaser-list__before");
     const listAfter = document.querySelectorAll(".half-teaser-list__after");
+
+    teaserActive = {
+        button : 'half-teaser-list__button--active',
+        before : 'half-teaser-list__before--active',
+        after : 'half-teaser-list__after--active',
+        item :'half-teaser-list__visual-content-item--active'
+    }
     
     for(let i = 0; i < contentItem.length; i++) {
         contentItem[i].addEventListener("mouseenter", function(){
             sw_teaser.slideTo(i + 1, 0, false);
 
             for(j = 0; j < contentItem.length; j++) {
-                listButton[j].classList.remove("half-teaser-list__button--active");
-                listBefore[j].classList.remove("half-teaser-list__before--active");
-                listAfter[j].classList.remove("half-teaser-list__after--active");
-                contentItem[j].classList.remove("half-teaser-list__visual-content-item--active");
+                listButton[j].classList.remove(teaserActive.button);
+                listBefore[j].classList.remove(teaserActive.before);
+                listAfter[j].classList.remove(teaserActive.after);
+                contentItem[j].classList.remove(teaserActive.item);
             }
-            listButton[i].classList.add("half-teaser-list__button--active");
-            listBefore[i].classList.add("half-teaser-list__before--active");
-            listAfter[i].classList.add("half-teaser-list__after--active");
-            contentItem[i].classList.add("half-teaser-list__visual-content-item--active");
+            listButton[i].classList.add(teaserActive.button);
+            listBefore[i].classList.add(teaserActive.before);
+            listAfter[i].classList.add(teaserActive.after);
+            contentItem[i].classList.add(teaserActive.item);
+
+            // 마지막 자식 요소의 after 클래스 제거 
+            let teaserListAfter = listAfter[sw_teaser.realIndex].getAttribute("data-after");
+            (teaserListAfter == "false") ? listAfter[sw_teaser.realIndex].classList.remove(teaserActive.after) : '';
         });
+        
     }
+    
 
 // ***************************비디오*******************************
 // const video = document.getElementById("video");
