@@ -74,8 +74,37 @@ window.onload = function() {
             play.setAttribute("fill", "#ffffff")
         }
     }
-    // Swiper 속성에서 slideChange는 활성화된 슬라이드 (swiper-slide-active) 가 바뀔 때 마다 함수를 실행한다.
+
     sw_carousel.on("slideChange", swiperActive);
+
+    // Half Teaser List
+    let sw_teaser = new Swiper('.sw-teaser', {
+        effect: 'creative',
+        loop: true,
+        speed: 300,
+        touchRatio: 0
+    });
+    const contentItem = document.querySelectorAll(".half-teaser-list__visual-content-item");
+    const listButton = document.querySelectorAll(".half-teaser-list__button");
+    const listBefore = document.querySelectorAll(".half-teaser-list__before");
+    const listAfter = document.querySelectorAll(".half-teaser-list__after");
+    
+    for(let i = 0; i < contentItem.length; i++) {
+        contentItem[i].addEventListener("mouseenter", function(){
+            sw_teaser.slideTo(i + 1, 0, false);
+
+            for(j = 0; j < contentItem.length; j++) {
+                listButton[j].classList.remove("half-teaser-list__button--active");
+                listBefore[j].classList.remove("half-teaser-list__before--active");
+                listAfter[j].classList.remove("half-teaser-list__after--active");
+                contentItem[j].classList.remove("half-teaser-list__visual-content-item--active");
+            }
+            listButton[i].classList.add("half-teaser-list__button--active");
+            listBefore[i].classList.add("half-teaser-list__before--active");
+            listAfter[i].classList.add("half-teaser-list__after--active");
+            contentItem[i].classList.add("half-teaser-list__visual-content-item--active");
+        });
+    }
 
 // ***************************비디오*******************************
 // const video = document.getElementById("video");

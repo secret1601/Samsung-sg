@@ -120,6 +120,74 @@ body {
 .rotate {transform: rotate( 45deg );color: red;}
 .pc-product-name-active{opacity: 1 !important;};
 
+.cta__inner {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+    margin-top: 28px;
+    line-height: 19px;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+    .cta {
+        position: relative;
+        display: block;
+        &--more {
+            position: relative;
+            color: black;
+            padding-bottom: 2px;
+            &:hover {
+                &::before {
+                    width: 100%;
+                    transition: all 0.3s;
+                }
+                &::after {
+                    width: 0%;
+                }
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: currentColor;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                display: block;
+                width: 0%;
+                height: 2px;
+                background-color: currentColor;
+            }
+        }
+        &--now {
+            padding: 12px 22px;
+            border-radius: 25px;
+            background-color: #fff ;
+            color: #000 ;
+            transition: color 0.3s, background-color 0.3s;
+            &:hover {
+                color: #eee !important;
+                background-color: #555 !important;
+            }
+        }
+        &:nth-child(2) {
+            @include calc-vw-pc(margin-left, 20px);
+        }
+    }
+    
+} 
+
+
 .clearfix::after {
     content: '';
     position: relative;
@@ -477,10 +545,13 @@ body {
     }
 }
 // end home-kv-carousel__wrapper
+
+// half-teaser-list
 .half-teaser-list {
+    padding-top: 50px;
     &__inner {
         @extend .container;
-        padding-top: 50px;
+        padding: 0px 24px;
         display: block;
     }
     &__headline {
@@ -491,12 +562,117 @@ body {
         text-align: center;
         border: 1px solid red;
     }
-    &__content {
+    &__visual {
         position: relative;
         display: flex;
+        column-gap: 22px;
+        padding-top: 45px;
+        overflow: hidden;
+        &-img-box {
+            width: 684px;
+            height: 684px;
+            overflow: hidden;
+            border-radius: 20px;
+            figure {
+                transition: transform 0.2s;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        &-content {
+            position: relative;
+            display: block;
+            width: 685px;
+            border: 1px solid red;
+            &-list {
+                width: 100%;
+                padding-top: 83px;
+                height: auto;
+            }
+            &-item {
+                display: flex;
+                height: 80px;
+                align-items: center;
+                // border: 1px solid brown;
+                transition: all 0.2s;
+                // &:first-child {
+                //     margin-top: 0 !important;
+                // }
+                &--active {
+                    height: 170px !important;
+                    margin-top: -40px;
+                }
+                h4 {
+                    width: 90px;
+                    font-family: 'SamsungSharpSans',arial,sans-serif;
+                    font-weight: bold;
+                    font-size: 16px;
+                    line-height: 1.33;
+                    padding-left: 24px;
+                }
+                span {
+                    font-size: 24px;
+                    font-family: 'SamsungSharpSans',arial,sans-serif;
+                    font-weight: bold;
+                }
+                .half-teaser-list__before {
+                    // content: '';
+                    position: absolute;
+                    right:0;
+                    display: block;
+
+                    opacity: 0;
+                    visibility: hidden;
+                    width: 80%;
+
+                    margin-bottom: 95px;
+                    height: 2px;
+                    background-color: #000;
+                    transition: all cubic-bezier(0.4,0,0.2,1) 0.2s;
+                    &--active {
+                        opacity: 1;
+                        visibility: visible;
+                        width: 100%;
+                    }
+                }
+                .half-teaser-list__after {
+                    // content: '';
+                    position: absolute;
+                    margin-top: 180px;
+                    right: 0;
+                    width: 590px;
+
+                    opacity: 0;
+                    visibility: hidden;
+
+                    height: 1px;
+                    background-color: rgba(0,0,0,0.2);
+                    transition: all 0.2s;
+                    &--active {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+                
+                // 첫번째 자식은 active 되어있는 상태
+                .half-teaser-list__button {
+                    position: absolute;
+                    padding-top: 78px;
+                    padding-left: 93px;
+                    opacity: 0;
+                    transition: all 0.2s;
+                    &--active {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
 }
 
+
+// end half-teaser-list
 
 // home-kv-carousel 반응형 
 @media only screen and (min-width: 768px) and (max-width: 1440px) {
@@ -585,7 +761,8 @@ body {
         @include calc-vw-pc(font-size, 14px);
     }
 
-    
+    // half-teaser-list
+
 
 }
 
@@ -736,5 +913,14 @@ body {
     .mobile-pagination-backgorund-white {
         border: 1px solid rgba(0, 0, 0, 0.1) !important;
         background-color: rgba(255,255,255,0.9) !important;
+    }
+
+    // half-teaser-list
+    .half-teaser-list__inner {
+        @include calc-vw-mo(width, 700px);
+        padding: 0
+    }
+    .half-teaser-list__headline {
+        width: 490px;
     }
 }
