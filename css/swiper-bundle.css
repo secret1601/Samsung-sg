@@ -527,6 +527,7 @@ button.swiper-pagination-bullet {
 .swiper-free-mode > .swiper-wrapper {
   transition-timing-function: ease-out;
   margin: 0 auto;
+  margin-right: 20px;
 }
 .swiper-grid > .swiper-wrapper {
   flex-wrap: wrap;

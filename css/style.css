@@ -53,6 +53,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.58;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 .textarea {
@@ -87,22 +88,8 @@ body {
   background-color: #555 !important;
 }
 
-.cta--white {
-  background-color: #fff !important;
-  color: #000 !important;
-}
-
 .more-white {
   color: #fff !important;
-}
-
-.d-no {
-  display: none !important;
-}
-
-.rotate {
-  transform: rotate(45deg);
-  color: red;
 }
 
 .pc-product-name-active {
@@ -185,6 +172,7 @@ body {
   position: relative;
   display: block;
   width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -514,12 +502,36 @@ body {
   display: block;
 }
 .half-teaser-list__headline {
+  position: relative;
   font-size: 38px;
   font-family: "SamsungSharpSans", arial, sans-serif;
   line-height: 1.2;
   font-weight: bold;
   text-align: center;
-  border: 1px solid red;
+}
+.half-teaser-list__headline-link {
+  position: relative;
+  display: inline;
+  color: #000;
+}
+.half-teaser-list__headline-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  transform: translateX(-50%);
+  display: inline;
+  width: 0%;
+  height: 2px;
+  background-color: #555;
+  color: red;
+}
+.half-teaser-list__headline-link:hover::after {
+  width: 100%;
+  transition: width 0.25s;
+}
+.half-teaser-list__headline-link:hover {
+  color: #555;
 }
 .half-teaser-list__visual {
   position: relative;
@@ -535,10 +547,23 @@ body {
   overflow: hidden;
   border-radius: 20px;
 }
+.half-teaser-list__visual-img-box .cta__inner {
+  display: none !important;
+}
 .half-teaser-list__visual-img-box figure {
+  width: 684px;
+  height: 684px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.half-teaser-list__visual-img-box span {
+  display: none;
+  font-size: 0px;
+}
+.half-teaser-list__visual-img-box img {
   transition: transform 0.2s;
 }
-.half-teaser-list__visual-img-box figure:hover {
+.half-teaser-list__visual-img-box img:hover {
   transform: scale(1.1);
 }
 .half-teaser-list__visual-content {
@@ -609,10 +634,12 @@ body {
   padding-top: 78px;
   padding-left: 93px;
   opacity: 0;
+  visibility: hidden;
   transition: opacity 0.2s;
 }
 .half-teaser-list__visual-content-item .half-teaser-list__button--active {
   opacity: 1;
+  visibility: visible;
 }
 .half-teaser-list__visual-content-item .half-teaser-list__button .cta__inner {
   font-family: "SamsungOne";
@@ -697,6 +724,11 @@ body {
     width: 100%;
   }
   .half-teaser-list__visual-img-box {
+    width: 47.5vw;
+    height: 47.5vw;
+  }
+  .half-teaser-list__visual-img-box figure {
+    width: 95%;
     width: 47.5vw;
     height: 47.5vw;
   }
@@ -864,10 +896,93 @@ body {
     background-color: rgba(255, 255, 255, 0.9) !important;
   }
   .half-teaser-list__inner {
-    width: 97.2222222222vw;
+    width: 100%;
     padding: 0;
   }
   .half-teaser-list__headline {
-    width: 490px;
+    width: 97.2222222222vw;
+    font-size: 7.2222222222vw;
+  }
+  .half-teaser-list__visual {
+    padding: 8.7vw 2.22222222vw 0vw 6.66666667vw;
+    height: 133.3333333333vw;
+  }
+  .half-teaser-list__headline-link {
+    width: 69.4444444444vw;
+    display: inline-block;
+    text-align: center;
+  }
+  .half-teaser-list__visual-img-box {
+    width: 100%;
+    font-family: "SamsungSharpSans", arial, sans-serif;
+    height: 86.6666666667vw;
+    overflow: visible;
+  }
+  .half-teaser-list__visual-img-box figure {
+    width: 95%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .half-teaser-list__visual-img-box span {
+    display: inline-flex;
+    width: 95%;
+    padding-top: 7.9166666667vw;
+    font-size: 4.4444444444vw;
+    line-height: 5.9722222222vw;
+    justify-content: center;
+    text-align: center;
+  }
+  .half-teaser-list__visual-img-box .cta__inner {
+    padding-top: 1.3888888889vw;
+    width: 96%;
+    justify-content: center;
+  }
+  .half-teaser-list__visual-img-box .cta__inner .cta--more {
+    font-size: 3.3333333333vw!important;
+    padding-bottom: 1vw !important;
+  }
+  .half-teaser-list__visual-img-box img {
+    width: 100%;
+    height: 100%;
+    height: 86.66666667vw;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .half-teaser-list__visual-content {
+    display: none;
+  }
+  .pagination {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .pagination-list {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    display: block;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4.1666666667vw;
+  }
+  .pagination-item {
+    width: 2.2083333333vw;
+    height: 2.2083333333vw;
+    display: inline-block;
+    background-color: #757575;
+    border-radius: 50%;
+    margin-top: 1.875vw;
+    margin-bottom: 1.875vw;
+    margin-left: 2.9583333333vw;
+    cursor: pointer;
+  }
+  .pagination-item:last-child {
+    margin-right: 2.9583333333vw;
+  }
+  .pagination-item--active {
+    background-color: #000;
   }
 }/*# sourceMappingURL=style.css.map */

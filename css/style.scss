@@ -84,6 +84,11 @@ body {
     line-height: 1.50;
     letter-spacing: 0.58;
     font-weight: 400;
+    overflow-x: hidden;
+}
+:focus {
+    // box-shadow:0 0 0 2px #fff;
+    // outline:2px dotted #000
 }
 
 .textarea{
@@ -113,11 +118,9 @@ body {
     }
 }
 
-.cta--white{background-color: #fff !important; color: #000 !important;}
+// .cta--white{background-color: #fff !important; color: #000 !important;}
 
 .more-white {color:#fff !important}
-.d-no{display: none !important}
-.rotate {transform: rotate( 45deg );color: red;}
 .pc-product-name-active{opacity: 1 !important;};
 
 .cta__inner {
@@ -200,6 +203,7 @@ body {
     position: relative;
     display: block;
     width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -555,12 +559,36 @@ body {
         display: block;
     }
     &__headline {
+        position: relative;
         font-size: 38px;
         font-family: 'SamsungSharpSans',arial,sans-serif;
         line-height: 1.2;
         font-weight: bold;
         text-align: center;
-        border: 1px solid red;
+        &-link {
+            position: relative;
+            display: inline;
+            color: #000;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: -3px;
+                transform: translateX(-50%);
+                display: inline;
+                width: 0%;
+                height: 2px;
+                background-color: #555;
+                color: red;
+            }
+            &:hover::after {
+                width: 100%;
+                transition: width 0.25s;
+            }
+            &:hover {
+                color: #555;
+            }
+        }
     }
     &__visual {
         position: relative;
@@ -573,7 +601,20 @@ body {
             height: 684px;
             overflow: hidden;
             border-radius: 20px;
+            .cta__inner {
+                display: none !important;
+            }
             figure {
+                width: 684px;
+                height: 684px;
+                overflow: hidden;
+                border-radius: 20px;
+            }
+            span {
+                display: none;
+                font-size: 0px;
+            }
+            img {
                 transition: transform 0.2s;
                 &:hover {
                     transform: scale(1.1);
@@ -656,9 +697,11 @@ body {
                     padding-top: 78px;
                     padding-left: 93px;
                     opacity: 0;
+                    visibility: hidden;
                     transition: opacity 0.2s;
                     &--active {
                         opacity: 1;
+                        visibility: visible;
                     }
                     .cta__inner {
                         font-family: "SamsungOne";
@@ -766,6 +809,11 @@ body {
         }
     }
     .half-teaser-list__visual-img-box {
+        @include calc-vw-pc(width, 684px);
+        @include calc-vw-pc(height, 684px);
+    }
+    .half-teaser-list__visual-img-box figure {
+        width: 95%;
         @include calc-vw-pc(width, 684px);
         @include calc-vw-pc(height, 684px);
     }
@@ -968,12 +1016,104 @@ body {
 
     // half-teaser-list 반응형 767
     .half-teaser-list__inner {
-        @include calc-vw-mo(width, 700px);
-        padding: 0
+        width: 100%;
+        // @include calc-vw-mo(width, 700px);
+        padding: 0;
     }
     .half-teaser-list__headline {
-        width: 490px;
+        @include calc-vw-mo(width, 700px);
+        @include calc-vw-mo(font-size, 52px);
     }
-
+    .half-teaser-list__visual {
+        padding: 8.7vw 2.22222222vw 0vw 6.66666667vw;
+        @include calc-vw-mo(height, 960px);
+    }
+    .half-teaser-list__headline-link {
+        @include calc-vw-mo(width, 500px);
+        display: inline-block;
+        text-align: center;
+    }
+    .half-teaser-list__visual-img-box {
+        width: 100%;
+        font-family: 'SamsungSharpSans',arial,sans-serif;
+        // @include calc-vw-mo(width, 601px);
+        @include calc-vw-mo(height, 624px);
+        overflow: visible;
+        figure {
+            width: 95%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        span {
+            display: inline-flex;
+            width: 95%;
+            @include calc-vw-mo(padding-top,57px);
+            @include calc-vw-mo(font-size, 32px);
+            @include calc-vw-mo(line-height, 43px);
+            justify-content: center;
+            text-align: center;
+        }
+        .cta__inner {
+            @include calc-vw-mo(padding-top, 10px);
+            width: 96%;
+            justify-content: center;
+            .cta--more {
+                @include calc-vw-mo-important(font-size, 24px);
+                padding-bottom: 1vw !important;
+            }
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            height: 86.66666667vw;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+    }
+    .swiper-wrapper {
+        // 이것 때문에 모바일 슬라이드가 중앙정렬이 되지 않음 
+    }
+    .half-teaser-list__visual-content {
+        display: none;
+    }
     // end half-teaser-list
+
+    // half-teaser-list pagination
+    .pagination {
+        position: relative;
+        display: block;
+        width: 100%;
+        &-list {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            display: block;
+            // @include calc-vw-mo(width, 223.9px);
+            // @include calc-vw-mo(height, 48px);
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            // @in
+            @include calc-vw-mo(border-radius, 30px);
+        }
+        &-item {
+            @include calc-vw-mo(width, 15.9px);
+            @include calc-vw-mo(height, 15.9px);
+            display: inline-block;
+            background-color: #757575;
+            border-radius: 50%;
+            @include calc-vw-mo(margin-top, 13.5px);
+            @include calc-vw-mo(margin-bottom, 13.5px);
+            @include calc-vw-mo(margin-left, 21.3px);
+            cursor: pointer;
+            &:last-child {
+                @include calc-vw-mo(margin-right, 21.3px);
+            }
+            &--active {
+                background-color: #000;
+            }
+        }
+    }
 }

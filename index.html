@@ -169,10 +169,10 @@
 
                     <!-- 화살표 -->
                     <div class="arrow-indicator-wrap clearfix">
-                        <button class="arrow-indicator arrow-indicator--circle arrow-indicator--prev sw-carousel-prev">
+                        <button tabindex="1" class="arrow-indicator arrow-indicator--circle arrow-indicator--prev sw-carousel-prev">
                             ᐸ
                         </button>
-                        <button class="arrow-indicator arrow-indicator--circle arrow-indicator--next sw-carousel-next">
+                        <button tabindex="1" class="arrow-indicator arrow-indicator--circle arrow-indicator--next sw-carousel-next">
                             ᐳ
                         </button>
                     </div>
@@ -184,7 +184,7 @@
 
                                 <div class="indicator__progress-wrap">
                                     <ul class="indicator__progress-list">
-                                        <li class="indicator__progress-item">
+                                        <li tabindex="0" class="indicator__progress-item">
 
                                             <!-- PC indicator -->
                                             <div class="indicator__product-wrap">
@@ -195,7 +195,7 @@
                                             </div>
 
                                         </li>
-                                        <li class="indicator__progress-item ">
+                                        <li tabindex="0" class="indicator__progress-item ">
 
                                             <!-- PC indicator -->
                                             <div class="indicator__product-wrap">
@@ -206,7 +206,7 @@
                                             </div>
                                             
                                         </li>
-                                        <li class="indicator__progress-item">
+                                        <li tabindex="0" class="indicator__progress-item">
 
                                             <!-- PC indicator -->
                                             <div class="indicator__product-wrap">
@@ -217,7 +217,7 @@
                                             </div>
                                             
                                         </li>
-                                        <li class="indicator__progress-item">
+                                        <li tabindex="0" class="indicator__progress-item">
 
                                             <!-- PC indicator -->
                                             <div class="indicator__product-wrap">
@@ -267,57 +267,84 @@
             <section class="half-teaser-list">
                 <div class="half-teaser-list__inner">
                     <h2 class="half-teaser-list__headline">
-                        Explore #DoWhatYouCant 
+                        <a class="half-teaser-list__headline-link">
+                            Explore #DoWhatYouCant
+                            <span class="half-teaser-list__headline-link-after"></span>
+                        </a>
+                        
                     </h2>
                     <div class="half-teaser-list__visual">
                         <div class="half-teaser-list__visual-img-box">
-
                             <div class="swiper-container sw-teaser">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <figure>
-                                            <picture class="thumbnail">
-                                                <!-- <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/life-hacks/tips-for-navigating-big-life-changes/mx0147_home-explore-banner_mo_624x624.jpg?$624_624_PNG$"> -->
-                                                <img src="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/life-hacks/tips-for-navigating-big-life-changes/mx0147_home-explore-banner_pc_684x684.jpg?$684_684_PNG$" alt="Why I don't miss the movie theaters">
-                                            </picture>
-                                        </figure>
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <picture class="thumbnail">
+                                                    <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/life-hacks/tips-for-navigating-big-life-changes/mx0147_home-explore-banner_mo_624x624.jpg?$624_624_PNG$">
+                                                    <img src="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/life-hacks/tips-for-navigating-big-life-changes/mx0147_home-explore-banner_pc_684x684.jpg?$684_684_PNG$">
+                                                </picture>
+                                            </figure>
+                                            <span>Tips for Navigating Big Life<br>Changes</span>
+                                            <div class="cta__inner">
+                                                <a href="" class="cta cta--more">Learn more</a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <picture class="thumbnail">
+                                                    <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/entertainment/vd0037_why-i-don't-miss-the-movie-theaters/vd0037_home-explore-banner_mo_624x624.jpg?$624_624_PNG$">
+                                                    <img src="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/entertainment/vd0037_why-i-don't-miss-the-movie-theaters/vd0037_home-explore-banner_pc_684x684.jpg?$684_684_PNG$" alt="Why I don't miss the movie theaters">
+                                                </picture>
+                                            </figure>
+                                            <span>Why I don't miss the movie<br>theaters</span>
+                                            <div class="cta__inner">
+                                                <a href="" class="cta cta--more">Learn more</a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <picture class="thumbnail">
+                                                    <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/wellbeing/a-showcase-of-freshness/da0017_explore_kv_624.jpg?$624_624_PNG$">
+                                                    <img src="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/wellbeing/a-showcase-of-freshness/da0017_explore_kv_684.jpg?$684_684_PNG$" alt="A Showcase of Freshness">
+                                                </picture>
+                                            </figure>
+                                            <span>A Showcase of Freshness</span>
+                                            <div class="cta__inner">
+                                                <a href="" class="cta cta--more">Learn more</a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <picture class="thumbnail">
+                                                    <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/brand/global0028_explore_meet-g-nusmas/global0028_home-explore-banner_mo_624x624.jpg?$624_624_PNG$">
+                                                    <img src="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/brand/global0028_explore_meet-g-nusmas/global0028_home-explore-banner_pc_684x684.jpg?$684_684_PNG$" alt="Meet G·NUSMAS, the curious extraterrestrial">
+                                                </picture>
+                                            </figure>
+                                            <span>Meet G·NUSMAS, the curious extraterrestrial</span>
+                                            <div class="cta__inner">
+                                                <a href="" class="cta cta--more">Learn more</a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure>
+                                                <picture class="thumbnail">
+                                                    <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/brand/emily-in-paris/EO_Emily_in_paris_Hero_624.jpg?$624_624_PNG$">
+                                                    <img src="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/brand/emily-in-paris/EO_Emily_in_paris_Hero_684.jpg?$684_684_PNG$" alt="Samsung: The Paris Edit">
+                                                </picture>
+                                            </figure>
+                                            <span>Samsung: The Paris Edit</span>
+                                            <div class="cta__inner">
+                                                <a href="" class="cta cta--more">Learn more</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <figure>
-                                            <picture class="thumbnail">
-                                                <!-- <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/life-hacks/tips-for-navigating-big-life-changes/mx0147_home-explore-banner_mo_624x624.jpg?$624_624_PNG$"> -->
-                                                <img src="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/entertainment/vd0037_why-i-don't-miss-the-movie-theaters/vd0037_home-explore-banner_pc_684x684.jpg?$684_684_PNG$" alt="Why I don't miss the movie theaters">
-                                            </picture>
-                                        </figure>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <figure>
-                                            <picture class="thumbnail">
-                                                <!-- <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/life-hacks/tips-for-navigating-big-life-changes/mx0147_home-explore-banner_mo_624x624.jpg?$624_624_PNG$"> -->
-                                                <img src="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/wellbeing/a-showcase-of-freshness/da0017_explore_kv_684.jpg?$684_684_PNG$" alt="A Showcase of Freshness">
-                                            </picture>
-                                        </figure>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <figure>
-                                            <picture class="thumbnail">
-                                                <!-- <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/life-hacks/tips-for-navigating-big-life-changes/mx0147_home-explore-banner_mo_624x624.jpg?$624_624_PNG$"> -->
-                                                <img src="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/brand/global0028_explore_meet-g-nusmas/global0028_home-explore-banner_pc_684x684.jpg?$684_684_PNG$" alt="Meet G·NUSMAS, the curious extraterrestrial">
-                                            </picture>
-                                        </figure>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <figure>
-                                            <picture class="thumbnail">
-                                                <!-- <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/life-hacks/tips-for-navigating-big-life-changes/mx0147_home-explore-banner_mo_624x624.jpg?$624_624_PNG$"> -->
-                                                <img src="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_explore_detail/brand/emily-in-paris/EO_Emily_in_paris_Hero_684.jpg?$684_684_PNG$" alt="Samsung: The Paris Edit">
-                                            </picture>
-                                        </figure>
-                                    </div>
-                                </div>
                             </div>
-
                         </div>
+                        
+                        <!-- half-teaser-list 모바일 페이지네이션 -->
+                        <!-- <div class="swiper-pagination"></div> -->
+
+
                         <div class="half-teaser-list__visual-content">
                             <ul class="half-teaser-list__visual-content-list">
                                 <li class="half-teaser-list__visual-content-item half-teaser-list__visual-content-item--active">
@@ -378,6 +405,16 @@
                             </ul>
                         </div>
                     </div>
+                    <!-- half-teaser-list 모바일 페이지네이션 -->
+                    <div class="pagination">
+                        <ul class="pagination-list clearfix">
+                            <li tabindex="0" class="pagination-item pagination-item--active"></li>
+                            <li tabindex="0" class="pagination-item"></li>
+                            <li tabindex="0" class="pagination-item"></li>
+                            <li tabindex="0" class="pagination-item"></li>
+                            <li tabindex="0" class="pagination-item"></li>
+                        </ul>
+                    </div>
                 </div>
             </section>
             <!-- // Half Teaser List -->
@@ -386,7 +423,7 @@
         </div>
 
         <footer class="footer">
-            <div class="height-test">높이</div>
+            <div class="height-test"></div>
         </footer>
 
     </div>

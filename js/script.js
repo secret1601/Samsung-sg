@@ -79,10 +79,20 @@ window.onload = function() {
 
     // Half Teaser List
     let sw_teaser = new Swiper('.sw-teaser', {
-        effect: 'creative',
-        loop: true,
-        speed: 300,
-        touchRatio: 0
+        breakpoints: {
+            767: {
+                effect: 'creative',
+                loop: false,
+                speed: 300,
+                touchRatio: 0
+            }
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            type: 'bullets'
+        },
+        loop: false,
     });
 
     const contentItem = document.querySelectorAll(".half-teaser-list__visual-content-item");
@@ -99,7 +109,7 @@ window.onload = function() {
     
     for(let i = 0; i < contentItem.length; i++) {
         contentItem[i].addEventListener("mouseenter", function(){
-            sw_teaser.slideTo(i + 1, 0, false);
+            sw_teaser.slideTo(i, 0, false);
 
             for(j = 0; j < contentItem.length; j++) {
                 listButton[j].classList.remove(teaserActive.button);
@@ -116,9 +126,23 @@ window.onload = function() {
             let teaserListAfter = listAfter[sw_teaser.realIndex].getAttribute("data-after");
             (teaserListAfter == "false") ? listAfter[sw_teaser.realIndex].classList.remove(teaserActive.after) : '';
         });
-        
     }
     
+    const paginationItem = document.querySelectorAll(".pagination-item");
+
+    for(let i = 0; i < paginationItem.length; i++) {
+        paginationItem[i].addEventListener("click", function(){
+            sw_teaser.slideTo(i, 350, false)
+        });
+    }
+
+    function pagination() {
+        for(let i = 0; i < paginationItem.length; i++) {
+            paginationItem[i].classList.remove("pagination-item--active");
+            paginationItem[sw_teaser.realIndex].classList.add("pagination-item--active");
+        }
+    }
+    sw_teaser.on("slideChange", pagination);
 
 // ***************************비디오*******************************
 // const video = document.getElementById("video");
