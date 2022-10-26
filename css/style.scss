@@ -23,6 +23,8 @@
 // 정의하기
 // $clientWidth : 100px;
 
+.half-teaser-list__button .cta {}
+
 $pc-width : 1440px;
 $mobile-width : 720px;
 
@@ -646,25 +648,28 @@ body {
                 height: auto;
             }
             &-item {
+                position: relative;
                 display: flex;
                 height: 80px;
+                // min-height: 80px;
+                // height: auto;
                 align-items: center;
-                // border: 1px solid brown;
-                transition: all 0.2s;
                 font-family: 'SamsungSharpSans',arial,sans-serif;
                 font-weight: bold;
+                transition: all 0.2s;
+                overflow: hidden;
                 &--active {
                     height: 170px !important;
                     margin-top: -40px;
                 }
                 h4 {
+                    font-size: 24px;
+                }
+                span {
                     width: 90px;
                     font-size: 16px;
                     line-height: 1.33;
                     padding-left: 24px;
-                }
-                span {
-                    font-size: 24px;
                 }
                 .half-teaser-list__before {
                     // content: '';
@@ -710,12 +715,13 @@ body {
                     position: absolute;
                     padding-top: 78px;
                     padding-left: 93px;
-                    opacity: 0;
-                    visibility: hidden;
+                    // opacity: 0;
+                    // visibility: hidden;
                     transition: opacity 0.2s;
+                    z-index: 0;
                     &--active {
-                        opacity: 1;
-                        visibility: visible;
+                        // opacity: 1;
+                        // visibility: visible;
                     }
                     .cta__inner {
                         font-family: "SamsungOne";
@@ -804,6 +810,9 @@ body {
         position: relative;
         display: block;
         z-index: -1 !important;
+        #parallax-duration {
+            transition: all .1s 220ms;
+        }
         &-title {
             font-family: 'SamsungSharpSans',arial,sans-serif;
             font-weight: bold;
@@ -960,12 +969,12 @@ body {
     .half-teaser-list__visual-content-item--active {
         @include calc-vw-pc-important(height, 234px);
     }
-    .half-teaser-list__visual-content-item h4 {
+    .half-teaser-list__visual-content-item span {
         @include calc-vw-pc(width, 90px);
         @include calc-vw-pc(padding-left, 24px);
         @include calc-vw-pc(font-size, 16px);
     }
-    .half-teaser-list__visual-content-item span {
+    .half-teaser-list__visual-content-item h4 {
         @include calc-vw-pc(font-size, 24px);
     }
     .half-teaser-list__visual-content-item .half-teaser-list__button {

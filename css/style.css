@@ -611,25 +611,27 @@ body {
   height: auto;
 }
 .half-teaser-list__visual-content-item {
+  position: relative;
   display: flex;
   height: 80px;
   align-items: center;
-  transition: all 0.2s;
   font-family: "SamsungSharpSans", arial, sans-serif;
   font-weight: bold;
+  transition: all 0.2s;
+  overflow: hidden;
 }
 .half-teaser-list__visual-content-item--active {
   height: 170px !important;
   margin-top: -40px;
 }
 .half-teaser-list__visual-content-item h4 {
+  font-size: 24px;
+}
+.half-teaser-list__visual-content-item span {
   width: 90px;
   font-size: 16px;
   line-height: 1.33;
   padding-left: 24px;
-}
-.half-teaser-list__visual-content-item span {
-  font-size: 24px;
 }
 .half-teaser-list__visual-content-item .half-teaser-list__before {
   position: absolute;
@@ -667,13 +669,8 @@ body {
   position: absolute;
   padding-top: 78px;
   padding-left: 93px;
-  opacity: 0;
-  visibility: hidden;
   transition: opacity 0.2s;
-}
-.half-teaser-list__visual-content-item .half-teaser-list__button--active {
-  opacity: 1;
-  visibility: visible;
+  z-index: 0;
 }
 .half-teaser-list__visual-content-item .half-teaser-list__button .cta__inner {
   font-family: "SamsungOne";
@@ -751,6 +748,9 @@ body {
   position: relative;
   display: block;
   z-index: -1 !important;
+}
+.key-feature-tab__slide #parallax-duration {
+  transition: all 0.1s 220ms;
 }
 .key-feature-tab__slide-title {
   font-family: "SamsungSharpSans", arial, sans-serif;
@@ -886,12 +886,12 @@ body {
   .half-teaser-list__visual-content-item--active {
     height: 16.25vw!important;
   }
-  .half-teaser-list__visual-content-item h4 {
+  .half-teaser-list__visual-content-item span {
     width: 6.25vw;
     padding-left: 1.6666666667vw;
     font-size: 1.1111111111vw;
   }
-  .half-teaser-list__visual-content-item span {
+  .half-teaser-list__visual-content-item h4 {
     font-size: 1.6666666667vw;
   }
   .half-teaser-list__visual-content-item .half-teaser-list__button {

@@ -1,5 +1,16 @@
 // 스와이퍼
 window.onload = function() {
+    document.querySelector(".test").addEventListener("focus", function(){
+        console.log("tab")
+    })
+    // 모든 a태그 클릭 막기
+    const wrap = document.querySelectorAll(".wrap a");
+    for(let i = 0; i < wrap.length; i++) {
+        wrap[i].addEventListener("click", function(e){
+            e.preventDefault();
+        });
+    }
+
     let sw_carousel = new Swiper('.sw-carousel', {
         effect: 'fade',
         loop: true,
@@ -84,10 +95,12 @@ window.onload = function() {
                 this.ctaInActive = homeKvCarousel[i].querySelectorAll("#cta");
                 for(let j = 0; j <this.ctaInActive.length; j++){
                     this.ctaInActive[j].setAttribute("tabindex", "-1");
+                    this.ctaInActive[j].setAttribute("aria-hidden", "true");
                 }
                 this.ctaActive = homeKvCarousel[sw_carousel.realIndex + 1].querySelectorAll("#cta");
                 for(let j = 0; j <this.ctaActive.length; j++){
                     this.ctaActive[j].setAttribute("tabindex", "1");
+                    this.ctaActive[j].setAttribute("aria-hidden", "false");
                 }
             }
         }
@@ -114,9 +127,12 @@ window.onload = function() {
     });
 
     const contentItem = document.querySelectorAll(".half-teaser-list__visual-content-item");
+    const contentCta = document.querySelectorAll(".half-teaser-list__visual-content-item .cta");
     const listButton = document.querySelectorAll(".half-teaser-list__button");
     const listBefore = document.querySelectorAll(".half-teaser-list__before");
     const listAfter = document.querySelectorAll(".half-teaser-list__after");
+    const paginationItem = document.querySelectorAll(".pagination-item");
+
 
     teaserActive = {
         button : 'half-teaser-list__button--active',
@@ -125,33 +141,59 @@ window.onload = function() {
         item :'half-teaser-list__visual-content-item--active'
     }
     
-    for(let i = 0; i < contentItem.length; i++) {
-        contentItem[i].addEventListener("mouseenter", function(){
-            sw_teaser.slideTo(i, 0, false);
-
-            for(j = 0; j < contentItem.length; j++) {
-                listButton[j].classList.remove(teaserActive.button);
-                listBefore[j].classList.remove(teaserActive.before);
-                listAfter[j].classList.remove(teaserActive.after);
-                contentItem[j].classList.remove(teaserActive.item);
-            }
-            listButton[i].classList.add(teaserActive.button);
-            listBefore[i].classList.add(teaserActive.before);
-            listAfter[i].classList.add(teaserActive.after);
-            contentItem[i].classList.add(teaserActive.item);
-
-            // 마지막 자식 요소의 after 클래스 제거 
-            let teaserListAfter = listAfter[sw_teaser.realIndex].getAttribute("data-after");
-            (teaserListAfter == "false") ? listAfter[sw_teaser.realIndex].classList.remove(teaserActive.after) : '';
-        });
-    }
+    function teaserEnter(){
+        for(let i = 0; i < contentItem.length; i++) {
+            contentItem[i].addEventListener("mouseenter", function(){
+                sw_teaser.slideTo(i, 0, false);
     
-    const paginationItem = document.querySelectorAll(".pagination-item");
+                for(j = 0; j < contentItem.length; j++) {
+                    listButton[j].classList.remove(teaserActive.button);
+                    listBefore[j].classList.remove(teaserActive.before);
+                    listAfter[j].classList.remove(teaserActive.after);
+                    contentItem[j].classList.remove(teaserActive.item);
+                }
+                listButton[i].classList.add(teaserActive.button);
+                listBefore[i].classList.add(teaserActive.before);
+                listAfter[i].classList.add(teaserActive.after);
+                contentItem[i].classList.add(teaserActive.item);
+    
+                let teaserListAfter = listAfter[sw_teaser.realIndex].getAttribute("data-after");
+                (teaserListAfter == "false") ? listAfter[sw_teaser.realIndex].classList.remove(teaserActive.after) : '';
+            });
+        }
+    }
+
+    function teaserFocus(){
+        for(let i = 0; i < contentCta.length; i++) {
+            contentCta[i].addEventListener("focus", function(){
+                sw_teaser.slideTo(i, 0, false);
+    
+                for(j = 0; j < contentCta.length; j++) {
+                    listButton[j].classList.remove(teaserActive.button);
+                    listBefore[j].classList.remove(teaserActive.before);
+                    listAfter[j].classList.remove(teaserActive.after);
+                    contentItem[j].classList.remove(teaserActive.item);
+                }
+                listButton[i].classList.add(teaserActive.button);
+                listBefore[i].classList.add(teaserActive.before);
+                listAfter[i].classList.add(teaserActive.after);
+                contentItem[i].classList.add(teaserActive.item);
+    
+                let teaserListAfter = listAfter[sw_teaser.realIndex].getAttribute("data-after");
+                (teaserListAfter == "false") ? listAfter[sw_teaser.realIndex].classList.remove(teaserActive.after) : '';
+            });
+        }
+    }
+
+    teaserEnter();
+    teaserFocus();
 
     for(let i = 0; i < paginationItem.length; i++) {
         paginationItem[i].addEventListener("click", function(){
             sw_teaser.slideTo(i, 350, false)
         });
+    }
+
 
     function teaserTabFocus() {
         const halfTeaserList = document.querySelector(".half-teaser-list__visual").querySelectorAll(".swiper-slide");
@@ -176,7 +218,8 @@ window.onload = function() {
     let sw_feature = new Swiper('.sw-feature', {
         effect: "slide",
         loop: false,
-        followFinger: false,
+        // followFinger: false,
+        parallax: true,
     });
 
     // feature-tab hover 효과
@@ -244,4 +287,4 @@ window.onload = function() {
 //         videoChange[1].setAttribute("src", 'https://images.samsung.com/is/content/samsung/assets/sg/home/Home_Q4_KV_Main-KV_1440x640_pc.mp4')
 //     }
 // });
-}}
+}
