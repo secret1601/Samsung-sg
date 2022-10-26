@@ -15,7 +15,8 @@ window.onload = function() {
     });
 
     // pc, mobile 프로그래스바 클릭 시, active !
-    const progressItem = document.querySelectorAll('.indicator__progress-item')
+    const homeInner = document.querySelectorAll(".home-kv-carousel__slide-inner");
+    const progressItem = document.querySelectorAll('.indicator__progress-item');
     const progressList = document.querySelector('.indicator__progress-list');
     const productLine = document.querySelectorAll('.indicator__product-line');
     const productName = document.querySelectorAll('.indicator__product-name');
@@ -36,9 +37,10 @@ window.onload = function() {
             sw_carousel.slideTo(i + 1, 1000, false);
         });
     }
-
+    
     // realIndex 활용하여 스와이퍼에 따른 pc, mobile 프로그래스바 index 연동
     function swiperActive(){
+        homeTabFocus();
         for(let k = 0; k < progressItem.length; k++) {
             for(let l = 0; l < progressItem.length; l++) {
                 progressItem[l].querySelector(".indicator__product-line").classList.remove("pc-progress-active");
@@ -59,7 +61,6 @@ window.onload = function() {
             productName[i].classList.add(skinColor["pc-bg-black"]);
             productLine[sw_carousel.realIndex].classList.add(skinColor["pc-active-black"]);
             progressList.classList.add(skinColor["mo-bg-white"]);
-
             play.setAttribute("fill", "#000000")
         }    
     }
@@ -70,10 +71,27 @@ window.onload = function() {
             productName[j].classList.remove(skinColor["pc-bg-black"]);
             productLine[j].classList.remove(skinColor["pc-active-black"]);
             progressList.classList.remove(skinColor["mo-bg-white"]);
-            
             play.setAttribute("fill", "#ffffff")
         }
     }
+
+    function homeTabFocus() {
+        const homeKvCarousel = document.querySelector(".home-kv-carousel").querySelectorAll(".swiper-slide");
+
+        for(let i = 0; i < homeKvCarousel.length; i++){
+            this.bool = homeKvCarousel[i].classList.contains("swiper-slide-active");
+            if(this.bool){
+                this.ctaInActive = homeKvCarousel[i].querySelectorAll("#cta");
+                for(let j = 0; j <this.ctaInActive.length; j++){
+                    this.ctaInActive[j].setAttribute("tabindex", "-1");
+                }
+                this.ctaActive = homeKvCarousel[sw_carousel.realIndex + 1].querySelectorAll("#cta");
+                for(let j = 0; j <this.ctaActive.length; j++){
+                    this.ctaActive[j].setAttribute("tabindex", "1");
+                }
+            }
+        }
+    };
 
     sw_carousel.on("slideChange", swiperActive);
 
@@ -84,7 +102,7 @@ window.onload = function() {
                 effect: 'creative',
                 loop: false,
                 speed: 300,
-                touchRatio: 0
+                touchRatio: 0,
             }
         },
         pagination: {
@@ -134,15 +152,63 @@ window.onload = function() {
         paginationItem[i].addEventListener("click", function(){
             sw_teaser.slideTo(i, 350, false)
         });
+
+    function teaserTabFocus() {
+        const halfTeaserList = document.querySelector(".half-teaser-list__visual").querySelectorAll(".swiper-slide");
+        for(let i = 0; i < halfTeaserList.length; i++) {
+            this.ctaInActive = halfTeaserList[i].querySelectorAll("#cta");
+            this.ctaInActive[0].setAttribute("tabindex", "-1");
+        }
+        this.ctaActive = halfTeaserList[sw_teaser.realIndex].querySelectorAll("#cta");
+        this.ctaActive[0].setAttribute("tabindex", "0");
     }
 
     function pagination() {
+        teaserTabFocus();
         for(let i = 0; i < paginationItem.length; i++) {
             paginationItem[i].classList.remove("pagination-item--active");
             paginationItem[sw_teaser.realIndex].classList.add("pagination-item--active");
         }
     }
     sw_teaser.on("slideChange", pagination);
+
+    // Key-Feature-Tab
+    let sw_feature = new Swiper('.sw-feature', {
+        effect: "slide",
+        loop: false,
+        followFinger: false,
+    });
+
+    // feature-tab hover 효과
+    const tabItem = document.querySelectorAll(".key-feature-tab__item");
+    const tabLine = document.querySelectorAll(".line");
+
+    for(let i = 0; i < tabItem.length; i++){
+        tabItem[i].addEventListener("click", function(){
+            sw_feature.slideTo(i, 300)
+
+            for(let j = 0; j < tabLine.length; j++) {
+                tabLine[j].classList.remove("line-active")
+            }
+            tabLine[i].classList.add("line-active");
+        });
+    }
+    function tabLineFn(){
+        for(let i = 0; i < tabLine.length; i++) {
+            tabLine[i].classList.remove("line-active");
+        }
+        tabLine[sw_feature.realIndex].classList.add("line-active");
+    };
+    // const featureTitle = document.querySelectorAll(".key-feature-tab__slide-title");
+    // const featureCta = document.querySelectorAll(".key-feature-tab__slide-cta");
+
+    sw_feature.on("slideChange", function(){
+        tabLineFn();
+        this.activeSlide = sw_feature.slides[sw_feature.realIndex]
+    });
+    
+    sw_feature.on("slideChangeTransitionEnd", function(){
+    });
 
 // ***************************비디오*******************************
 // const video = document.getElementById("video");
@@ -178,4 +244,4 @@ window.onload = function() {
 //         videoChange[1].setAttribute("src", 'https://images.samsung.com/is/content/samsung/assets/sg/home/Home_Q4_KV_Main-KV_1440x640_pc.mp4')
 //     }
 // });
-}
+}}

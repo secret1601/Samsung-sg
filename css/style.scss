@@ -87,8 +87,8 @@ body {
     overflow-x: hidden;
 }
 :focus {
-    // box-shadow:0 0 0 2px #fff;
-    // outline:2px dotted #000
+    box-shadow:0 0 0 2px #fff;
+    outline:2px dotted #000
 }
 
 .textarea{
@@ -105,7 +105,6 @@ body {
 // 공통 클래스
 .text-color--black{color:#000 !important}
 .home-kv-carousel__slide-inner--black{color:#000 !important}
-
 .cta--black{
     padding: 12px 22px;
     border-radius: 25px;
@@ -117,11 +116,11 @@ body {
     background-color: #555 !important;
     }
 }
-
-// .cta--white{background-color: #fff !important; color: #000 !important;}
-
 .more-white {color:#fff !important}
-.pc-product-name-active{opacity: 1 !important;};
+.pc-product-name-active{opacity: 1 !important;}
+.visible {visibility: visible; opacity: 1;}
+.hidden {visibility: hidden;opacity: 0;}
+.animated {animation-duration: 0.3s !important;}
 
 .cta__inner {
     position: relative;
@@ -434,6 +433,12 @@ body {
                 display: flex;
                 height: 45px;
                 // align-items: flex-end;
+
+                button {
+                    position: relative;
+                    border: 0;
+                    background-color: transparent;
+                }
             }
             &__progress-item {
                 display: inline-flex;
@@ -467,6 +472,15 @@ body {
                 width: 100%;
                 height: 2px;
                 background-color: rgba(255,255,255,0.25);
+                button {
+                    top: -25px;
+                    width: 100%;
+                    height: 2500%;
+                    border: 0;
+                    background-color: transparent;
+                    cursor: pointer;
+                    z-index: 999;
+                }
             }
             &__product-name {
                 position: absolute;
@@ -602,7 +616,7 @@ body {
             overflow: hidden;
             border-radius: 20px;
             .cta__inner {
-                display: none !important;
+                display: none;
             }
             figure {
                 width: 684px;
@@ -710,10 +724,127 @@ body {
             }
         }
     }
+    .pagination {
+        display: none;
+    }
+}
+// end half-teaser-list
+
+// key-feature-tab
+.key-feature-tab {
+    padding-top: 90px;
+    &__inner {
+        @extend .container;
+        overflow: hidden;
+    }
+    &__headline {
+        position: relative;
+        margin-top: 48px;
+        font-family: 'SamsungSharpSans',arial,sans-serif;
+        font-weight: bold;
+        font-size: 38px;
+        line-height: 1.2;
+        color: currentColor;
+        text-align: center;
+        z-index: 2;
+    }
+    &__list {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 51px;
+        height: 64px;
+        z-index: 2;
+    }
+    .sw-feature .swiper-wrapper {
+        // z-index: -1;
+    }
+    &__item {
+        button {
+            position: relative;
+            font-family: 'SamsungOne',arial,sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 24px;
+            border: 0;
+            background-color: transparent;
+            cursor: pointer;
+            .line {
+                position: absolute;
+                left:50%;
+                transform: translateX(-50%);
+                bottom:-2px;
+                display: inline-block;
+                width: 0%;
+                height: 2px;
+                background-color: #000;
+                z-index: 3;
+                transition: width 0.2s;
+            }
+            .line-active {
+                width: 100%;
+            }
+            &:hover::after {
+                content: '';
+                position: absolute;
+                left:50%;
+                top:50%;
+                transform: translate(-50%, -50%);
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: 8px 16px;
+                border-radius: 20px;
+                background-color: rgba(255,255,255, 0.2);
+            }
+        }
+    }
+    &__slide {
+        position: relative;
+        display: block;
+        z-index: -1 !important;
+        &-title {
+            font-family: 'SamsungSharpSans',arial,sans-serif;
+            font-weight: bold;
+            font-size: 48px;
+            line-height: 1.2;
+            text-align: center;
+            padding-top: 500px;
+            cursor: default;
+
+            transform: translateX(0);
+            transition: transform 0.5s;
+        }
+        &-cta {
+            padding-bottom: 48px;
+            .cta__inner {
+                margin-top: 2px;
+                justify-content: center;
+                align-items: center;
+                .cta--black {
+                    font-size: 14px;
+                    padding: 11px 26px;
+                }
+            }
+            transform: translateX(0);
+            transition: transform 0.5s;
+        }
+        &-background {
+            position: absolute;
+            top: -157px;
+            width: 100%;
+            z-index: -1;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    
 }
 
+// end key-feature-tab
 
-// end half-teaser-list
 
 // home-kv-carousel 반응형 
 @media only screen and (min-width: 768px) and (max-width: 1440px) {
@@ -863,6 +994,63 @@ body {
         }
     }
     // end half-teaser-list
+
+    // key-feature-tab
+    .key-feature-tab {
+        @include calc-vw-pc(padding-top, 90px);
+        &__headline {
+            @include calc-vw-pc(margin-top, 48px);
+            @include calc-vw-pc(font-size, 38px);
+        }
+        &__list {
+            @include calc-vw-pc(column-gap, 51px);
+            @include calc-vw-pc(height, 64px);
+        }
+        &__item {
+            button {
+                @include calc-vw-pc(font-size, 18px);
+                @include calc-vw-pc(line-height, 24px);
+            }
+        }
+        &__slide {
+            &-title {
+                @include calc-vw-pc(font-size, 48px);
+                @include calc-vw-pc(padding-top, 500px);
+            }
+            &-cta {
+                @include calc-vw-pc(padding-bottom, 48px);
+                .cta__inner {
+                    @include calc-vw-pc(font-size, 12px);
+                    @include calc-vw-pc(line-height, 19px);
+                    .cta--more::after {
+                        @include calc-vw-pc(height, 2px);
+                    }
+                    .cta--more::before {
+                        @include calc-vw-pc(height, 2px);
+                    }
+                    .cta--black {
+                        @include calc-vw-pc(padding-top, 11px);
+                        @include calc-vw-pc(padding-bottom, 11px);
+                        @include calc-vw-pc(padding-right, 26px);
+                        @include calc-vw-pc(padding-left, 26px);
+                        @include calc-vw-pc(border-radius, 25px);
+                        @include calc-vw-pc(font-size, 14px);
+                    }
+                }
+            }
+            &-background {
+                @include calc-vw-pc(top, -157px);
+            }
+        }
+    }
+    .key-feature-tab__item button:hover::after {
+        @include calc-vw-pc(padding-top, 8px);
+        @include calc-vw-pc(padding-bottom, 8px);
+        @include calc-vw-pc(padding-right, 16px);
+        @include calc-vw-pc(padding-left, 16px);
+        @include calc-vw-pc(border-radius, 20px);
+    }
+    // end key-feature-tab
 }
 
 @media only screen and (max-width: 767px) {
@@ -1013,6 +1201,10 @@ body {
         border: 1px solid rgba(0, 0, 0, 0.1) !important;
         background-color: rgba(255,255,255,0.9) !important;
     }
+    .home-kv-carousel__indicator-wrap .indicator__progress-list button {
+        height: 100%;
+        top: 0;
+    }
 
     // half-teaser-list 반응형 767
     .half-teaser-list__inner {
@@ -1059,6 +1251,7 @@ body {
             @include calc-vw-mo(padding-top, 10px);
             width: 96%;
             justify-content: center;
+            display: flex;
             .cta--more {
                 @include calc-vw-mo-important(font-size, 24px);
                 padding-bottom: 1vw !important;
@@ -1083,7 +1276,7 @@ body {
     // half-teaser-list pagination
     .pagination {
         position: relative;
-        display: block;
+        display: block !important;
         width: 100%;
         &-list {
             position: absolute;
@@ -1113,6 +1306,13 @@ body {
             }
             &--active {
                 background-color: #000;
+            }
+            button {
+                width: 100%;
+                height: 100%;
+                border: 0;
+                background-color: transparent;
+                cursor: pointer;
             }
         }
     }

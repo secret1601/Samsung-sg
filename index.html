@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/swiper-bundle.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <script src="js/swiper-bundle.js"></script>
 </head>
 <body>
@@ -39,7 +40,7 @@
                                             with big offers.
                                         </p>
                                         <div class="home-kv-carousel__cta home-kv-carousel__cta-mobile--horizontal">
-                                            <a href="#" class="cta cta--now cta--now-mobile">Buy now</a>
+                                            <a tabindex="1" id="cta" href="#" class="cta cta--now cta--now-mobile">Buy now</a>
                                         </div>
                                     </div>
             
@@ -78,8 +79,8 @@
                                             </span>
                                         </p>
                                         <div class="home-kv-carousel__cta home-kv-carousel__cta-mobile">
-                                            <a href="#" class="cta cta--more">Learn more</a>
-                                            <a href="#" class="cta cta--black cta--now-mobile">Buy now</a>
+                                            <a tabindex="-1" id="cta" href="#" class="cta cta--more">Learn more</a>
+                                            <a tabindex="-1" id="cta" href="#" class="cta cta--black cta--now-mobile">Buy now</a>
                                         </div>
                                     </div>
             
@@ -115,8 +116,8 @@
                                             Image simulated. Subscription service not included.
                                         </span>
                                         <div class="home-kv-carousel__cta home-kv-carousel__cta-mobile">
-                                            <a href="#" class="cta cta--more more-white">Learn more</a>
-                                            <a href="#" class="cta cta--now cta--now-mobile">Buy now</a>
+                                            <a tabindex="-1" id="cta" href="#" class="cta cta--more more-white">Learn more</a>
+                                            <a tabindex="-1" id="cta" href="#" class="cta cta--now cta--now-mobile">Buy now</a>
                                         </div>
                                     </div>
                                     <div class="home-kv-carousel__background-wrap">
@@ -141,7 +142,7 @@
                                             most-loved characters. Bring the Disney magic into your home today.
                                         </p>
                                         <div class="home-kv-carousel__cta home-kv-carousel__cta-mobile">
-                                            <a href="#" class="cta cta--now cta--now-mobile">Learn more</a>
+                                            <a tabindex="-1" id="cta" href="#" class="cta cta--now cta--now-mobile">Learn more</a>
                                         </div>
                                     </div>
                                     <!-- 비디오 -->
@@ -169,10 +170,10 @@
 
                     <!-- 화살표 -->
                     <div class="arrow-indicator-wrap clearfix">
-                        <button tabindex="1" class="arrow-indicator arrow-indicator--circle arrow-indicator--prev sw-carousel-prev">
+                        <button tabindex="0" class="arrow-indicator arrow-indicator--circle arrow-indicator--prev sw-carousel-prev">
                             ᐸ
                         </button>
-                        <button tabindex="1" class="arrow-indicator arrow-indicator--circle arrow-indicator--next sw-carousel-next">
+                        <button tabindex="0" class="arrow-indicator arrow-indicator--circle arrow-indicator--next sw-carousel-next">
                             ᐳ
                         </button>
                     </div>
@@ -184,49 +185,49 @@
 
                                 <div class="indicator__progress-wrap">
                                     <ul class="indicator__progress-list">
-                                        <li tabindex="0" class="indicator__progress-item">
-
+                                        <li class="indicator__progress-item">
                                             <!-- PC indicator -->
                                             <div class="indicator__product-wrap">
-                                                <span class="indicator__product-line pc-progress-active"></span>
+                                                <span class="indicator__product-line pc-progress-active">
+                                                    <button></button>
+                                                </span>
                                                 <span class="indicator__product-name">
                                                     Customise your big game experience with #YouMake
                                                 </span>
                                             </div>
-
                                         </li>
-                                        <li tabindex="0" class="indicator__progress-item ">
-
+                                        <li class="indicator__progress-item ">
                                             <!-- PC indicator -->
                                             <div class="indicator__product-wrap">
-                                                <span class="indicator__product-line" ></span>
+                                                <span class="indicator__product-line" >
+                                                    <button></button>
+                                                </span>
                                                 <span class="indicator__product-name">
                                                     Galaxy Z Fold4 | Z Flip4 5G
                                                 </span>
                                             </div>
-                                            
                                         </li>
-                                        <li tabindex="0" class="indicator__progress-item">
-
+                                        <li class="indicator__progress-item">
                                             <!-- PC indicator -->
                                             <div class="indicator__product-wrap">
-                                                <span class="indicator__product-line"></span>
+                                                <span class="indicator__product-line">
+                                                    <button></button>
+                                                </span>
                                                 <span class="indicator__product-name">
                                                     Neo QLED 8K
                                                 </span>
                                             </div>
-                                            
                                         </li>
-                                        <li tabindex="0" class="indicator__progress-item">
-
+                                        <li class="indicator__progress-item">
                                             <!-- PC indicator -->
                                             <div class="indicator__product-wrap">
-                                                <span class="indicator__product-line"></span>
+                                                <span class="indicator__product-line">
+                                                    <button></button>
+                                                </span>
                                                 <span class="indicator__product-name">
                                                     Bespoke Disney Collection
                                                 </span>
                                             </div>
-                                            
                                         </li>
                                         
                                     </ul>
@@ -286,7 +287,7 @@
                                             </figure>
                                             <span>Tips for Navigating Big Life<br>Changes</span>
                                             <div class="cta__inner">
-                                                <a href="" class="cta cta--more">Learn more</a>
+                                                <a tabindex="0" href="" id="cta" class="cta cta--more">Learn more</a>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
@@ -298,7 +299,7 @@
                                             </figure>
                                             <span>Why I don't miss the movie<br>theaters</span>
                                             <div class="cta__inner">
-                                                <a href="" class="cta cta--more">Learn more</a>
+                                                <a tabindex="-1" href="" id="cta" class="cta cta--more">Learn more</a>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
@@ -310,7 +311,7 @@
                                             </figure>
                                             <span>A Showcase of Freshness</span>
                                             <div class="cta__inner">
-                                                <a href="" class="cta cta--more">Learn more</a>
+                                                <a tabindex="-1" href="" id="cta" class="cta cta--more">Learn more</a>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
@@ -322,7 +323,7 @@
                                             </figure>
                                             <span>Meet G·NUSMAS, the curious extraterrestrial</span>
                                             <div class="cta__inner">
-                                                <a href="" class="cta cta--more">Learn more</a>
+                                                <a tabindex="-1" href="" id="cta" class="cta cta--more">Learn more</a>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
@@ -334,7 +335,7 @@
                                             </figure>
                                             <span>Samsung: The Paris Edit</span>
                                             <div class="cta__inner">
-                                                <a href="" class="cta cta--more">Learn more</a>
+                                                <a tabindex="-1" href="" id="cta" class="cta cta--more">Learn more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -408,16 +409,179 @@
                     <!-- half-teaser-list 모바일 페이지네이션 -->
                     <div class="pagination">
                         <ul class="pagination-list clearfix">
-                            <li tabindex="0" class="pagination-item pagination-item--active"></li>
-                            <li tabindex="0" class="pagination-item"></li>
-                            <li tabindex="0" class="pagination-item"></li>
-                            <li tabindex="0" class="pagination-item"></li>
-                            <li tabindex="0" class="pagination-item"></li>
+                            <li class="pagination-item pagination-item--active">
+                                <button></button>
+                            </li>
+                            <li class="pagination-item">
+                                <button></button>
+                            </li>
+                            <li class="pagination-item">
+                                <button></button>
+                            </li>
+                            <li class="pagination-item">
+                                <button></button>
+                            </li>
+                            <li class="pagination-item">
+                                <button></button>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </section>
             <!-- // Half Teaser List -->
+
+            <!-- Key Feature Tab -->
+            <section class="key-feature-tab">
+                <div class="key-feature-tab__inner">
+                    <h2 class="key-feature-tab__headline">Home Appliances</h2>
+                    <ul class="key-feature-tab__list">
+                        <li class="key-feature-tab__item">
+                            <button>
+                                Bespoke Refrigerators
+                                <span class="line line-active"></span>
+                            </button>
+                        </li>
+                        <li class="key-feature-tab__item">
+                            <button>
+                                QuickDrive™
+                                <span class="line"></span>
+                            </button>
+                        </li>
+                        <li class="key-feature-tab__item">
+                            <button>
+                                Bespoke Jet™
+                                <span class="line"></span>
+                            </button>
+                        </li>
+                        <li class="key-feature-tab__item">
+                            <button>
+                                Colour Microwave Series
+                                <span class="line"></span>
+                            </button>
+                        </li>
+                        <li class="key-feature-tab__item">
+                            <button>
+                                Family Hub™
+                                <span class="line"></span>
+                            </button>
+                        </li>
+                    </ul>
+                    <!-- 스와이퍼 적용할 것 -->
+                    <div class="swiper-container sw-feature">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <!-- 1 -->
+                                <div class="key-feature-tab__slide">
+                                    <div class="key-feature-tab__slide-title animated">Designed for you, by you</div>
+                                    <div class="key-feature-tab__slide-cta animated">
+                                        <div class="cta__inner">
+                                            <a id="cta" href="#" class="cta cta--more">Learn more</a>
+                                            <a id="cta" href="#" class="cta cta--black cta--now-mobile">See all</a>
+                                        </div>
+                                    </div>
+                                    <div class="key-feature-tab__slide-background">
+                                        <figure class="thumbnail">
+                                            <picture>
+                                                <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_home/GNB-MO-Disney.jpg?$720_1280_JPG$">
+                                                <img class="show-img" src="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_home/Home-Page-GNB-Main-Ref-2Oct.jpg?$1440_810_JPG$" alt="mobile이미지">
+                                            </picture>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- 2 -->
+                                <div class="key-feature-tab__slide">
+                                    <div class="key-feature-tab__slide-title animated">Outsmart your laundry</div>
+                                    <div class="key-feature-tab__slide-cta animated">
+                                        <div class="cta__inner">
+                                            <a tabindex="-1" id="cta" href="#" class="cta cta--more more-white">Learn more</a>
+                                            <a tabindex="-1" id="cta" href="#" class="cta cta--black cta--now-mobile">See all</a>
+                                        </div>
+                                    </div>
+                                    <div class="key-feature-tab__slide-background">
+                                        <figure class="thumbnail">
+                                            <picture>
+                                                <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/home/2022/home-appliances/quickdrive-new-gbm-kv-mo-720x1280.jpg?$720_1280_JPG$">
+                                                <img class="show-img" src="https://images.samsung.com/is/image/samsung/assets/sg/home/2022/home-appliances/quickdrive-new-gbm-kv-pc-1440x810-v2.jpg?$1440_810_JPG$" alt="mobile이미지">
+                                            </picture>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- 3 -->
+                                <div class="key-feature-tab__slide">
+                                    <div class="key-feature-tab__slide-title animated">From start to finish, all round clean</div>
+                                    <div class="key-feature-tab__slide-cta animated">
+                                        <div class="cta__inner">
+                                            <a tabindex="-1" id="cta" href="#" class="cta cta--more">Learn more</a>
+                                            <a tabindex="-1" id="cta" href="#" class="cta cta--black cta--now-mobile">See all</a>
+                                        </div>
+                                    </div>
+                                    <div class="key-feature-tab__slide-background">
+                                        <figure class="thumbnail">
+                                            <picture>
+                                                <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/home/2022-bespoke-jet_home_gbm_kv_mo_sep22.jpg?$720_1280_JPG$">
+                                                <img class="show-img" src="https://images.samsung.com/is/image/samsung/assets/sg/home/2022-bespoke-jet_home_gbm_kv_pc_sep22.jpg?$1440_810_JPG$" alt="mobile이미지">
+                                            </picture>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- 4 -->
+                                <div class="key-feature-tab__slide">
+                                    <div class="key-feature-tab__slide-title animated">Colour it your way</div>
+                                    <div class="key-feature-tab__slide-cta animated">
+                                        <div class="cta__inner">
+                                            <a tabindex="-1" id="cta" href="#" class="cta cta--more">Learn more</a>
+                                            <a tabindex="-1" id="cta" href="#" class="cta cta--black cta--now-mobile">See all</a>
+                                        </div>
+                                    </div>
+                                    <div class="key-feature-tab__slide-background">
+                                        <figure class="thumbnail">
+                                            <picture>
+                                                <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/home/2022/home-appliances/mwo-new-gbm-kv-mo-720x1280-2.png?$720_1280_JPG$">
+                                                <img class="show-img" src="https://images.samsung.com/is/image/samsung/assets/sg/home/2022/home-appliances/mwo-new-gbm-kv-pc-1440x810.jpg?$1440_810_JPG$" alt="mobile이미지">
+                                            </picture>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- 5 -->
+                                <div class="key-feature-tab__slide">
+                                    <div class="key-feature-tab__slide-title animated">It's more than just a fridge</div>
+                                    <div class="key-feature-tab__slide-cta animated">
+                                        <div class="cta__inner">
+                                            <a tabindex="-1" id="cta" href="#" class="cta cta--more">Learn more</a>
+                                            <a tabindex="-1" id="cta" href="#" class="cta cta--black cta--now-mobile">See all</a>
+                                        </div>
+                                    </div>
+                                    <div class="key-feature-tab__slide-background">
+                                        <figure class="thumbnail">
+                                            <picture>
+                                                <source media="(max-width:767px)" srcset="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_home/Samsung-Main-Page-REF-mobile2-2.jpg?$720_1280_JPG$">
+                                                <img class="show-img" src="https://images.samsung.com/is/image/samsung/assets/sg/p6_gro1/p6_initial_home/Samsung-Main-Page-REF-desktop_v4.jpg?$1440_810_JPG$" alt="mobile이미지">
+                                            </picture>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    
+                    
+
+                    
+                    <!-- end 스와이퍼 적용할 것 -->
+                </div>
+            </section>
+            <!-- // Key Feature Tab -->
 
 
         </div>

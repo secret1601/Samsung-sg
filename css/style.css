@@ -56,6 +56,11 @@ body {
   overflow-x: hidden;
 }
 
+:focus {
+  box-shadow: 0 0 0 2px #fff;
+  outline: 2px dotted #000;
+}
+
 .textarea {
   border: none;
   outline: none;
@@ -94,6 +99,21 @@ body {
 
 .pc-product-name-active {
   opacity: 1 !important;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.animated {
+  -webkit-animation-duration: 0.3s !important;
+          animation-duration: 0.3s !important;
 }
 
 .cta__inner {
@@ -168,7 +188,7 @@ body {
   clear: both;
 }
 
-.container, .half-teaser-list__inner {
+.container, .key-feature-tab__inner, .half-teaser-list__inner {
   position: relative;
   display: block;
   width: 1440px;
@@ -385,6 +405,11 @@ body {
   display: flex;
   height: 45px;
 }
+.home-kv-carousel__indicator-wrap .indicator__progress-list button {
+  position: relative;
+  border: 0;
+  background-color: transparent;
+}
 .home-kv-carousel__indicator-wrap .indicator__progress-item {
   display: inline-flex;
   align-items: flex-end;
@@ -418,6 +443,15 @@ body {
   width: 100%;
   height: 2px;
   background-color: rgba(255, 255, 255, 0.25);
+}
+.home-kv-carousel__indicator-wrap .indicator__product-line button {
+  top: -25px;
+  width: 100%;
+  height: 2500%;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 999;
 }
 .home-kv-carousel__indicator-wrap .indicator__product-name {
   position: absolute;
@@ -548,7 +582,7 @@ body {
   border-radius: 20px;
 }
 .half-teaser-list__visual-img-box .cta__inner {
-  display: none !important;
+  display: none;
 }
 .half-teaser-list__visual-img-box figure {
   width: 684px;
@@ -644,9 +678,117 @@ body {
 .half-teaser-list__visual-content-item .half-teaser-list__button .cta__inner {
   font-family: "SamsungOne";
 }
+.half-teaser-list .pagination {
+  display: none;
+}
+
+.key-feature-tab {
+  padding-top: 90px;
+}
+.key-feature-tab__inner {
+  overflow: hidden;
+}
+.key-feature-tab__headline {
+  position: relative;
+  margin-top: 48px;
+  font-family: "SamsungSharpSans", arial, sans-serif;
+  font-weight: bold;
+  font-size: 38px;
+  line-height: 1.2;
+  color: currentColor;
+  text-align: center;
+  z-index: 2;
+}
+.key-feature-tab__list {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 51px;
+       column-gap: 51px;
+  height: 64px;
+  z-index: 2;
+}
+.key-feature-tab__item button {
+  position: relative;
+  font-family: "SamsungOne", arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.key-feature-tab__item button .line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -2px;
+  display: inline-block;
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  z-index: 3;
+  transition: width 0.2s;
+}
+.key-feature-tab__item button .line-active {
+  width: 100%;
+}
+.key-feature-tab__item button:hover::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.key-feature-tab__slide {
+  position: relative;
+  display: block;
+  z-index: -1 !important;
+}
+.key-feature-tab__slide-title {
+  font-family: "SamsungSharpSans", arial, sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 1.2;
+  text-align: center;
+  padding-top: 500px;
+  cursor: default;
+  transform: translateX(0);
+  transition: transform 0.5s;
+}
+.key-feature-tab__slide-cta {
+  padding-bottom: 48px;
+  transform: translateX(0);
+  transition: transform 0.5s;
+}
+.key-feature-tab__slide-cta .cta__inner {
+  margin-top: 2px;
+  justify-content: center;
+  align-items: center;
+}
+.key-feature-tab__slide-cta .cta__inner .cta--black {
+  font-size: 14px;
+  padding: 11px 26px;
+}
+.key-feature-tab__slide-background {
+  position: absolute;
+  top: -157px;
+  width: 100%;
+  z-index: -1;
+}
+.key-feature-tab__slide-background img {
+  width: 100%;
+}
 
 @media only screen and (min-width: 768px) and (max-width: 1440px) {
-  .container, .half-teaser-list__inner {
+  .container, .half-teaser-list__inner, .key-feature-tab__inner {
     position: relative;
     display: block;
     width: 100vw;
@@ -774,6 +916,57 @@ body {
     bottom: 0.2083333333vw;
     height: 0.1458333333vw;
   }
+  .key-feature-tab {
+    padding-top: 6.25vw;
+  }
+  .key-feature-tab__headline {
+    margin-top: 3.3333333333vw;
+    font-size: 2.6388888889vw;
+  }
+  .key-feature-tab__list {
+    -moz-column-gap: 3.5416666667vw;
+         column-gap: 3.5416666667vw;
+    height: 4.4444444444vw;
+  }
+  .key-feature-tab__item button {
+    font-size: 1.25vw;
+    line-height: 1.6666666667vw;
+  }
+  .key-feature-tab__slide-title {
+    font-size: 3.3333333333vw;
+    padding-top: 34.7222222222vw;
+  }
+  .key-feature-tab__slide-cta {
+    padding-bottom: 3.3333333333vw;
+  }
+  .key-feature-tab__slide-cta .cta__inner {
+    font-size: 0.8333333333vw;
+    line-height: 1.3194444444vw;
+  }
+  .key-feature-tab__slide-cta .cta__inner .cta--more::after {
+    height: 0.1388888889vw;
+  }
+  .key-feature-tab__slide-cta .cta__inner .cta--more::before {
+    height: 0.1388888889vw;
+  }
+  .key-feature-tab__slide-cta .cta__inner .cta--black {
+    padding-top: 0.7638888889vw;
+    padding-bottom: 0.7638888889vw;
+    padding-right: 1.8055555556vw;
+    padding-left: 1.8055555556vw;
+    border-radius: 1.7361111111vw;
+    font-size: 0.9722222222vw;
+  }
+  .key-feature-tab__slide-background {
+    top: -10.9027777778vw;
+  }
+  .key-feature-tab__item button:hover::after {
+    padding-top: 0.5555555556vw;
+    padding-bottom: 0.5555555556vw;
+    padding-right: 1.1111111111vw;
+    padding-left: 1.1111111111vw;
+    border-radius: 1.3888888889vw;
+  }
 }
 @media only screen and (max-width: 767px) {
   .mobile-progress-active {
@@ -895,6 +1088,10 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.1) !important;
     background-color: rgba(255, 255, 255, 0.9) !important;
   }
+  .home-kv-carousel__indicator-wrap .indicator__progress-list button {
+    height: 100%;
+    top: 0;
+  }
   .half-teaser-list__inner {
     width: 100%;
     padding: 0;
@@ -938,6 +1135,7 @@ body {
     padding-top: 1.3888888889vw;
     width: 96%;
     justify-content: center;
+    display: flex;
   }
   .half-teaser-list__visual-img-box .cta__inner .cta--more {
     font-size: 3.3333333333vw!important;
@@ -955,7 +1153,7 @@ body {
   }
   .pagination {
     position: relative;
-    display: block;
+    display: block !important;
     width: 100%;
   }
   .pagination-list {
@@ -984,5 +1182,12 @@ body {
   }
   .pagination-item--active {
     background-color: #000;
+  }
+  .pagination-item button {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
   }
 }/*# sourceMappingURL=style.css.map */
