@@ -16,19 +16,19 @@ export class Teaser {
                 type: 'bullets'
             },
             loop: false,
+            a11y : false
         });
-
+        
         const contentItem = document.querySelectorAll(".half-teaser-list__visual-content-item");
         const contentCta = document.querySelectorAll(".half-teaser-list__visual-content-item .cta");
-        const listAfter = document.querySelectorAll(".half-teaser-list__after");
         const paginationItem = document.querySelectorAll(".pagination-item");
         const halfTeaserList = document.querySelector(".half-teaser-list__visual").querySelectorAll(".swiper-slide");
-
+        
         const teaserActive = {
             item :'item--active'
         }
-
-        let teaserListAfter, ctaInActive, ctaActive;
+        
+        let ctaInActive, ctaActive ;
         
         function teaserEnter(){
             for(let i = 0; i < contentItem.length; i++) {
@@ -55,8 +55,8 @@ export class Teaser {
                 });
             }
         }
-        teaserEnter();
         teaserFocus();
+        teaserEnter();
 
         for(let i = 0; i < paginationItem.length; i++) {
             paginationItem[i].addEventListener("click", function(){
@@ -76,12 +76,15 @@ export class Teaser {
         }
 
         function pagination() {
-            teaserTabFocus();
             for(let i = 0; i < paginationItem.length; i++) {
                 paginationItem[i].classList.remove("pagination-item--active");
                 paginationItem[sw_teaser.realIndex].classList.add("pagination-item--active");
             }
         }
-        sw_teaser.on("slideChange", pagination);
+
+        sw_teaser.on("slideChange", function(){
+            teaserTabFocus();
+            pagination();
+        });
     }
 }
