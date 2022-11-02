@@ -555,15 +555,38 @@ body {
     max-width: 1440px;
     border-radius: 50%;
     border: 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color: transparent;
     color: #fff;
+    font-size: 0;
     cursor: pointer;
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+    &:focus {
+        svg>g>g>circle {
+            fill: #000;
+        }
+    }
+    &:hover {
+        svg>g>g>circle {
+            fill: #000;
+        }
+    }
+    svg>g>g>g {
+        fill: #fff;
+        fill-opacity: 0.95;
+    }
+    svg>g>g>circle {
+        stroke: #fff;
+        stroke-opacity: .15;
+        z-index: 9999;
+        transition: fill .1s cubic-bezier(0.4,0,0.2,1),fill-opacity .1s cubic-bezier(0.4,0,0.2,1);
+    }
     &--prev {
-        @extend .arrow-indicator;
         left: 10px;
     }
     &--next {
-        @extend .arrow-indicator;
         right: 10px;
     }
 }
@@ -612,6 +635,7 @@ body {
     &__visual {
         position: relative;
         display: flex;
+        flex-direction: row-reverse;
         column-gap: 22px;
         padding-top: 45px;
         overflow: hidden;
@@ -844,11 +868,25 @@ body {
             font-size: 48px;
             line-height: 1.2;
             text-align: center;
-            padding-top: 500px;
+            padding-bottom: 500px;
             cursor: default;
-
             transform: translateX(0);
             transition: transform 0.5s;
+
+            
+            span {
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                display: block;
+                word-wrap: break-word;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+            }
         }
         &-cta {
             padding-bottom: 48px;
@@ -942,7 +980,7 @@ body {
     .arrow-indicator {
         @include calc-vw-pc(width, 42px);
         @include calc-vw-pc(height, 42px);
-        @include calc-vw-pc(font-size, 13.33px);
+        // @include calc-vw-pc(font-size, 13.33px);
     }
 
     .home-kv-carousel .gnb-indicator-wrap .indicator__progress-wrap {
@@ -1050,7 +1088,14 @@ body {
         &__slide {
             &-title {
                 @include calc-vw-pc(font-size, 48px);
-                @include calc-vw-pc(padding-top, 500px);
+                @include calc-vw-pc(padding-bottom, 500px);
+                // span {
+                //     position: absolute;
+                //     left: 50%;
+                //     bottom: 0;
+                //     transform: translateX(-50%);
+                //     display: block;
+                // }
             }
             &-cta {
                 @include calc-vw-pc(padding-bottom, 48px);
@@ -1177,7 +1222,7 @@ body {
     }
 
     .arrow-indicator {
-        display: none ;
+        display: none !important;
     }
     .indicator__controls {
         @include calc-vw-mo-important(right, 18px);
@@ -1393,16 +1438,17 @@ body {
         }
         &__slide {
             &-title {
-                @include calc-vw-mo(padding-top, 664px);
+                @include calc-vw-mo(padding-bottom, 810px);
                 @include calc-vw-mo(font-size, 60px);
                 @include calc-vw-mo(margin-bottom, 12px);
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
                 span {
-                    position: relative;
-                    display: block;
-                    @include calc-vw-mo(width, 605px);
+                    // position: absolute;
+                    // left
+                    // display: block;
+                    @include calc-vw-mo(width, 590px);
                 }
             }
             &-cta {
@@ -1433,8 +1479,5 @@ body {
     }
     .key-feature-tab .swiper-slide:nth-child(2) .cta--more{
         text-shadow: 0 0 3px rgb(0 0 0 / 75%);
-    }
-    .key-feature-tab .swiper-slide:nth-child(4) #parallax-duration{
-        padding-top: 56px;
     }
 }
