@@ -438,12 +438,6 @@ body {
   width: 100%;
   margin-bottom: 13px;
 }
-.home-kv-carousel .gnb-indicator-wrap .indicator__product-wrap .pc-progress-active {
-  background-color: rgba(255, 255, 255, 0.6) !important;
-}
-.home-kv-carousel .gnb-indicator-wrap .indicator__product-wrap .pc-progress-active-black {
-  background-color: rgba(0, 0, 0, 0.4) !important;
-}
 .home-kv-carousel .gnb-indicator-wrap .indicator__product-line {
   position: absolute;
   left: 0;
@@ -482,12 +476,18 @@ body {
 }
 .home-kv-carousel .gnb-indicator-wrap .indicator__controls {
   position: absolute;
-  right: -15px;
-  bottom: 9px;
+  right: -19px;
+  bottom: 8px;
   display: block;
   border: 0;
   background-color: transparent;
   cursor: pointer;
+  width: 21px;
+  height: 21px;
+}
+.home-kv-carousel .gnb-indicator-wrap .indicator__controls .play {
+  width: 24px;
+  height: 24px;
 }
 .home-kv-carousel .gnb-indicator-wrap .indicator__controls-pc-progress {
   width: 16px;
@@ -498,12 +498,28 @@ body {
   background-color: #ddd !important;
 }
 
-.line-background-black-pc {
+.home-kv-carousel--black .indicator__product-name {
+  color: #000 !important;
+}
+
+.home-kv-carousel--black .indicator__product-line {
   background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
-.line-color-black-pc {
-  color: #000 !important;
+.home-kv-carousel--black .indicator__progress-item:nth-child(2) .indicator__product-line {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.home-kv-carousel--black .indicator__controls .play {
+  fill: #000;
+}
+
+.pc-progress-active {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.pc-progress-active-black {
+  background-color: rgba(0, 0, 0, 0.4) !important;
 }
 
 .arrow-indicator-wrap {
@@ -547,6 +563,8 @@ body {
   fill-opacity: 0.95;
 }
 .arrow-indicator svg > g > g > circle {
+  fill: #1c1c1c;
+  opacity: 0.5;
   stroke: #fff;
   stroke-opacity: 0.15;
   z-index: 9999;
@@ -803,6 +821,7 @@ body {
   position: relative;
   display: block;
   z-index: -1 !important;
+  height: 653px;
 }
 .key-feature-tab__slide #parallax-duration {
   transition: all 0.1s 220ms;
@@ -813,7 +832,7 @@ body {
   font-size: 48px;
   line-height: 1.2;
   text-align: center;
-  padding-bottom: 500px;
+  padding-bottom: 560px;
   cursor: default;
   transform: translateX(0);
   transition: transform 0.5s;
@@ -824,6 +843,7 @@ body {
   bottom: 0;
   transform: translateX(-50%);
   display: block;
+  width: 830px;
   word-wrap: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -853,6 +873,10 @@ body {
 }
 .key-feature-tab__slide-background img {
   width: 100%;
+}
+
+.key-feature-tab--white .cta--more {
+  color: #fff;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1440px) {
@@ -919,6 +943,10 @@ body {
   }
   .home-kv-carousel .gnb-indicator-wrap .indicator__product-line button {
     top: -33px;
+  }
+  .home-kv-carousel .gnb-indicator-wrap .indicator__controls .play {
+    width: 1.6666666667vw;
+    height: 1.6666666667vw;
   }
   .half-teaser-list__inner {
     padding-right: 1.6666666667vw;
@@ -1004,7 +1032,10 @@ body {
   }
   .key-feature-tab__slide-title {
     font-size: 3.3333333333vw;
-    padding-bottom: 34.7222222222vw;
+    padding-bottom: 38.8888888889vw;
+  }
+  .key-feature-tab__slide-title span {
+    width: 57.6388888889vw;
   }
   .key-feature-tab__slide-cta {
     padding-bottom: 3.3333333333vw;
@@ -1113,8 +1144,8 @@ body {
     display: none !important;
   }
   .indicator__controls {
-    right: 2.5vw!important;
-    bottom: 4.0555555556vw!important;
+    right: 0.6944444444vw!important;
+    bottom: 3.0555555556vw!important;
   }
   .indicator__controls-mo-progress {
     width: 4.0277777778vw!important;
@@ -1161,6 +1192,24 @@ body {
   .home-kv-carousel .gnb-indicator-wrap .indicator__progress-list button {
     height: 100%;
     top: 0;
+  }
+  .home-kv-carousel--black .indicator__progress-list {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+  .home-kv-carousel--black .indicator__product-line {
+    background-color: #757575 !important;
+  }
+  .home-kv-carousel--black .indicator__progress-item:nth-child(2) .indicator__product-line {
+    background-color: #000 !important;
+  }
+  .home-kv-carousel .gnb-indicator-wrap .indicator__controls {
+    width: 6.9444444444vw;
+    height: 6.9444444444vw;
+  }
+  .home-kv-carousel .gnb-indicator-wrap .indicator__controls .play {
+    width: 6.9444444444vw;
+    height: 6.9444444444vw;
   }
   .half-teaser-list__inner {
     width: 100%;

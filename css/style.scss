@@ -461,9 +461,6 @@ body {
                 display: block;
                 width: 100%;
                 margin-bottom: 13px;
-                // pc 프로그레스 액티브 (선 채우기 )
-                .pc-progress-active{background-color: rgba(255,255,255,0.6) !important;}
-                .pc-progress-active-black{background-color: rgba(0,0,0,0.4) !important}
             }
 
             &__product-line {
@@ -504,12 +501,18 @@ body {
             }
             &__controls {
                 position: absolute;
-                right: -15px;
-                bottom: 9px;
+                right: -19px;
+                bottom: 8px;
                 display: block;
                 border: 0;
                 background-color: transparent;
                 cursor: pointer;
+                width: 21px;
+                height: 21px;
+                .play {
+                    width: 24px;
+                    height: 24px;
+                }
                 // pc 프로그레스 바
                 &-pc-progress {
                     width: 16px;
@@ -525,13 +528,24 @@ body {
     }   
 }
 
-// realIndex == 1, PC line style change
-.line-background-black-pc {
-    background-color: rgba(0, 0, 0, 0.2) !important;
-}
-.line-color-black-pc {
+// black일 때, 색상이 반전되어야 하는 클래스 추가 
+// section부터 접근하기
+.home-kv-carousel--black .indicator__product-name {
     color: #000 !important;
 }
+.home-kv-carousel--black .indicator__product-line {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+.home-kv-carousel--black .indicator__progress-item:nth-child(2) .indicator__product-line {
+    background-color: rgba(0,0,0,0.4) !important
+}
+.home-kv-carousel--black .indicator__controls .play {
+    fill: #000;
+}
+
+// pc 프로그레스 액티브 (선 채우기 )
+.pc-progress-active{background-color: rgba(255,255,255,0.6) !important;}
+.pc-progress-active-black{background-color: rgba(0,0,0,0.4) !important}
 
 
 // 화살표
@@ -578,6 +592,8 @@ body {
         fill-opacity: 0.95;
     }
     svg>g>g>circle {
+        fill: #1c1c1c;
+        opacity: 0.5;
         stroke: #fff;
         stroke-opacity: .15;
         z-index: 9999;
@@ -859,6 +875,7 @@ body {
         position: relative;
         display: block;
         z-index: -1 !important;
+        height: 653px;
         #parallax-duration {
             transition: all .1s 220ms;
         }
@@ -868,18 +885,17 @@ body {
             font-size: 48px;
             line-height: 1.2;
             text-align: center;
-            padding-bottom: 500px;
+            padding-bottom: 560px;
             cursor: default;
             transform: translateX(0);
             transition: transform 0.5s;
-
-            
             span {
                 position: absolute;
                 left: 50%;
                 bottom: 0;
                 transform: translateX(-50%);
                 display: block;
+                width: 830px;
                 word-wrap: break-word;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -913,6 +929,10 @@ body {
         }
     }
     
+}
+
+.key-feature-tab--white .cta--more {
+    color: #fff;
 }
 
 // end key-feature-tab
@@ -997,6 +1017,10 @@ body {
     }
     .home-kv-carousel .gnb-indicator-wrap .indicator__product-line button {
         top: -33px;
+    }
+    .home-kv-carousel .gnb-indicator-wrap .indicator__controls .play {
+        @include calc-vw-pc(width, 24px);
+        @include calc-vw-pc(height, 24px);
     }
     // half-teaser-list 반응형 768 ~ 1440
     .half-teaser-list__inner {
@@ -1088,14 +1112,10 @@ body {
         &__slide {
             &-title {
                 @include calc-vw-pc(font-size, 48px);
-                @include calc-vw-pc(padding-bottom, 500px);
-                // span {
-                //     position: absolute;
-                //     left: 50%;
-                //     bottom: 0;
-                //     transform: translateX(-50%);
-                //     display: block;
-                // }
+                @include calc-vw-pc(padding-bottom, 560px);
+                span {
+                    @include calc-vw-pc(width, 830px);
+                }
             }
             &-cta {
                 @include calc-vw-pc(padding-bottom, 48px);
@@ -1225,8 +1245,8 @@ body {
         display: none !important;
     }
     .indicator__controls {
-        @include calc-vw-mo-important(right, 18px);
-        @include calc-vw-mo-important(bottom, 29.2px);
+        @include calc-vw-mo-important(right, 5px);
+        @include calc-vw-mo-important(bottom, 22px);
     }
     .indicator__controls-mo-progress {
         @include calc-vw-mo-important(width, 29px);
@@ -1266,7 +1286,6 @@ body {
     .home-kv-carousel .gnb-indicator-wrap .indicator__product-name {
         display: none;
     }
-
     // active 변경
     .home-kv-carousel .gnb-indicator-wrap .indicator__product-wrap .pc-progress-active {
         background-color: #fff !important;
@@ -1284,6 +1303,25 @@ body {
     .home-kv-carousel .gnb-indicator-wrap .indicator__progress-list button {
         height: 100%;
         top: 0;
+    }
+
+    .home-kv-carousel--black .indicator__progress-list {
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        background-color: rgba(255,255,255,0.9) !important;
+    }
+    .home-kv-carousel--black .indicator__product-line {
+        background-color: #757575 !important;
+    }
+    .home-kv-carousel--black .indicator__progress-item:nth-child(2) .indicator__product-line {
+        background-color: #000 !important;
+    }
+    .home-kv-carousel .gnb-indicator-wrap .indicator__controls {
+        @include calc-vw-mo(width, 50px);
+        @include calc-vw-mo(height, 50px);
+    }
+    .home-kv-carousel .gnb-indicator-wrap .indicator__controls .play {
+        @include calc-vw-mo(width, 50px);
+        @include calc-vw-mo(height, 50px);
     }
 
     // half-teaser-list 반응형 767

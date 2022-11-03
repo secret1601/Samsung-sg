@@ -1,17 +1,17 @@
 export class Feature {
     init() {
-        // Key-Feature-Tab
         let sw_feature = new Swiper('.sw-feature', {
             effect: "slide",
             loop: false,
             parallax: true,
         });
 
+        const section = document.querySelector(".key-feature-tab");
         const tabItem = document.querySelectorAll(".key-feature-tab__item");
         const tabLine = document.querySelectorAll(".line");
         const featureSlide = document.querySelector(".sw-feature").querySelectorAll(".swiper-slide");
-
-        let ctaInActive, ctaActive;
+        const slides = sw_feature.slides;
+        let ctaInActive, ctaActive, skin;
 
         for(let i = 0; i < tabItem.length; i++){
             tabItem[i].addEventListener("click", function(){
@@ -23,6 +23,12 @@ export class Feature {
                 tabLine[i].classList.add("line-active");
             });
         }
+
+        function sectionSkin() {
+            skin = slides[sw_feature.realIndex].getAttribute("data-skin-color");
+            ( skin == "white") ? section.classList.add("key-feature-tab--white") : section.classList.remove("key-feature-tab--white")
+        }
+
         function tabLineFn(){
             for(let i = 0; i < tabLine.length; i++) {
                 tabLine[i].classList.remove("line-active");
@@ -72,8 +78,10 @@ export class Feature {
         }
 
         scrollX();
+        sectionSkin();
 
         sw_feature.on("slideChange", function(){
+            sectionSkin();
             tabLineFn();
             featureTabFocus();
         });
