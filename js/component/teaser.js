@@ -1,4 +1,7 @@
 export class Teaser {
+    constructor() {
+        this.init();
+    }
     init() {
         // Half Teaser List
         let sw_teaser = new Swiper('.sw-teaser-1', {
@@ -123,18 +126,22 @@ export class Teaser {
             }
         }
 
-        (windowWidth < 768) ? mobileFocus() : pcFocus();
-        window.addEventListener("resize", function(){
-            windowWidth = window.innerWidth;
+        function mobilePcFocus() {
             (windowWidth < 768) ? mobileFocus() : pcFocus();
-        });
-
+            window.addEventListener("resize", function(){
+                windowWidth = window.innerWidth;
+                (windowWidth < 768) ? mobileFocus() : pcFocus();
+            });
+        }
+        
+        mobilePcFocus();
         clickToSlide();
         imgFocusActive();
         teaserFocus();
         teaserEnter();
 
         sw_teaser.on("slideChange", function(){
+            mobilePcFocus();
             teaserTabFocus();
             pagination();
         });

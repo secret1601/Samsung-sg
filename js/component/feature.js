@@ -1,18 +1,21 @@
 export class Feature {
+    constructor() {
+        this.init();
+    }
     init() {
-        let sw_feature = new Swiper('.sw-feature', {
-            effect: "slide",
-            loop: false,
-            parallax: true,
-        });
-
+        // 셀렉터
+        console.log(this.name)
         const section = document.querySelector(".key-feature-tab");
         const tabItem = document.querySelectorAll(".key-feature-tab__item");
         const tabLine = document.querySelectorAll(".line");
         const featureSlide = document.querySelector(".sw-feature").querySelectorAll(".swiper-slide");
-        const slides = sw_feature.slides;
-        let ctaInActive, ctaActive, skin;
 
+        // 초기화
+        let ctaInActive, ctaActive, skin;
+        let sw_feature = new Swiper('.sw-feature', {effect: "slide", loop: false, parallax: true,});
+        const slides = sw_feature.slides;
+        
+        // bindEvents
         for(let i = 0; i < tabItem.length; i++){
             tabItem[i].addEventListener("click", function(){
                 sw_feature.slideTo(i, 300)
@@ -24,9 +27,11 @@ export class Feature {
             });
         }
 
+
+
         function sectionSkin() {
             skin = slides[sw_feature.realIndex].getAttribute("data-skin-color");
-            ( skin == "white") ? section.classList.add("key-feature-tab--white") : section.classList.remove("key-feature-tab--white")
+            ( skin == "white") ? section.classList.add("key-feature-tab--white") : section.classList.remove("key-feature-tab--white") ;
         }
 
         function tabLineFn(){

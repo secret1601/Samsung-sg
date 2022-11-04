@@ -8,8 +8,5 @@ window.onload = function() {
     carousel = new Carousel;
     teaser = new Teaser;
     feature = new Feature;
-
-    carousel.init();
-    teaser.init();
-    feature.init();
+    
 }

@@ -57,7 +57,7 @@
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="home-kv-carousel__slide-inner color--black">
+                                <div class="home-kv-carousel__slide-inner">
                                     <div class="home-kv-carousel__text-wrap wrap--top wrap--mobile-top">
                                         <h2 class="home-kv-carousel__headline">
                                             Galaxy Z Fold4 5G
@@ -201,10 +201,10 @@
 
                                 <div class="indicator__progress-wrap">
                                     <ul class="indicator__progress-list">
-                                        <li class="indicator__progress-item">
+                                        <li class="indicator__progress-item indicator-active">
                                             <!-- PC indicator -->
                                             <div class="indicator__product-wrap">
-                                                <span class="indicator__product-line pc-progress-active">
+                                                <span class="indicator__product-line">
                                                     <button class="indicator__product-name">Customise your big game experience with #YouMake</button>
                                                 </span>
                                             </div>
@@ -237,12 +237,12 @@
                                     </ul>
 
                                     <button class="indicator__controls">
-                                        <svg class="play" xmlns="http://www.w3.org/2000/svg" fill="#fff" class="bi bi-play-fill" viewBox="0 0 17 17">
+                                        <svg id="video-button" class="play" xmlns="http://www.w3.org/2000/svg" fill="#fff" class="bi bi-play-fill" viewBox="0 0 17 17">
                                             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                                         </svg>
-                                        <svg class="hidden" width="21" height="21" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-                                            <rect class="play" x="116" y="40" width="30" height="120" rx="8" fill="#fff" stroke="#fff" stroke-width="15"/>
-                                            <rect class="play" x="48" y="40" width="30" height="120" rx="8" fill="#fff" stroke="#fff" stroke-width="15"/>
+                                        <svg id="video-button" class="pause inactive" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                            <rect class="pause" x="116" y="40" width="30" height="120" rx="8" fill="#fff"/>
+                                            <rect class="pause" x="48" y="40" width="30" height="120" rx="8" fill="#fff"/>
                                         </svg>
                                     </button>
 
@@ -275,7 +275,6 @@
                         <div class="half-teaser-list__visual-content">
                             <ul class="half-teaser-list__visual-content-list">
                                 <li class="half-teaser-list__visual-content-item item--active">
-                                    <div class="half-teaser-list__before"></div>
                                     <span>01</span>
                                     <h4>Tips for Navigatin Big Life Changes</h4>
                                     <div class="half-teaser-list__button">
@@ -283,10 +282,8 @@
                                             <a tabindex="0" aria-hidden="false" href="#" class="cta cta--more">Learn more</a>
                                         </div>
                                     </div>
-                                    <div class="half-teaser-list__after"></div>
                                 </li>
                                 <li class="half-teaser-list__visual-content-item">
-                                    <div class="half-teaser-list__before"></div>
                                     <span>02</span>
                                     <h4>Why I don't miss the movie theaters</h4>
                                     <div class="half-teaser-list__button">
@@ -294,10 +291,8 @@
                                             <a tabindex="0" aria-hidden="false" href="#" class="cta cta--more">Learn more</a>
                                         </div>
                                     </div>
-                                    <div class="half-teaser-list__after"></div>
                                 </li>
                                 <li class="half-teaser-list__visual-content-item">
-                                    <div class="half-teaser-list__before"></div>
                                     <span>03</span>
                                     <h4>A Showcase of Freshness</h4>
                                     <div class="half-teaser-list__button">
@@ -305,10 +300,8 @@
                                             <a tabindex="0" aria-hidden="false" href="#" class="cta cta--more">Learn more</a>
                                         </div>
                                     </div>
-                                    <div class="half-teaser-list__after"></div>
                                 </li>
                                 <li class="half-teaser-list__visual-content-item">
-                                    <div class="half-teaser-list__before"></div>
                                     <span>04</span>
                                     <h4>Meet G·NUSMAS, the curious extraterrestrial</h4>
                                     <div class="half-teaser-list__button">
@@ -316,10 +309,8 @@
                                             <a tabindex="0" aria-hidden="false" href="#" class="cta cta--more">Learn more</a>
                                         </div>
                                     </div>
-                                    <div class="half-teaser-list__after"></div>
                                 </li>
                                 <li class="half-teaser-list__visual-content-item">
-                                    <div class="half-teaser-list__before"></div>
                                     <span>05</span>
                                     <h4>Samsung: The Paris Edit</h4>
                                     <div class="half-teaser-list__button">
@@ -417,19 +408,19 @@
                     <div class="pagination">
                         <ul class="pagination-list clearfix">
                             <li class="pagination-item pagination-item--active">
-                                <button></button>
+                                <button>item1</button>
                             </li>
                             <li class="pagination-item">
-                                <button></button>
+                                <button>item2</button>
                             </li>
                             <li class="pagination-item">
-                                <button></button>
+                                <button>item3</button>
                             </li>
                             <li class="pagination-item">
-                                <button></button>
+                                <button>item4</button>
                             </li>
                             <li class="pagination-item">
-                                <button></button>
+                                <button>item5</button>
                             </li>
                         </ul>
                     </div>
@@ -445,31 +436,31 @@
                         <li class="key-feature-tab__item">
                             <button>
                                 Bespoke Refrigerators
-                                <span class="line line-active"></span>
+                                <span class="line line-active">line</span>
                             </button>
                         </li>
                         <li class="key-feature-tab__item">
                             <button>
                                 QuickDrive™
-                                <span class="line"></span>
+                                <span class="line">line</span>
                             </button>
                         </li>
                         <li class="key-feature-tab__item">
                             <button>
                                 Bespoke Jet™
-                                <span class="line"></span>
+                                <span class="line">line</span>
                             </button>
                         </li>
                         <li class="key-feature-tab__item">
                             <button>
                                 Colour Microwave Series
-                                <span class="line"></span>
+                                <span class="line">line</span>
                             </button>
                         </li>
                         <li class="key-feature-tab__item">
                             <button>
                                 Family Hub™
-                                <span class="line"></span>
+                                <span class="line">line</span>
                             </button>
                         </li>
                     </ul>
