@@ -10,9 +10,10 @@ export class Carousel {
         let section = document.querySelector(".home-kv-carousel");
         const progressItem = document.querySelectorAll('.indicator__progress-item');
         const productLine = document.querySelectorAll('.indicator__product-line');
+        const videoControls = document.querySelector(".indicator__controls");
 
         // 초기화
-        let sw_carousel, windowWidth, skin, slides, activeSlideCta, allCta, allSlide;
+        let sw_carousel, windowWidth, skin, slides, activeSlideCta, allCta, allSlide, videoClass;
         sw_carousel = new Swiper('.sw-carousel', {
             effect: 'fade',
             loop: true,
@@ -28,7 +29,8 @@ export class Carousel {
         });
         slides = sw_carousel.slides;
         windowWidth = window.innerWidth;
-        
+
+
         // event binding
         function clickToSlide() {
             for (let i = 0; i < progressItem.length; i++) {
@@ -44,10 +46,20 @@ export class Carousel {
                 });
             }
         }
-        window.addEventListener("resize", pcMobileFocus);
+        window.addEventListener("resize", deviceCheckFocus);
+        videoControls.addEventListener("click", videoEvent);
 
         // ============ activeItem() =============
-        function activeList(){
+        function videoEvent() {
+            videoClass = videoControls.classList;
+            if( videoClass.contains("play") ) {
+                videoClass.remove("play");
+            } else {
+                videoClass.add("play");
+            }
+        }
+
+        function progressActive(){
             for(let j = 0; j < progressItem.length; j++) {
                 progressItem[j].classList.remove("indicator-active");
             }
@@ -59,28 +71,28 @@ export class Carousel {
             (skin == "black") ? section.classList.add("home-kv-carousel--black") : section.classList.remove("home-kv-carousel--black")
         }
 
-        function dotFocusTrue() {
+        function mobileTab() {
             for(let i = 0; i < productLine.length; i++) {
                 productLine[i].setAttribute("tabindex", "0");
                 productLine[i].setAttribute("aria-hidden", "false");
             }
-            console.log("dotFocusTrue");
+            console.log("mobileTab");
         }
 
-        function dotFocusFalse() {
+        function pcTab() {
             for(let i = 0; i < productLine.length; i++) {
                 productLine[i].setAttribute("tabindex", "-1");
                 productLine[i].setAttribute("aria-hidden", "true");
             }
-            console.log("dotFocusFalse");
+            console.log("pcTab");
         }
 
-        function pcMobileFocus(){
+        function deviceCheckFocus(){
             windowWidth = window.innerWidth;
-            (windowWidth < 768 ) ? dotFocusTrue() : dotFocusFalse();
+            (windowWidth < 768 ) ? mobileTab() : pcTab();
         }
 
-        function kvCarouselFocus(){
+        function ctaFocus(){
             activeSlideCta = document.querySelector(".swiper-slide-active").querySelectorAll("#cta");
             allSlide = section.querySelectorAll(".swiper-slide")
             
@@ -100,10 +112,10 @@ export class Carousel {
 
         clickToSlide();
         mobileFocusEnter();
-        pcMobileFocus();
+        deviceCheckFocus();
 
-        sw_carousel.on("slideChange", () => { activeList(); skinColor(); });
-        sw_carousel.on("transitionEnd", kvCarouselFocus);
+        sw_carousel.on("slideChange", () => { progressActive(); skinColor(); });
+        sw_carousel.on("transitionEnd", ctaFocus);
     }
 
     activeItem(){

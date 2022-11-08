@@ -13,9 +13,870 @@
 </head>
 <body>
     <div class="wrap">
+
+        <!-- 모달 및 배경 검정 -->
+        <div class="gnb-background">
+            <span>background black</span>
+        </div>
+
         <header class="header">
-            <!-- <div class="border-box1">123 pc</div> -->
-            <!-- <div class="border-box2">456 mobile</div> -->
+            <div class="header__inner">
+
+                <a href="#" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 16" focusable="false">
+                        <g fill="none" fill-rule="evenodd">
+                            <path d="M0.964 0H121.507V32H0.964z" transform="translate(-9 -8)"></path>
+                            <path fill="#000" fill-rule="nonzero" d="M15.937 19.184c.155.363.104.829.026 1.114-.13.492-.466 1.01-1.45 1.01-.931 0-1.5-.544-1.5-1.347v-1.45H9v1.14C9 22.99 11.614 24 14.436 24c2.692 0 4.918-.932 5.28-3.417.181-1.295.052-2.123-.026-2.46-.62-3.133-6.29-4.065-6.73-5.8-.077-.31-.051-.62-.026-.776.104-.466.44-1.01 1.372-1.01.88 0 1.398.544 1.398 1.346v.933h3.728v-1.062C19.432 8.492 16.507 8 14.384 8c-2.666 0-4.815.88-5.229 3.314-.103.673-.13 1.269.026 2.02.673 3.028 5.98 3.909 6.756 5.85zm48.534-.025c.155.362.103.828.026 1.087-.13.492-.466.984-1.45.984-.932 0-1.475-.544-1.475-1.347V18.46h-3.96v1.139c0 3.288 2.588 4.297 5.383 4.297 2.667 0 4.867-.906 5.23-3.391.18-1.269.05-2.123-.027-2.434-.621-3.107-6.238-4.013-6.652-5.747-.078-.311-.052-.622-.026-.777.104-.466.414-.984 1.346-.984.854 0 1.372.544 1.372 1.346v.907h3.701V11.78c0-3.21-2.899-3.728-4.995-3.728-2.615 0-4.763.88-5.177 3.288-.104.647-.13 1.243.026 1.993.673 3.03 5.927 3.91 6.678 5.826zm30.984 1.32l-.207-12.013h3.701v14.757h-5.332l-3.753-12.401.207 12.401h-3.676V8.466h5.54l3.52 12.013zM28.335 9.553l-2.07 13.826h-4.038l2.744-14.913h6.652l2.744 14.913h-4.012l-2.02-13.826zm21.796 0L47.542 23.38h-3.779L41.201 9.553l-.104 13.826H37.37l.31-14.913h6.083l1.89 11.65 1.89-11.65h6.082l.337 14.913h-3.728l-.103-13.826zm26.868 11.6c1.035 0 1.372-.726 1.424-1.088.026-.156.026-.389.026-.57V8.44h3.779V19.16c0 .284-.026.828-.026.983-.259 2.797-2.46 3.703-5.203 3.703-2.744 0-4.944-.906-5.203-3.703-.026-.155-.052-.699-.026-.983V8.44h3.78v11.055c0 .181 0 .414.025.57.078.388.389 1.087 1.424 1.087zm31.165-.156c1.087 0 1.45-.7 1.527-1.088.026-.18.052-.388.026-.57v-2.174h-1.527V14.99h5.28v4.013c0 .285 0 .492-.051.984-.259 2.719-2.615 3.676-5.255 3.676-2.64 0-4.996-.957-5.254-3.676-.052-.492-.052-.699-.052-.984v-6.291c0-.259.026-.725.052-.984.336-2.796 2.588-3.676 5.254-3.676 2.64 0 4.97.88 5.229 3.676.052.466.026.984.026.984v.492h-3.78v-.829s0-.362-.051-.57c-.078-.336-.362-1.087-1.501-1.087-1.088 0-1.398.725-1.476 1.088-.052.207-.052.466-.052.699v6.835c0 .181 0 .388.026.57.104.414.492 1.087 1.58 1.087z" transform="translate(-9 -8)"></path>
+                        </g>
+                    </svg>
+                </a>
+
+                <nav class="nav">
+                    <div class="gnb">
+                        <ul class="gnb__left">
+                            <li id="list" class="gnb__left-item">
+                                <a class="gnb-item" href="#">Shop</a>
+                            </li>
+                            <li id="list" class="gnb__left-item" data-contents="true">
+                                <a class="gnb-item" href="#">Mobile</a>
+                                <div class="contents-wrap">
+                                    <div class="contents">
+                                        <h2 class="contents-title">Mobile</h2>
+                                        <ul class="contents-list">
+                                            <li class="contents-item selected">
+                                                <a class="item-title" href="#">New & Featured</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Galaxy Z Flip4 5G</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Z Fold4 5G</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Bespoke</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Watch5</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Watch5 Pro</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Buds2 Pro</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy S22 Ultra 5G</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy S22 | S22+ 5G</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Tab S8 Series</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Smartphones</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu ">
+                                                    <li class="submenu-item"><a href="#">Discover Smartphones</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Z</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy S</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy A</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy M</a></li>
+                                                    <li class="submenu-item"><a href="#">Accessories</a></li>
+                                                    <li class="submenu-item"><a href="#">All Smartphones</a></li>
+                                                    <li class="submenu-item"><a href="#">Compare</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Phone Selector</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Tablets</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Discover Tablets</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Tab S</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Tab A</a></li>
+                                                    <li class="submenu-item"><a href="#">Accessories</a></li>
+                                                    <li class="submenu-item"><a href="#">All Tablets</a></li>
+                                                    <li class="submenu-item"><a href="#">Compare</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Watches</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Discover Watchers</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Watch</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Watch5 Bespoke Studio</a></li>
+                                                    <li class="submenu-item"><a href="#">Accessories</a></li>
+                                                    <li class="submenu-item"><a href="#">All Watches</a></li>
+                                                    <li class="submenu-item"><a href="#">Compare</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Audio</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Discover Audio</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Buds2 Pro</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Buds2</a></li>
+                                                    <li class="submenu-item"><a href="#">All Audio</a></li>
+                                                    <li class="submenu-item"><a href="#">Compare</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Accessories</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Discover Accessories</a></li>
+                                                    <li class="submenu-item"><a href="#">Smartphones Accessories</a></li>
+                                                    <li class="submenu-item"><a href="#">Tablets Accessories</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy SmartTag</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy SmartTag+</a></li>
+                                                    <li class="submenu-item"><a href="#">All Accessories</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">One UI</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">One UI Overview</a></li>
+                                                    <li class="submenu-item"><a href="#">Connected Experience</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Apps & Services</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Apps & Services Overview</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Store</a></li>
+                                                    <li class="submenu-item"><a href="#">Bixby</a></li>
+                                                    <li class="submenu-item"><a href="#">Samsung Pay</a></li>
+                                                    <li class="submenu-item"><a href="#">Samsung Health</a></li>
+                                                    <li class="submenu-item"><a href="#">Samsung DeX</a></li>
+                                                    <li class="submenu-item"><a href="#">Samsung Members</a></li>
+                                                    <li class="submenu-item"><a href="#">Smart Switch</a></li>
+                                                    <li class="submenu-item"><a href="#">Samsung Health Monitor</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Smart Ways to Buy</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Switch Easy</a></li>
+                                                    <li class="submenu-item"><a href="#">Unfold the Future</a></li>
+                                                    <li class="submenu-item"><a href="#">Video Call width vPromoter</a></li>
+                                                    <li class="submenu-item"><a href="#">Upgrade to Galaxy</a></li>
+                                                    <li class="submenu-item"><a href="#">Samsung Trade Up</a></li>
+                                                    <li class="submenu-item"><a href="#">Why Buy Online</a></li>
+                                                    <li class="submenu-item"><a href="#">Store Pickup and Support</a></li>
+                                                    <li class="submenu-item"><a href="#">Samsung Care+</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">why Galaxy</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Upgrade with Galaxy</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="contents-img">
+                                            <div class="img">
+                                                <img src="https://images.samsung.com/is/image/samsung/assets/sg/2208/gnb/Home_B4Q4_KV_GNB_624x624.jpg?$330_330_JPG$" alt="galaxy-z-flip4 & galaxy-z-fold4">
+                                            </div>
+                                            <span>Galaxy Z Fold4 | Z Flip4 5G</span>
+                                            <div class="cta__inner">
+                                                <span href="#" class="cta--more">Learn more</span>
+                                            </div>
+                                        </a>
+                                        <!-- 닫기 버튼 -->
+                                        <button class="contents-close">
+                                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
+                                                <path d="M79.17 11.17L48 42.34 16.83 11.17l-5.66 5.66L42.34 48 11.17 79.17l5.66 5.66L48 53.66l31.17 31.17 5.66-5.66L53.66 48l31.17-31.17z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="list" class="gnb__left-item" data-contents="true">
+                                <a class="gnb-item" href="#">TV & AV</a>
+                                <div class="contents-wrap">
+                                    <div class="contents">
+                                        <h2 class="contents-title">TV & AV</h2>
+                                        <ul class="contents-list">
+                                            <li class="contents-item selected">
+                                                <a class="item-title" href="#">New & Featured</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Help Choose Your Best TV</a></li>
+                                                    <li class="submenu-item"><a href="#">Neo QLED</a></li>
+                                                    <li class="submenu-item"><a href="#">The Freestyle</a></li>
+                                                    <li class="submenu-item"><a href="#">The Premiere (4K Triple Laser Projector</a></li>
+                                                    <li class="submenu-item"><a href="#">Soundbars width Q-symphony</a></li>
+                                                    <li class="submenu-item"><a href="#">Why Samsung Smart TV</a></li>
+                                                    <li class="submenu-item"><a href="#">Best Gaming TVs FOR Winning</a></li>
+                                                    <li class="submenu-item"><a href="#">Why Display Size Matters - Go Super Big</a></li>
+                                                    <li class="submenu-item"><a href="#">TV Buying Guide</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Micro LED</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Micro LED</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">TVs</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Discover TVs</a></li>
+                                                    <li class="submenu-item"><a href="#">Neo QLED</a></li>
+                                                    <li class="submenu-item"><a href="#">QLED</a></li>
+                                                    <li class="submenu-item"><a href="#">OLED</a></li>
+                                                    <li class="submenu-item"><a href="#">Crystal UHD</a></li>
+                                                    <li class="submenu-item"><a href="#">8K TVs</a></li>
+                                                    <li class="submenu-item"><a href="#">4K TVs</a></li>
+                                                    <li class="submenu-item"><a href="#">Full HD/HD TVs</a></li>
+                                                    <li class="submenu-item"><a href="#">Smart TVs</a></li>
+                                                    <li class="submenu-item"><a href="#">TV Accessories</a></li>
+                                                    <li class="submenu-item"><a href="#">All TVs</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Lifestyle TVs</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Discover Lifestyle TVs</a></li>
+                                                    <li class="submenu-item"><a href="#">The Freestyle</a></li>
+                                                    <li class="submenu-item"><a href="#">The Frame</a></li>
+                                                    <li class="submenu-item"><a href="#">The Serif</a></li>
+                                                    <li class="submenu-item"><a href="#">The Premiere</a></li>
+                                                    <li class="submenu-item"><a href="#">The Sero</a></li>
+                                                    <li class="submenu-item"><a href="#">TV Accessories</a></li>
+                                                    <li class="submenu-item"><a href="#">All LifeStyle TVs</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">TV by Size</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">85"</a></li>
+                                                    <li class="submenu-item"><a href="#">75"</a></li>
+                                                    <li class="submenu-item"><a href="#">65"</a></li>
+                                                    <li class="submenu-item"><a href="#">55"</a></li>
+                                                    <li class="submenu-item"><a href="#">43"</a></li>
+                                                    <li class="submenu-item"><a href="#">32"</a></li>
+                                                    <li class="submenu-item"><a href="#">All TVs by Size"</a></li>
+                                                    <li class="submenu-item"><a href="#">Why Display Size Matters?</a></li>
+                                                    <li class="submenu-item"><a href="#">What is the Right TV Size?</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Sound Devices</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Overview</a></li>
+                                                    <li class="submenu-item"><a href="#">Q-Series Soundbars</a></li>
+                                                    <li class="submenu-item"><a href="#">B-Series Soundbars</a></li>
+                                                    <li class="submenu-item"><a href="#">S-Series Soundbars</a></li>
+                                                    <li class="submenu-item"><a href="#">Ultra Slim Soundbars</a></li>
+                                                    <li class="submenu-item"><a href="#">All sound Devices</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Projects</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">The Freestyle</a></li>
+                                                    <li class="submenu-item"><a href="#">The Premiere 4K Triple Laser</a></li>
+                                                    <li class="submenu-item"><a href="#">The Premiere 4K Laser</a></li>
+                                                    <li class="submenu-item"><a href="#">All Projectors</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Smart Ways to Buy</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Discover Smart Ways to Buy</a></li>
+                                                    <li class="submenu-item"><a href="#">TV Trade-in</a></li>
+                                                    <li class="submenu-item"><a href="#">Buy TV Online</a></li>
+                                                    <li class="submenu-item"><a href="#">Video Call with vPromoter</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="contents-img">
+                                            <div class="img">
+                                                <img src="https://images.samsung.com/is/image/samsung/assets/sg/gnb/SAMCE22182_GNB-Feature-624x624_11.jpg?$330_330_JPG$" alt="galaxy-z-flip4 & galaxy-z-fold4">
+                                            </div>
+                                            <span>Watch the legend unfold on Neo QLED 8K</span>
+                                            <div class="cta__inner">
+                                                <span href="#" class="cta--more">Buy now</span>
+                                            </div>
+                                        </a>
+                                        <!-- 닫기 버튼 -->
+                                        <button class="contents-close">
+                                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
+                                                <path d="M79.17 11.17L48 42.34 16.83 11.17l-5.66 5.66L42.34 48 11.17 79.17l5.66 5.66L48 53.66l31.17 31.17 5.66-5.66L53.66 48l31.17-31.17z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="list" class="gnb__left-item" data-contents="true">
+                                <a class="gnb-item" href="#">Home Appliances</a>
+                                <div class="contents-wrap">
+                                    <div class="contents">
+                                        <h2 class="contents-title">Home Appliances</h2>
+                                        <ul class="contents-list">
+                                            <li class="contents-item selected">
+                                                <a class="item-title" href="#">New & Featured</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Bespoke Home</a></li>
+                                                    <li class="submenu-item"><a href="#">#BespokeMyHouse</a></li>
+                                                    <li class="submenu-item"><a href="#">Bespoke Disney Collection</a></li>
+                                                    <li class="submenu-item"><a href="#">Our Bespoke Collections</a></li>
+                                                    <li class="submenu-item"><a href="#">Bespoke Refrigerators</a></li>
+                                                    <li class="submenu-item"><a href="#">Bespoke Jet™</a></li>
+                                                    <li class="submenu-item"><a href="#">Bespoke AirDresser</a></li>
+                                                    <li class="submenu-item"><a href="#">Family Hub™</a></li>
+                                                    <li class="submenu-item"><a href="#">QuickDrive™</a></li>
+                                                    <li class="submenu-item"><a href="#">Jet Series</a></li>
+                                                    <li class="submenu-item"><a href="#">SmartThings Home</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Bespoke</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Bespoke Home</a></li>
+                                                    <li class="submenu-item"><a href="#">#BespokeMyHome</a></li>
+                                                    <li class="submenu-item"><a href="#">Our Bespoke Collections</a></li>
+                                                    <li class="submenu-item"><a href="#">Bespoke Refrigerators</a></li>
+                                                    <li class="submenu-item"><a href="#">Bespoke Jet™</a></li>
+                                                    <li class="submenu-item"><a href="#">Bespoke AirDresser</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Refrigerators</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Discover Refrigerators</a></li>
+                                                    <li class="submenu-item"><a href="#">Bespoke Refrigerators</a></li>
+                                                    <li class="submenu-item"><a href="#">Our Bespoke Collection</a></li>
+                                                    <li class="submenu-item"><a href="#">Family Hub</a></li>
+                                                    <li class="submenu-item"><a href="#">Multi Door</a></li>
+                                                    <li class="submenu-item"><a href="#">Side by Side</a></li>
+                                                    <li class="submenu-item"><a href="#">Top Mount Freezer</a></li>
+                                                    <li class="submenu-item"><a href="#">Bottom Mount Freezer</a></li>
+                                                    <li class="submenu-item"><a href="#">1 Door</a></li>
+                                                    <li class="submenu-item"><a href="#">All Refrigerators</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Laundry</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Discover Laundry</a></li>
+                                                    <li class="submenu-item"><a href="#">Washer Dryer Combo</a></li>
+                                                    <li class="submenu-item"><a href="#">Front Load</a></li>
+                                                    <li class="submenu-item"><a href="#">Top Load</a></li>
+                                                    <li class="submenu-item"><a href="#">Dryer</a></li>
+                                                    <li class="submenu-item"><a href="#">AirDresser</a></li>
+                                                    <li class="submenu-item"><a href="#">All Laundry</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Cooking Appliances</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Discover Cooking Appliances</a></li>
+                                                    <li class="submenu-item"><a href="#">Microwave Ovens</a></li>
+                                                    <li class="submenu-item"><a href="#">All Cooking Appliances</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Vacuum Cleaners</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Dicover Vacuum Cleaners</a></li>
+                                                    <li class="submenu-item"><a href="#">Bespoke Jet™</a></li>
+                                                    <li class="submenu-item"><a href="#">Stick Vacuum</a></li>
+                                                    <li class="submenu-item"><a href="#">Robot Vacuum</a></li>
+                                                    <li class="submenu-item"><a href="#">Clean Station™</a></li>
+                                                    <li class="submenu-item"><a href="#">Vacuum Accessories</a></li>
+                                                    <li class="submenu-item"><a href="#">All Vacuum Cleaners</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Dishwashers</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Overview</a></li>
+                                                    <li class="submenu-item"><a href="#">Freestanding Dishwashers</a></li>
+                                                    <li class="submenu-item"><a href="#">See All</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Air Solutions</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Air Purifier</a></li>
+                                                    <li class="submenu-item"><a href="#">Air Purifier Filter</a></li>
+                                                    <li class="submenu-item"><a href="#">Air Air Solutions</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Smart Ways to Buy</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Video Call with vPromoter</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="contents-img">
+                                            <div class="img">
+                                                <img src="https://images.samsung.com/is/image/samsung/assets/sg/gnb/GNB-Featured-Image-624x624_MO.jpg?$330_330_JPG$" alt="galaxy-z-flip4 & galaxy-z-fold4">
+                                            </div>
+                                            <span>The new Bespoke Disney Collection</span>
+                                            <div class="cta__inner">
+                                                <span href="#" class="cta--more">Learn more</span>
+                                            </div>
+                                        </a>
+                                        <!-- 닫기 버튼 -->
+                                        <button class="contents-close">
+                                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
+                                                <path d="M79.17 11.17L48 42.34 16.83 11.17l-5.66 5.66L42.34 48 11.17 79.17l5.66 5.66L48 53.66l31.17 31.17 5.66-5.66L53.66 48l31.17-31.17z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="list" class="gnb__left-item" data-contents="true">
+                                <a class="gnb-item" href="#">Computing</a>
+                                <div class="contents-wrap">
+                                    <div class="contents">
+                                        <h2 class="contents-title">Computing</h2>
+                                        <ul class="contents-list">
+                                            <li class="contents-item selected">
+                                                <a class="item-title" href="#">New & Featured</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Odyssey Ark</a></li>
+                                                    <li class="submenu-item"><a href="#">Odyssey Gaming Monitors</a></li>
+                                                    <li class="submenu-item"><a href="#">2022 Smart Monitors</a></li>
+                                                    <li class="submenu-item"><a href="#">2021 Smart Monitors</a></li>
+                                                    <li class="submenu-item"><a href="#">High Resolution Monitors</a></li>
+                                                    <li class="submenu-item"><a href="#">SSD Magician Software</a></li>
+                                                    <li class="submenu-item"><a href="#">Portable SSD T7 Shield</a></li>
+                                                    <li class="submenu-item"><a href="#">980 PRO</a></li>
+                                                    <li class="submenu-item"><a href="#">870 EVO</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Computer Monitors</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Discover Computer Monitors</a></li>
+                                                    <li class="submenu-item"><a href="#">Gaming</a></li>
+                                                    <li class="submenu-item"><a href="#">Smart Monitors</a></li>
+                                                    <li class="submenu-item"><a href="#">High Resolution</a></li>
+                                                    <li class="submenu-item"><a href="#">Curved</a></li>
+                                                    <li class="submenu-item"><a href="#">Flat</a></li>
+                                                    <li class="submenu-item"><a href="#">Business</a></li>
+                                                    <li class="submenu-item"><a href="#">All Computer Monitors</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Memory & Storage</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Discover Memory & Storage</a></li>
+                                                    <li class="submenu-item"><a href="#">SSD</a></li>
+                                                    <li class="submenu-item"><a href="#">Portable SSD</a></li>
+                                                    <li class="submenu-item"><a href="#">Memory Cards</a></li>
+                                                    <li class="submenu-item"><a href="#">All Memory & Storage</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="contents-img">
+                                            <div class="img">
+                                                <img src="https://images.samsung.com/is/image/samsung/assets/sg/gnb/624x624-1.png?$330_330_JPG$" alt="galaxy-z-flip4 & galaxy-z-fold4">
+                                            </div>
+                                            <span>Level up your gaming experience with the new Odyssey Ark</span>
+                                            <div class="cta__inner">
+                                                <span href="#" class="cta--more">Buy now</span>
+                                            </div>
+                                        </a>
+                                        <!-- 닫기 버튼 -->
+                                        <button class="contents-close">
+                                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
+                                                <path d="M79.17 11.17L48 42.34 16.83 11.17l-5.66 5.66L42.34 48 11.17 79.17l5.66 5.66L48 53.66l31.17 31.17 5.66-5.66L53.66 48l31.17-31.17z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="list" class="gnb__left-item" data-contents="true">
+                                <a class="gnb-item" href="#">Displays</a>
+                                <div class="contents-wrap">
+                                    <div class="contents">
+                                        <h2 class="contents-title">Displays</h2>
+                                        <ul class="contents-list">
+                                            <li class="contents-item selected">
+                                                <a class="item-title" href="#">Monitors</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Discover Monitors</a></li>
+                                                    <li class="submenu-item"><a href="#">All Monitors</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Smart Signage</a>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">LED Signage</a>
+                                            </li>
+                                            <li class="contents-item">
+                                                <a class="item-title" href="#">Commercial TVs</a>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="contents-img">
+                                            <div class="img">
+                                                <img src="https://images.samsung.com/is/image/samsung/assets/sg/gnb/the-wall-624x624.jpg?$330_330_JPG$" alt="galaxy-z-flip4 & galaxy-z-fold4">
+                                            </div>
+                                            <span>Digital flipchart</span>
+                                            <div class="cta__inner">
+                                                <span href="#" class="cta--more">Learn more</span>
+                                            </div>
+                                        </a>
+                                        <!-- 닫기 버튼 -->
+                                        <button class="contents-close">
+                                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
+                                                <path d="M79.17 11.17L48 42.34 16.83 11.17l-5.66 5.66L42.34 48 11.17 79.17l5.66 5.66L48 53.66l31.17 31.17 5.66-5.66L53.66 48l31.17-31.17z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="list" class="gnb__left-item">
+                                <a class="gnb-item" href="#">Accessories</a>
+                            </li>
+                            <li id="list" class="gnb__left-item" data-contents="true">
+                                <a class="gnb-item" href="#">SmartThings</a>
+                                <div class="contents-wrap">
+                                    <div class="contents">
+                                        <h2 class="contents-title">SmartThings</h2>
+                                        <ul class="contents-list">
+                                            <li class="contents-item selected">
+                                                <a class="item-title" href="#">Work from Home</a>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Set the Mood</a>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Think Green at Home</a>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Stay Fit & Healthy</a>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Apps & Products</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">SmartThings App</a></li>
+                                                    <li class="submenu-item"><a href="#">SmartThings Products</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="contents-img">
+                                            <div class="img">
+                                                <img src="https://images.samsung.com/is/image/samsung/assets/sg/smartthings/do-the-smartthings/cx-mde0004_dts_gnb-feature_pc_mo_624x624.jpg?$330_330_JPG$" alt="galaxy-z-flip4 & galaxy-z-fold4">
+                                            </div>
+                                            <span>Do the SmartThings!</span>
+                                            <div class="cta__inner">
+                                                <span href="#" class="cta--more">Learn more</span>
+                                            </div>
+                                        </a>
+                                        <!-- 닫기 버튼 -->
+                                        <button class="contents-close">
+                                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
+                                                <path d="M79.17 11.17L48 42.34 16.83 11.17l-5.66 5.66L42.34 48 11.17 79.17l5.66 5.66L48 53.66l31.17 31.17 5.66-5.66L53.66 48l31.17-31.17z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="list" class="gnb__left-item">
+                                <a class="gnb-item" href="#">#YouMake</a>
+                            </li>
+                        </ul>
+                        <ul class="gnb__right">
+                            <li id="list" class="gnb__right-item" data-contents="true">
+                                <a class="gnb-item" href="#">Support</a>
+                                <div class="contents-wrap">
+                                    <div class="contents">
+                                        <h2 class="contents-title">Support</h2>
+                                        <ul class="contents-list">
+                                            <li class="contents-item selected">
+                                                <a class="item-title" href="#">Product page</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Mobile</a></li>
+                                                    <li class="submenu-item"><a href="#">TV & AV</a></li>
+                                                    <li class="submenu-item"><a href="#">Home Appliances</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Solutions & Tips</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">FAQs</a></li>
+                                                    <li class="submenu-item"><a href="#">Manuals & Downloads</a></li>
+                                                    <li class="submenu-item"><a href="#">News & Alerts</a></li>
+                                                    <li class="submenu-item"><a href="#">Online shop FAQ </a></li>
+                                                    <li class="submenu-item"><a href="#">Community </a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Repair Service</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Service Locator</a></li>
+                                                    <li class="submenu-item"><a href="#">Track My Repair</a></li>
+                                                    <li class="submenu-item"><a href="#">Book a Repair</a></li>
+                                                    <li class="submenu-item"><a href="#">Galaxy Screen Replacement</a></li>
+                                                    <li class="submenu-item"><a href="#">TV Screen Replacement</a></li>
+                                                    <li class="submenu-item"><a href="#">Service Centre Waiting Time</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Contact Us</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Call Us</a></li>
+                                                    <li class="submenu-item"><a href="#">Live Chat</a></li>
+                                                    <li class="submenu-item"><a href="#">Email</a></li>
+                                                    <li class="submenu-item"><a href="#">Sign Language Support</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Online shop support
+                                                </a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Shop FAQs</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="contents-item ">
+                                                <a class="item-title" href="#">Warranty</a>
+                                                <div class="arrow">
+                                                    <svg class="icon icon--next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                                        <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                                    </svg>
+                                                </div>
+                                                <ul class="submenu">
+                                                    <li class="submenu-item"><a href="#">Warranty Information</a></li>
+                                                    <li class="submenu-item"><a href="#">Product Registration</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="contents-img">
+                                            <div class="img">
+                                                <img src="https://images.samsung.com/is/image/samsung/assets/sg/gnb/624x624-GNB.jpg?$330_330_JPG$" alt="galaxy-z-flip4 & galaxy-z-fold4">
+                                            </div>
+                                            <span>Useful tips for Galaxy devices</span>
+                                            <div class="cta__inner">
+                                                <span href="#" class="cta--more">Learn more</span>
+                                            </div>
+                                        </a>
+                                        <!-- 닫기 버튼 -->
+                                        <button class="contents-close">
+                                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
+                                                <path d="M79.17 11.17L48 42.34 16.83 11.17l-5.66 5.66L42.34 48 11.17 79.17l5.66 5.66L48 53.66l31.17 31.17 5.66-5.66L53.66 48l31.17-31.17z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="list" class="gnb__right-item">
+                                <a class="gnb-item" href="#">For Business</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <ul class="utility">
+                    <li class="utility__item">
+                        <a href="#" class="search">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
+                                <path d="M40.581 4.09c20.126 0 36.5 16.374 36.5 36.5a36.325 36.325 0 01-7.963 22.733l22.8 22.948-5.674 5.639-22.767-22.913a36.327 36.327 0 01-22.896 8.093c-20.126 0-36.5-16.374-36.5-36.5s16.374-36.5 36.5-36.5zm0 8c-15.715 0-28.5 12.785-28.5 28.5s12.785 28.5 28.5 28.5 28.5-12.785 28.5-28.5-12.785-28.5-28.5-28.5z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="utility__item">
+                        <a href="#" class="basket">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
+                                <path d="M72.848 70.25c6.075 0 11 4.925 11 11s-4.925 11-11 11-11-4.925-11-11 4.925-11 11-11zm-35 0c6.075 0 11 4.925 11 11s-4.925 11-11 11-11-4.925-11-11c0-6.074 4.926-11 11-11zm35 7a4 4 0 10.002 8.001 4 4 0 00-.002-8.001zm-35 0a4 4 0 100 8 4 4 0 000-8zM13.892 3.75c2.287 0 4.376 1.55 5.058 3.72l.064.22 2.97 11.187h68.128a4.727 4.727 0 014.661 5.786l-.048.2-9.559 36.291c-.583 2.216-2.618 3.842-4.894 3.944l-.228.005H30.06c-2.287 0-4.377-1.55-5.06-3.72l-.063-.219-13.124-49.413-10.7.006-.004-8 12.782-.007zm72.03 23.127H24.108l8.027 30.226H77.96l7.962-30.226z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="utility__item pc-login">
+                        <a href="#" class="login">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
+                                <path d="M48 50c17.346 0 32 14.221 32 31.054V89c0 2.757-2.243 5-5 5H21c-2.757 0-5-2.243-5-5v-7.946C16 64.221 30.654 50 48 50zm0 8c-12.785 0-24 10.773-24 23.054V86h48v-4.946C72 68.773 60.785 58 48 58zm-.002-56c12.133 0 22.003 9.87 22.003 22.001C70 36.131 60.13 46 47.998 46c-12.13 0-21.997-9.869-21.997-21.999C26 11.87 35.867 2 47.998 2zm0 8c-7.718 0-13.997 6.281-13.997 14.001C34 31.72 40.28 38 47.998 38 55.718 38 62 31.72 62 24.001 62 16.281 55.719 10 47.998 10z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="utility__item mobile-gnb">
+                        <a href="#" class="gnb-menu">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
+								<path d="M83 70v8H13v-8h70zm0-26v8H13v-8h70zm0-26v8H13v-8h70z"></path>
+							</svg>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
         </header>
 
         <div class="main">
@@ -237,12 +1098,12 @@
                                     </ul>
 
                                     <button class="indicator__controls">
-                                        <svg id="video-button" class="play" xmlns="http://www.w3.org/2000/svg" fill="#fff" class="bi bi-play-fill" viewBox="0 0 17 17">
+                                        <svg id="play" class="" xmlns="http://www.w3.org/2000/svg" fill="#fff" class="bi bi-play-fill" viewBox="0 0 17 17">
                                             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                                         </svg>
-                                        <svg id="video-button" class="pause inactive" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-                                            <rect class="pause" x="116" y="40" width="30" height="120" rx="8" fill="#fff"/>
-                                            <rect class="pause" x="48" y="40" width="30" height="120" rx="8" fill="#fff"/>
+                                        <svg id="pause" class="pause" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                            <rect class="pause" x="116" y="40" width="30" height="120" rx="8"/>
+                                            <rect class="pause" x="48" y="40" width="30" height="120" rx="8"/>
                                         </svg>
                                     </button>
 
@@ -257,7 +1118,6 @@
 
             </section>
             <!-- // home-kv-carousel -->
-
 
             <!-- Half Teaser List -->
             <section class="half-teaser-list">

@@ -27,8 +27,6 @@ export class Feature {
             });
         }
 
-
-
         function sectionSkin() {
             skin = slides[sw_feature.realIndex].getAttribute("data-skin-color");
             ( skin == "white") ? section.classList.add("key-feature-tab--white") : section.classList.remove("key-feature-tab--white") ;
