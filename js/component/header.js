@@ -8,12 +8,18 @@ export class Header {
         const gnbBackground = document.querySelector(".gnb-background");
         const contentsItem = document.querySelectorAll(".contents-item");
         const contentsClose = document.querySelectorAll(".contents-close");
+
         const searchModalClose = document.querySelector(".search-modal__close");
         const searchModal = document.querySelector(".search-modal");
         const search = document.querySelector(".search");
+        
+        const basketModaCta = document.querySelector(".basket-modal__cta");
+        const basketModalClose = document.querySelector(".basket-modal__close");
+        const basketModal = document.querySelector(".basket-modal");
+        const basket = document.querySelector(".basket");
 
         let activeContentsItem;
-        
+
         list.forEach((v,i) => {
             v.addEventListener("mouseover", function(){
                 if(v.getAttribute("data-contents")) {
@@ -34,7 +40,7 @@ export class Header {
             });
         });
 
-        // search
+        // search modal
         searchModalClose.addEventListener("click", () => {
             searchClose();
             yVisible();
@@ -44,12 +50,17 @@ export class Header {
             yHidden();
         });
 
-        function yHidden() {
-            body.style.overflowY = "hidden";
-        }
+        // basket modal
+        basket.addEventListener("click", basketOpen);
+        basketModalClose.addEventListener("click", basketClose);
+        basketModaCta.addEventListener("click", basketClose);
 
         function yVisible() {
             body.style.overflowY = "visible";
+        }
+
+        function yHidden() {
+            body.style.overflowY = "hidden";
         }
 
         function searchOpen(){
@@ -60,6 +71,30 @@ export class Header {
             searchModal.classList.remove("open");
         }
 
+        function basketOpen(){
+            basketModal.classList.add("open");
+        }
+        function basketClose(){
+            basketModal.classList.remove("open");
+        }
+        function addBackground(){
+            gnbBackground.classList.add("open");
+        }
+
+        function removeBackground(){
+            gnbBackground.classList.remove("open");
+        }
+        function removeSelected(variable) {
+            for(let i = 0; i < variable.length; i++) {
+                variable[i].classList.remove("selected");
+            }
+        }
+
+        function removeActive(variable) {
+            for(let i = 0; i < variable.length; i++) {
+                variable[i].classList.remove("active");
+            }
+        }
         function itemMove(){
             for(let i = 0; i < contentsItem.length; i++) {
                 contentsItem[i].addEventListener("mouseover", function(){
@@ -73,7 +108,6 @@ export class Header {
                 });
             }
         }
-        
         function closeClick(){
             contentsClose.forEach((v,i) => {
                 v.addEventListener("click", function(){
@@ -82,27 +116,6 @@ export class Header {
                 });
             });
         }
-
-        function addBackground(){
-            gnbBackground.classList.add("open");
-        }
-
-        function removeBackground(){
-            gnbBackground.classList.remove("open");
-        }
-
-        function removeSelected(variable) {
-            for(let i = 0; i < variable.length; i++) {
-                variable[i].classList.remove("selected");
-            }
-        }
-
-        function removeActive(variable) {
-            for(let i = 0; i < variable.length; i++) {
-                variable[i].classList.remove("active");
-            }
-        }
-
         function itemFocusMove() {
             for(let i = 0; i < contentsItem.length; i++) {
                 contentsItem[i].addEventListener("keydown", function(e){
@@ -118,7 +131,6 @@ export class Header {
                 });
             }
         }
-
         function gnbFocusMove() {
             for(let i = 0; i < list.length; i++) {
                 list[i].addEventListener("keydown", function(e){

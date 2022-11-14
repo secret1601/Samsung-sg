@@ -341,7 +341,7 @@ legend {
                             font-size: 18px;
                             font-weight: 400;
                             margin: 37px 0;
-                            a:hover{
+                            a:hover, a:focus{
                                 font-weight: 700;
                             }
                             .arrow {
@@ -382,7 +382,7 @@ legend {
                                             height: 1px;
                                             transition: all 0.3s;
                                         }
-                                        &:hover::before {
+                                        &:hover::before, &:focus::before {
                                             width: 100%;
                                         }
                                     }
@@ -443,6 +443,11 @@ legend {
                         background-color: #000;
                         border-radius: 20px;
                     }
+                    &:focus {
+                        color: #fff;
+                        background-color: #000;
+                        border-radius: 20px;
+                    }
                 }
                 .active .gnb__contents{
                     height: 700px;
@@ -459,9 +464,6 @@ legend {
                 width: 24px;
                 height: 24px;
                 margin-left: 24px;
-                &:first-child {
-                    margin-left: 0;
-                }
                 // search-modal 
                 .search-modal {
                     position: fixed;
@@ -573,14 +575,123 @@ legend {
                         width: 36px;
                         height: 36px;
                         background: transparent;
+                        border: 0;
                         cursor: pointer;
                         svg {
                             fill: #fff;
                         }
                     }
                 }
-                .modal-close {
-                    display: none !important;
+                .basket-modal {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    display: none;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0.68);
+                    z-index: 3000;
+                    &__inner {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 100%;
+                    }
+                    &__contents {
+                        position: relative;
+                        display: flex;
+                        width: 448px;
+                        border-radius: 20px;
+                        background-color: #fff;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 20px;
+                        flex-direction: column;
+                    }
+                    &__info {
+                        width: 48px;
+                    }
+                    &__des {
+                        margin-top: 20px;
+                        font-weight: bold;
+                        font-size: 18px;
+                    }
+                    &__cta {
+                        margin-top: 30px;
+                        border: 0;
+                        padding: 10px 90px;
+                        border-radius: 20px;
+                        background: #000;
+                        font-size: 14px;
+                        font-weight: 700;
+                        transition: all 0.3s;
+                        font-family: SamsungOne, Arial, sans-serif;
+                        cursor: pointer;
+                        .cta-text {
+                            color: #fff;
+                            text-transform: uppercase;
+                        }
+                        &:hover {
+                            color: #eee !important;
+                            background: #555 !important;
+                        }
+                    }
+                    &__close {
+                        position: absolute;
+                        right: 20px;
+                        top: 20px;
+                        display: block;
+                        width: 24px;
+                        border: 0;
+                        background: transparent;
+                        cursor: pointer;
+                    }
+                }
+                .login-layer {
+                    position: absolute;
+                    left: -197px;
+                    top: 32px;
+                    display: block;
+                    width: 216px;
+                    background-color: #fff;
+                    z-index: 1000;
+                    padding: 18px 16px;
+                    border-radius: 6px;
+                    box-shadow: 0 4px 10px -2px rgb(0 0 0 / 20%);
+                    transform: scale(0);
+                    opacity: 0;
+                    visibility: hidden;
+                    transform-origin: 100% 0;
+                    transition-delay: 0.15s;
+                    &__list {
+                        position: relative;
+                        display: block;
+                    }
+                    &__item {
+                        font-size: 14px;
+                        line-height: 1.3;
+                        margin-bottom: 15px;
+                        &:last-child {
+                            margin-bottom: 0px;
+                        }
+                        .layer-text {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            text-align: left;
+                        }
+                        .layer-icon {
+                            position: relative;
+                            display: inline-block;
+                            padding-right: 10px;
+                            line-height: 0px;
+                            svg {
+                                width: 16px;
+                                height: 16px;
+                            }
+                        }
+                    }
                 }
             }
             .mobile-gnb {
@@ -589,6 +700,28 @@ legend {
         }
     }
 }
+
+.pc-login:focus-within > .login-layer {
+    transition: all 0.2s;
+    transform: scale(1.0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.pc-login:hover .login-layer {
+    transition: all 0.2s;
+    transform: scale(1.0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.login-active {
+    transition: all 0.2s;
+    transform: scale(1.0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 .gnb-item {
     overflow: hidden !important;
     border-radius: 20px;
