@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/swiper-bundle.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="js/swiper-bundle.js"></script>
 </head>
 <body>
@@ -34,7 +35,7 @@
                 <nav class="nav">
                     <div class="gnb">
                         <ul class="gnb__left">
-                            <li class="gnb__left-item list">
+                            <li class="gnb__left-item list" data-contents="false">
                                 <a class="gnb-item" href="#">Shop</a>
                             </li>
                             <li class="gnb__left-item list" data-contents="true">
@@ -674,7 +675,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="gnb__left-item list">
+                            <li class="gnb__left-item list" data-contents="false">
                                 <a class="gnb-item" href="#">Accessories</a>
                             </li>
                             <li class="gnb__left-item list" data-contents="true">
@@ -726,7 +727,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="gnb__left-item list">
+                            <li class="gnb__left-item list" data-contents="false">
                                 <a class="gnb-item" href="#">#YouMake</a>
                             </li>
                         </ul>
@@ -838,7 +839,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="gnb__right-item list">
+                            <li class="gnb__right-item list" data-contents="false">
                                 <a class="gnb-item" href="#">For Business</a>
                             </li>
                         </ul>
@@ -894,6 +895,11 @@
                                         <path d="M79.17 11.17L48 42.34 16.83 11.17l-5.66 5.66L42.34 48 11.17 79.17l5.66 5.66L48 53.66l31.17 31.17 5.66-5.66L53.66 48l31.17-31.17z"></path>
                                     </svg>
                                 </button>
+                                <button class="search-modal__close-mo">
+                                    <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"/>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </li>
@@ -903,7 +909,7 @@
                                 <path d="M72.848 70.25c6.075 0 11 4.925 11 11s-4.925 11-11 11-11-4.925-11-11 4.925-11 11-11zm-35 0c6.075 0 11 4.925 11 11s-4.925 11-11 11-11-4.925-11-11c0-6.074 4.926-11 11-11zm35 7a4 4 0 10.002 8.001 4 4 0 00-.002-8.001zm-35 0a4 4 0 100 8 4 4 0 000-8zM13.892 3.75c2.287 0 4.376 1.55 5.058 3.72l.064.22 2.97 11.187h68.128a4.727 4.727 0 014.661 5.786l-.048.2-9.559 36.291c-.583 2.216-2.618 3.842-4.894 3.944l-.228.005H30.06c-2.287 0-4.377-1.55-5.06-3.72l-.063-.219-13.124-49.413-10.7.006-.004-8 12.782-.007zm72.03 23.127H24.108l8.027 30.226H77.96l7.962-30.226z"></path>
                             </svg>
                         </a>
-                        <div class="basket-modal">
+                        <div class="basket-modal" aria-modal="true" data-popup="popup2" role="dialog">
                             <div class="basket-modal__inner">
                                 <div class="basket-modal__contents">
                                     <svg class="basket-modal__info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false">
@@ -1036,15 +1042,17 @@
                                                 <source media="(max-width:767px)" srcset="//images.samsung.com/is/image/samsung/assets/sg/home/Home_Q4_KV_Main-KV_720x1080_mo_preview.jpg?imwidth=720, //images.samsung.com/is/image/samsung/assets/sg/home/Home_Q4_KV_Main-KV_720x1080_mo_preview.jpg?imwidth=720 1.5x">
                                                 <img src="./images/Home_Q4_KV_Main-KV_1440x640_pc_preview.jpg" alt="galaxy-z-flip4">
                                             </picture>
-                                        <!-- <figcaption>galaxy-z-flip4</figcaption> -->
                                         </figure>
-                                        <!-- <div class="video">
+                                        <div class="video pc">
                                             <figure class="video--play">
-                                                <video class="video-player" id="video" playsinline > 
-                                                    <source src="https://images.samsung.com/is/content/samsung/assets/sg/home/Home_Q4_KV_Main-KV_1440x640_pc.mp4">
+                                                <video class="video-player" id="kvPc" playsinline> 
+                                                    <source src="./images/Home_Q4_KV_Main-KV_1440x640_pc.mp4">
+                                                </video>
+                                                <video class="video-player" id="kvMobile" playsinline> 
+                                                    <source src="./images/Home_Q4_KV_Main-KV_720x1080_mo.mp4">
                                                 </video>
                                             </figure>
-                                        </div> -->
+                                        </div>
                                     </div>
             
                                 </div>
@@ -1542,12 +1550,196 @@
         </div>
 
         <footer class="footer">
-            <div class="height-test">
+            <div class="footer__inner">
+                <ul class="footer-column">
+                    <li class="footer-column__item">
+                        <div class="footer-submenu" data-columns="1">
+                            <span class="submenu__title">Product & Service</span>
+                            <a class="submenu__arrow" href="#">
+                                <svg class="submenu__arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                    <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                </svg>
+                            </a>
+                            <ul class="submenu__list">
+                                <li class="submenu__item"><a href="#">Smartphones</a></li>
+                                <li class="submenu__item"><a href="#">Tablets</a></li>
+                                <li class="submenu__item"><a href="#">Audio</a></li>
+                                <li class="submenu__item"><a href="#">Watches</a></li>
+                                <li class="submenu__item"><a href="#">Smart Switch</a></li>
+                                <li class="submenu__item"><a href="#">Mobile Accessories</a></li>
+                                <li class="submenu__item"><a href="#">TVs</a></li>
+                                <li class="submenu__item"><a href="#">Lifestyle TVs</a></li>
+                                <li class="submenu__item"><a href="#">Sound Devices</a></li>
+                                <li class="submenu__item"><a href="#">Refrigerators</a></li>
+                                <li class="submenu__item"><a href="#">Laundry</a></li>
+                                <li class="submenu__item"><a href="#">Cooking Appliances</a></li>
+                                <li class="submenu__item"><a href="#">Monitors</a></li>
+                                <li class="submenu__item"><a href="#">Memory Storage</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="footer-column__item">
+                        <div class="footer-submenu" data-columns="2">
+                            <span class="submenu__title">Shop</span>
+                            <a class="submenu__arrow" href="#">
+                                <svg class="submenu__arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                    <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                </svg>
+                            </a>
+                            <ul class="submenu__list">
+                                <li class="submenu__item"><a href="#">Offers</a></li>
+                                <li class="submenu__item"><a href="#">Samsung Experiencs Store</a></li>
+                                <li class="submenu__item"><a href="#">Samsung Care+</a></li>
+                                <li class="submenu__item"><a href="#">Store Pickup and Support</a></li>
+                                <li class="submenu__item"><a href="#">Student Offers</a></li>
+                                <li class="submenu__item"><a href="#">Corporate Employee Offers</a></li>
+                                <li class="submenu__item"><a href="#">Upgrade with Galaxy</a></li>
+                                <li class="submenu__item"><a href="#">Online Shop FAQs</a></li>
+                                <li class="submenu__item"><a href="#">Sound Devices</a></li>
+                                <li class="submenu__item"><a href="#">Explore</a></li>
+                                <li class="submenu__item"><a href="#">Business Shop</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="footer-column__item">
+                        <div class="footer-submenu" data-columns="3">
+                            <span class="submenu__title">Support</span>
+                            <a class="submenu__arrow" href="#">
+                                <svg class="submenu__arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                    <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                </svg>
+                            </a>
+                            <ul class="submenu__list">
+                                <li class="submenu__item"><a href="#">Contact Us</a></li>
+                                <li class="submenu__item"><a href="#">Email↗</a></li>
+                                <li class="submenu__item"><a href="#">Product Registration</a></li>
+                                <li class="submenu__item"><a href="#">Warranty Information</a></li>
+                                <li class="submenu__item"><a href="#">Service Location</a></li>
+                                <li class="submenu__item"><a href="#">Sign Language Support</a></li>
+                                <li class="submenu__item"><a href="#">Give Feedback↗</a></li>
+                                <li class="submenu__item"><a href="#">Email the CEO↗</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="footer-column__item">
+                        <div class="footer-submenu" data-columns="4">
+                            <span class="submenu__title">Account & Community</span>
+                            <a class="submenu__arrow" href="#">
+                                <svg class="submenu__arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                    <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                </svg>
+                            </a>
+                            <ul class="submenu__list">
+                                <li class="submenu__item"><a href="#">My Page</a></li>
+                                <li class="submenu__item"><a href="#">Orders</a></li>
+                                <li class="submenu__item"><a href="#">Wishlist</a></li>
+                                <li class="submenu__item"><a href="#">Members</a></li>
+                                <li class="submenu__item"><a href="#">Samsung Rewards</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="footer-column__item">
+                        <div class="footer-submenu" data-columns="5">
+                            <span class="submenu__title">Sustainability</span>
+                            <a class="submenu__arrow" href="#">
+                                <svg class="submenu__arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                    <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                </svg>
+                            </a>
+                            <ul class="submenu__list">
+                                <li class="submenu__item"><a href="#">Overview</a></li>
+                                <li class="submenu__item"><a href="#">Environment</a></li>
+                                <li class="submenu__item"><a href="#">Corporate Citizenship</a></li>
+                                <li class="submenu__item"><a href="#">Digital Responsibility</a></li>
+                                <li class="submenu__item"><a href="#">Security & Privacy</a></li>
+                                <li class="submenu__item"><a href="#">Accessibility</a></li>
+                                <li class="submenu__item"><a href="#">Labour & Human Rights</a></li>
+                                <li class="submenu__item"><a href="#">Diversity & Inclusion</a></li>
+                                <li class="submenu__item"><a href="#">Sustainable Supply Chain</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-submenu" data-columns="6">
+                            <span class="submenu__title">About Us</span>
+                            <a class="submenu__arrow" href="#">
+                                <svg class="submenu__arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" focusable="false" style="">
+                                    <path d="M31.828 16.306l3.457-3.612L72.172 48 35.285 83.306l-3.457-3.612L64.941 48z"></path>
+                                </svg>
+                            </a>
+                            <ul class="submenu__list">
+                                <li class="submenu__item"><a href="#">Company Info</a></li>
+                                <li class="submenu__item"><a href="#">Business Area</a></li>
+                                <li class="submenu__item"><a href="#">Brand Identity</a></li>
+                                <li class="submenu__item"><a href="#">Careers</a></li>
+                                <li class="submenu__item"><a href="#">Investor Relations↗</a></li>
+                                <li class="submenu__item"><a href="#">Newsroom↗</a></li>
+                                <li class="submenu__item"><a href="#">Ethics</a></li>
+                                <li class="submenu__item"><a href="#">Samsung Design↗</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="footer-bottom">
+                    <p class="copyright">Copyright© 1995-2022 Samsung. All rights reserved.</p>
+                    <div class="information">
+                        <div class="language">
+                            <a href="#">Singapore/English</a>
+                        </div>
+                        <div class="terms">
+                            <ul class="terms-list">
+                                <li class="terms-item"><a href="#">privacy</a></li>
+                                <li class="terms-item"><a href="#">legal</a></li>
+                                <li class="terms-item"><a href="#">sitemap</a></li>
+                            </ul>
+                        </div>
+                        <div class="sns">
+                            <span class="sns-title">Stay in the Loop?</span>
+                            <ul class="sns-list">
+                                <li class="sns-item">
+                                    <a href="#">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="sns-item">
+                                    <a href="#">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="sns-item">
+                                    <a href="#">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="sns-item">
+                                    <a href="#">
+                                        <i class="fa-brands fa-youtube"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-			</button>
         </footer>
+        
+        <button class="scroll-top">
+            <div class="scroll-top__inner">
+                <i class="fa-solid fa-arrow-up"></i>
+            </div>
+        </button>
+
+        <div class="chat">
+            <div class="chat__inner">
+                <img src="https://prod.cdata.app.sprinklr.com/DAM/738/104cbfb5-fa03-4376-acd4-38360e7721b8-466400244.jpg" alt="">
+            </div>
+            <button class="chat-close">x</button>
+        </div>
+
+        <button class="feedback">
+            <img src="./images/feedback.png" alt="Feedback Image">
+        </button>
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script type="module" src="./js/script.js"></script>
 </body>
 </html>

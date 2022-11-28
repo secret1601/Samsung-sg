@@ -9,6 +9,7 @@ export class Header {
         const contentsItem = document.querySelectorAll(".contents-item");
         const contentsClose = document.querySelectorAll(".contents-close");
 
+        const searchModalCloseMo = document.querySelector(".search-modal__close-mo");
         const searchModalClose = document.querySelector(".search-modal__close");
         const searchModal = document.querySelector(".search-modal");
         const search = document.querySelector(".search");
@@ -22,14 +23,14 @@ export class Header {
 
         list.forEach((v,i) => {
             v.addEventListener("mouseover", function(){
-                if(v.getAttribute("data-contents")) {
+                if(v.getAttribute("data-contents") === "true") {
                     v.classList.add("active");
                     addBackground();
                 }
             });
 
             v.addEventListener("mouseleave", function(){
-                if(v.getAttribute("data-contents")) {
+                if(v.getAttribute("data-contents") === "true") {
                     v.classList.remove("active");
                     removeBackground();
                     
@@ -41,6 +42,10 @@ export class Header {
         });
 
         // search modal
+        searchModalCloseMo.addEventListener("click", function(){
+            searchClose();
+            yVisible();
+        });
         searchModalClose.addEventListener("click", () => {
             searchClose();
             yVisible();
@@ -137,7 +142,7 @@ export class Header {
                     if(e.key === "Enter") {
                         removeActive(list);
                         removeBackground();
-                        if(list[i].getAttribute("data-contents")) {
+                        if(list[i].getAttribute("data-contents") === "true") {
                             list[i].classList.add("active");
                             addBackground();
                         }

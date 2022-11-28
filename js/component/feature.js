@@ -4,7 +4,6 @@ export class Feature {
     }
     init() {
         // 셀렉터
-        console.log(this.name)
         const section = document.querySelector(".key-feature-tab");
         const tabItem = document.querySelectorAll(".key-feature-tab__item");
         const tabLine = document.querySelectorAll(".line");
