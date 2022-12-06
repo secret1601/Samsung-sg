@@ -19,27 +19,8 @@ export class Header {
         const basketModal = document.querySelector(".basket-modal");
         const basket = document.querySelector(".basket");
 
-        let activeContentsItem;
-
-        list.forEach((v,i) => {
-            v.addEventListener("mouseover", function(){
-                if(v.getAttribute("data-contents") === "true") {
-                    v.classList.add("active");
-                    addBackground();
-                }
-            });
-
-            v.addEventListener("mouseleave", function(){
-                if(v.getAttribute("data-contents") === "true") {
-                    v.classList.remove("active");
-                    removeBackground();
-                    
-                    activeContentsItem = v.querySelectorAll(".contents-item");
-                    removeSelected(activeContentsItem);
-                    activeContentsItem[0].classList.add("selected");
-                }
-            });
-        });
+        let activeContentsItem, domWidth;
+        domWidth = window.innerWidth;        
 
         // search modal
         searchModalCloseMo.addEventListener("click", function(){
@@ -150,10 +131,32 @@ export class Header {
                 });
             }
         }
+        function gnbPc() {
+            list.forEach( v => {
+                v.addEventListener("mouseover", function(){
+                        if(v.getAttribute("data-contents") === "true") {
+                            v.classList.add("active");
+                            addBackground();
+                        }
+                    });
 
+                v.addEventListener("mouseleave", function(){
+                    if(v.getAttribute("data-contents") === "true") {
+                        v.classList.remove("active");
+                        removeBackground();
+                        
+                        activeContentsItem = v.querySelectorAll(".contents-item");
+                        removeSelected(activeContentsItem);
+                        activeContentsItem[0].classList.add("selected");
+                    }
+                });
+            });
+        }
+
+        gnbPc();
         itemMove();
         closeClick();
         itemFocusMove();
         gnbFocusMove();
     }
-}
+};

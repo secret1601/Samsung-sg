@@ -14,9 +14,11 @@ export class Carousel {
         const video = document.querySelector(".video");
         const kvPc = document.querySelector("#kvPc");
         const kvMobile = document.querySelector("#kvMobile");
-
+        const swiperSlide = document.querySelectorAll(".swiper-slide");
+        const swiperContainer = document.querySelector(".swiper-container");
+        
         // 초기화
-        let sw_carousel, windowWidth, skin, slides, activeSlideCta, allCta, allSlide, videoClass;
+        let sw_carousel, windowWidth, skin, slides, activeSlideCta, allCta, allSlide, videoClass, toggle;
         sw_carousel = new Swiper('.sw-carousel', {
             effect: 'fade',
             loop: true,
@@ -28,6 +30,10 @@ export class Carousel {
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false
             },
         });
         slides = sw_carousel.slides;
@@ -49,28 +55,6 @@ export class Carousel {
                 });
             }
         }
-        window.addEventListener("resize", () => {
-            deviceCheckFocus();
-            videoDeviceCheck();
-        });
-        
-        videoControls.addEventListener("click", videoEvent);
-        kvPc.addEventListener("ended", removeVideoClass);
-        kvMobile.addEventListener("ended", removeVideoClass);
-
-        // ============ activeItem() =============
-        function videoEvent() {
-            if( videoClass.contains("play") ) {
-                removeVideoClass();
-                kvPc.pause();
-                kvMobile.pause();
-            } else {
-                addVideoClass();
-                kvPc.play();
-                kvMobile.play();
-            }
-        }
-
         function videoDeviceCheck() {
             if(window.innerWidth < 768) {
                 video.classList.remove("pc");
@@ -80,47 +64,38 @@ export class Carousel {
                 video.classList.add("pc");
             }
         }
-        
         function removeVideoClass() {
             videoClass.remove("play");
         }
         function addVideoClass() {
             videoClass.add("play");
         }
-
         function progressActive(){
             for(let j = 0; j < progressItem.length; j++) {
                 progressItem[j].classList.remove("indicator-active");
             }
             progressItem[sw_carousel.realIndex].classList.add("indicator-active");
         }
-        
         function skinColor(){
             skin = slides[sw_carousel.realIndex].getAttribute("data-skin-color");
             (skin == "black") ? section.classList.add("home-kv-carousel--black") : section.classList.remove("home-kv-carousel--black")
         }
-
         function mobileTab() {
             for(let i = 0; i < productLine.length; i++) {
                 productLine[i].setAttribute("tabindex", "0");
                 productLine[i].setAttribute("aria-hidden", "false");
             }
-            // console.log("mobileTab");
         }
-
         function pcTab() {
             for(let i = 0; i < productLine.length; i++) {
                 productLine[i].setAttribute("tabindex", "-1");
                 productLine[i].setAttribute("aria-hidden", "true");
             }
-            // console.log("pcTab");
         }
-
         function deviceCheckFocus(){
             windowWidth = window.innerWidth;
             (windowWidth < 768 ) ? mobileTab() : pcTab();
         }
-
         function ctaFocus(){
             activeSlideCta = document.querySelector(".swiper-slide-active").querySelectorAll("#cta");
             allSlide = section.querySelectorAll(".swiper-slide")
@@ -138,17 +113,67 @@ export class Carousel {
                 activeSlideCta[i].setAttribute("aria-hidden", "false");
             }
         }
+        function videoAutoPlay() {
+            swiperSlide.forEach((_) => {
+                if (_.getAttribute("data-video") == "true") {
+                    kvPc.play();
+                    kvMobile.play();
+                } else {
+                    kvPc.currentTime = 0;
+                    kvMobile.currentTime = 0;
+                }
+            });
+        }
+        function videoPause() {
+            kvPc.pause();
+            kvMobile.pause();
+        }
+        function videoStart() {
+            kvPc.play();
+            kvMobile.play();
+        }
+        function startAutoPlay() {
+            sw_carousel.autoplay.start();
+        }
+        function stopAutoPlay() {
+            sw_carousel.autoplay.stop();
+        }
+
+        window.addEventListener("resize", () => {
+            deviceCheckFocus();
+            videoDeviceCheck();
+        });
+        swiperContainer.addEventListener("mouseenter", function(){
+            stopAutoPlay();
+            videoPause();
+            removeVideoClass();
+        });
+        swiperContainer.addEventListener("mouseleave", function(){
+            startAutoPlay();
+            videoStart();
+            addVideoClass();
+        });
+        videoControls.addEventListener("click", function(){
+            videoClass.toggle("play");
+            toggle = !toggle;
+
+            if(toggle == true) {
+                stopAutoPlay();
+                videoPause();
+            } else {
+                startAutoPlay();
+                videoStart();
+            }
+        });
 
         clickToSlide();
         mobileFocusEnter();
         deviceCheckFocus();
         videoDeviceCheck();
         
-        sw_carousel.on("slideChange", () => { progressActive(); skinColor(); });
+        sw_carousel.on("slideChange", () => { progressActive(); skinColor(); videoAutoPlay(); });
         sw_carousel.on("transitionEnd", ctaFocus);
     }
-
-    
     // activeItem(){
     // }
 
