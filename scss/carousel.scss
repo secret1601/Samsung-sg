@@ -1,0 +1,420 @@
+.main {
+    position: relative;
+    display: block;
+}
+
+// home-kv-Carousel
+.home-kv-carousel {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    &__inner {
+        position: relative;
+        display: block;
+        width: 1440px;
+        height: 640px;
+        max-width: 1440px;
+        max-height: 640px;
+        overflow: hidden;
+    }
+    &__slide-inner {
+        position: relative;
+        display: block;
+        width: 100%;
+        max-width: 1440px;
+        color: white;
+        // height: 43.44444vw;
+        @include calc-vw-pc(height, 625.6px);
+        max-height: 640px;
+        overflow: hidden;
+    }
+    &__text-wrap {
+        position: absolute;
+        display: block;
+        width: 50%;
+        z-index: 10;
+    }
+    .wrap--middle {
+        @include calc-vw-pc(left, 85px);
+        top: 25%;
+    }
+    .wrap--top {
+        left: 90px;
+        top: 70px;
+    }
+    &__headline {
+        font-family: 'SamsungSharpSans', arial,sans-serif;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 1.2;
+        color: currentColor;
+        word-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+    &__desc {
+        margin-top: 24px;
+        font-size: 18px;
+        line-height: 1.33;
+        color: currentColor;
+        word-wrap: break-word;
+        &-header {
+            font-weight: 700;
+        }
+        &-footer {
+            font-size: 13px; 
+            font-weight: 400;
+            display: block;
+            padding-top: 15px;
+        }
+        &-watch {
+            margin-top: 16px;
+            font-size: 14px;
+            line-height: 1.33;
+            word-wrap: break-word;
+        }
+    }
+    &__cta {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 14px;
+        margin-top: 28px;
+        line-height: 19px;
+        font-weight: bold;
+        align-items: center;
+        text-align: center;
+        .cta {
+            position: relative;
+            display: block;
+            &--more {
+                position: relative;
+                color: black;
+                padding-bottom: 2px;
+                &:hover {
+                    &::before {
+                        width: 100%;
+                        transition: all 0.3s;
+                    }
+                    &::after {
+                        width: 0%;
+                    }
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%);
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background-color: currentColor;
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%);
+                    display: block;
+                    width: 0%;
+                    height: 2px;
+                    background-color: currentColor;
+                }
+            }
+            &--now {
+                padding: 12px 22px;
+                border-radius: 25px;
+                background-color: #fff ;
+                color: #000 ;
+                transition: color 0.3s, background-color 0.3s;
+                &:hover {
+                    color: #eee !important;
+                    background-color: #555 !important;
+                }
+            }
+            &:nth-child(2) {
+                @include calc-vw-pc(margin-left, 20px);
+            }
+        }
+        
+    } 
+    &__video {
+        position: relative;
+        display: block;
+        width: 100%;
+        .thumbnail {
+            picture {
+                width: 100%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .video {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            &play {
+
+            }
+            &-player {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .pc {
+            #kvMobile {
+                display: none !important;
+            }
+        }
+        .mobile {
+            #kvPc {
+                display: none !important;
+            }
+        }
+    }
+
+    &__background {
+        position: relative;
+        display: block;
+        .thumbnail {
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .gnb-indicator-wrap {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        display: block;
+        width: 100%; // 1440px
+        max-width: 1440px;
+        height: 80px;
+        z-index: 1;
+        .indicator {
+            position: absolute;
+            left: 50%;
+            top: 4px;
+            transform: translateX(-50%);
+            display: block;
+            &-wrap {
+                position: relative;
+                display: inline-block;
+                // direction: rtl;
+                white-space: nowrap;
+            }
+            &__progress-wrap {
+                display: inline-block;
+                height: auto;
+                // vertical-align: middle;
+                // border: 2px solid #000;
+            }
+            &__progress-list{
+                position: relative;
+                display: flex;
+                height: 45px;
+                // align-items: flex-end;
+
+                button {
+                    position: relative;
+                    border: 0;
+                    background-color: transparent;
+                }
+            }
+            &__progress-item {
+                display: inline-flex;
+                align-items: flex-end;
+                width: 150px;
+                min-height: 30px;
+                cursor: pointer;
+                border: 0;
+                margin-right: 16px;
+                background-color: transparent;
+                // border: 1px solid red;
+            }
+            &__progress-item:hover .indicator__product-name {
+                opacity: 1;
+            }
+            &__product-wrap {
+                position: relative;
+                display: block;
+                width: 100%;
+                margin-bottom: 13px;
+            }
+
+            &__product-line {
+                position: absolute;
+                left: 0;
+                bottom: 4px;
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: rgba(255,255,255,0.25);
+                button {
+                    top: -37px;
+                    width: 100%;
+                    height: 2500%;
+                    border: 0;
+                    background-color: transparent;
+                    cursor: pointer;
+                    z-index: 999;
+                }
+            }
+            &__product-name {
+                position: absolute;
+                left:0;
+                bottom: 0;
+                display: block;
+                width: 100%;
+                padding-bottom: 9px;
+                font-size: 14px;
+                font-family: 'SamsungOne';
+                font-weight: 700;
+                text-align: center;
+                opacity: 0;
+                transition: opacity 0.2s;
+                color: #fff;
+                &:focus {
+                    opacity: 1 !important;
+                }
+            }
+            &__controls {
+                position: absolute;
+                right: -19px;
+                bottom: 8px;
+                display: block;
+                border: 0;
+                background-color: transparent;
+                cursor: pointer;
+                width: 21px;
+                height: 21px;
+                .play {
+                    width: 24px;
+                    height: 24px;
+                }
+                // pc 프로그레스 바
+                &-pc-progress {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+    // cta--white 호버효과
+    .cta--now:hover{
+        color: #313131 !important;
+        background-color: #ddd !important;
+    }
+    .deactive {
+        display: none;
+    }
+}
+
+// black일 때, 색상이 반전되어야 하는 클래스 추가 
+// section부터 접근하기
+.indicator-active .indicator__product-line {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+}
+.home-kv-carousel--black .indicator__product-name {
+    color: #000 !important;
+}
+.home-kv-carousel--black .indicator__product-line {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+.home-kv-carousel--black .indicator__progress-item:nth-child(2) .indicator__product-line {
+    background-color: rgba(0,0,0,0.4) !important
+}
+.home-kv-carousel--black .indicator__controls #play {
+    fill: #000;
+}
+.home-kv-carousel--black .indicator__controls #pause {
+    fill: #000 !important;
+}
+.home-kv-carousel--black .home-kv-carousel__slide-inner {
+    color: black;
+}
+
+// 화살표
+.arrow-indicator-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 100%;
+    height: 0;
+    z-index: 30;
+    max-width: 1440px;
+}
+.arrow-indicator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    max-width: 1440px;
+    border-radius: 50%;
+    border: 0;
+    background-color: transparent;
+    color: #fff;
+    font-size: 0;
+    cursor: pointer;
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+    &:focus {
+        svg>g>g>circle {
+            fill: #000;
+        }
+    }
+    &:hover {
+        svg>g>g>circle {
+            fill: #000;
+        }
+    }
+    svg>g>g>g {
+        fill: #fff;
+        fill-opacity: 0.95;
+    }
+    svg>g>g>circle {
+        fill: #1c1c1c;
+        opacity: 0.5;
+        stroke: #fff;
+        stroke-opacity: .15;
+        z-index: 9999;
+        transition: fill .1s cubic-bezier(0.4,0,0.2,1),fill-opacity .1s cubic-bezier(0.4,0,0.2,1);
+    }
+    &--prev {
+        left: 10px;
+    }
+    &--next {
+        right: 10px;
+    }
+}
+
+.indicator__controls #play {
+    display: block;
+}
+.indicator__controls #pause {
+    display: none ;
+}
+
+.play #play {
+    display: none;
+}
+.play #pause {
+    display: block ;
+}
+
+// end home-kv-carousel

@@ -1,0 +1,20 @@
+$pc-width : 1440px;
+$mobile-width : 720px;
+
+@mixin calc-vw-pc($text, $pixel) {
+    #{$text}: calc(($pixel * 100) / $pc-width) + vw;
+    // $text: calc($pixel * 100) / $pc-width + vw;
+}
+
+@mixin calc-vw-mo($text, $pixel) {
+    #{$text}: calc(($pixel * 100) / $mobile-width) + vw;
+}
+
+// important
+@mixin calc-vw-pc-important($text, $pixel) {
+    #{$text}: calc(($pixel * 100) / $pc-width) + vw + !important;
+    // $text: calc($pixel * 100) / $pc-width + vw;
+}
+@mixin calc-vw-mo-important($text, $pixel) {
+    #{$text}: calc(($pixel * 100) / $mobile-width) + vw + !important;
+}

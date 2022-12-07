@@ -1,0 +1,512 @@
+// 상단 
+.header {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    z-index: 2001;
+    &__inner {
+        @extend .container;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        height: 80px;
+        .logo {
+            svg {
+                width: 100px;
+                height: 32px;
+            }
+        }
+
+        .nav {
+            display: block;
+            z-index: 2222;
+            .gnb{
+                display: flex;
+                align-items: center;
+                margin-left: 75px;
+                font-family: SamsungOne, Arial, sans-serif;
+                font-size: 14px;
+                font-weight: 700;
+                white-space: nowrap;
+                &__left {
+                    display: flex;
+                }
+                &__right {
+                    display: flex;
+                    margin-left: 200px;
+                }
+                &__mobile-login {
+                    display: none;
+                }
+
+                .contents-wrap {
+                    position: absolute;
+                    top: 70px;
+                    left: 50%;
+                    display: none;
+                    transform: translateX(-50%);
+                    background-color: #fff !important;
+                    width: 100vw;
+                    z-index: 2001;
+                    transition: top 0.5s, display 0.1s;
+                    .contents {
+                        position: relative;
+                        left: 50%;
+                        top: 0;
+                        transform: translateX(-50%);
+                        display: block;
+                        max-width: 1440px;
+                        z-index: 2001;
+                        height: 0px;
+                        background-color: #fff;
+                        padding: 0 20px;
+                        padding-top: 45px;
+                        transition: all 0.2s;
+                        &-title {
+                            position: relative;
+                            font-family: 'SamsungOne',arial,sans-serif;
+                            font-size: 32px;
+                            font-weight: 700;
+                            display: inline-block;
+                            cursor: pointer;
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                left: 50%;
+                                bottom: -8px;
+                                display: inline-block;
+                                transform: translateX(-50%);
+                                width: 100%;
+                                height: 2px;
+                                background: #000;
+                            }
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                left: 50%;
+                                bottom: -8px;
+                                display: inline-block;
+                                transform: translateX(-50%);
+                                width: 0%;
+                                height: 2px;
+                                background: #000;
+                            }
+                        }
+                        &-list {
+                            margin-top: 40px;
+                        }
+                        &-item {
+                            position: relative;
+                            display: block;
+                            width: 18%;
+                            font-family: SamsungOne, arial, sans-serif;
+                            font-size: 18px;
+                            font-weight: 400;
+                            margin: 37px 0;
+                            a:hover, a:focus{
+                                font-weight: 700;
+                            }
+                            .arrow {
+                                position: absolute;
+                                left: 230px;
+                                top: 50%;
+                                display: block;
+                                transform: translateY(-50%);
+                                width: 25px;
+                                opacity: 0;
+                                visibility: hideen;
+                                transition: all 0.2s;
+                                cursor: pointer;
+                            }
+                            // 11 / 08 ( 화 ) markup
+                            .submenu {
+                                position: fixed;
+                                left: 347px;
+                                top: 115px;
+                                display: block;
+                                opacity: 0;
+                                visibility: hidden;
+                                z-index: 1;
+                                &-item {
+                                    margin-bottom: 37px;
+                                    a {
+                                        position: relative;
+                                        font-size: 18px;
+                                        padding: 8px 0;
+                                        &::before {
+                                            content: '';
+                                            position: absolute;
+                                            bottom: 4px;
+                                            left: 50%;
+                                            transform: translateX(-50%);
+                                            background-color: #000;
+                                            margin-top: 20px;
+                                            width: 0%;
+                                            height: 1px;
+                                            transition: all 0.3s;
+                                        }
+                                        &:hover::before, &:focus::before {
+                                            width: 100%;
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                            // 서브메뉴 markup 끝
+                        }
+                        &-img {
+                            position: absolute;
+                            right: 0px;
+                            top: 105px;
+                            display: block;
+                            width: 497px;
+                            padding: 0 83px;
+                            border-left: 1px solid #ddd;
+                            font-size: 18px;
+                            .img {
+                                display: block;
+                                width: 330px;
+                                margin-bottom: 30px;
+                                border-radius: 20px;
+                                overflow: hidden;
+                                img {
+                                    transition: transform 0.2s;
+                                    &:hover {
+                                        transform: scale(1.05);
+                                    }
+                                }
+                            }
+                            & > span {
+                                display: block;
+                                margin-left: 10px;
+                                white-space: normal;
+                                line-height: 1.3;
+                            }
+                            .cta--more {
+                                margin-left: 10px;
+                            }
+                        }
+                        &-close {
+                            position: absolute;
+                            right: 1.3194vw;
+                            top: 3.0833vw;
+                            display: block;
+                            width: 24px;
+                            background-color: transparent;
+                            border: 0;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .gnb-item {
+                    padding: 8px;
+                    &:hover {
+                        color: #fff;
+                        background-color: #000;
+                        border-radius: 20px;
+                    }
+                    &:focus {
+                        color: #fff;
+                        background-color: #000;
+                        border-radius: 20px;
+                    }
+                }
+                .active .gnb__contents{
+                    height: 700px;
+                }
+            }
+        }
+        
+        .utility {
+            display: flex;
+            margin-left: auto;
+            &__item {
+                position: relative;
+                display: block;
+                width: 24px;
+                height: 24px;
+                margin-left: 24px;
+                // search-modal 
+                .search-modal {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    display: none;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0.9);
+                    z-index: 3000;
+                    &__inner {
+                        position: relative;
+                        display: flex;
+                        width: 100%;
+                        height: 100%;
+                        justify-content: center;
+                        padding-top: 111px;
+                        color: #fff;
+                    }
+                    &__contents {
+                        position: relative;
+                        display: block;
+                        width: 684px;
+                        text-align: center;
+                    }
+                    &__title {
+                        font-family: 'SamsungSharpSans',arial,sans-serif;
+                        font-size: 38px;
+                        line-height: 1.2;
+                        color: #fff;
+                    }
+                    &__search {
+                        position: relative;
+                        display: block;
+                        margin-top: 25px;
+                        background-color: #fff;
+                        border-top-left-radius: 20px;
+                        border-top-right-radius: 20px;
+                    }
+                    &__input {
+                        width: 80%;
+                        height: 48px;
+                        font-size: 18px;
+                        line-height: 1.33;
+                        border: 0;
+                    }
+                    &__icon {
+                        position: absolute;
+                        left:20px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        display: block;
+                        svg {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+                    &__suggest {
+                        position: relative;
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        background-color: #fff;
+                        text-align: left;
+                        padding: 30px 20px;
+                        border-bottom-left-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        &-title {
+                            color: #000;
+                            font-size: 18px;
+                            line-height: 1.33;
+                            font-weight: bold;
+                        }
+                        .suggest {
+                            position: relative;
+                            display: block;
+                            &-item {
+                                position: relative;
+                                display: block;
+                                font-size: 14px;
+                                margin-top: 25px;
+                            }
+                        }
+                    }
+                    &__link {
+                        position: relative;
+                        display: block;
+                        padding-top: 25px;
+                        .link-bt {
+                            font-family: 'SamsungOne',arial,sans-serif;
+                            font-size: 12px;
+                            background-color: transparent;
+                            color: #fff;
+                            border: 1px solid rgba(255, 255, 255, 0.3);
+                            padding: 8px 11px;
+                            border-radius: 20px;
+                            margin: 0 10px 5px 5px;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: rgba(255,255,255,0.15);
+                            }
+                        }
+                    }
+                    &__close {
+                        position: absolute;
+                        right: 22px;
+                        top: 22px;
+                        display: block;
+                        width: 36px;
+                        height: 36px;
+                        background: transparent;
+                        border: 0;
+                        cursor: pointer;
+                        svg {
+                            fill: #fff;
+                        }
+                    }
+                    &__close-mo {
+                        position: absolute;
+                        right: 22px;
+                        top: 22px;
+                        display: none;
+                        width: 36px;
+                        height: 36px;
+                        background: transparent;
+                        border: 0;
+                        cursor: pointer;
+                        svg {
+                            fill: #000;
+                        }
+                    }
+                }
+                .basket-modal {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    display: none;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0.68);
+                    z-index: 3000;
+                    &__inner {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 100%;
+                    }
+                    &__contents {
+                        position: relative;
+                        display: flex;
+                        width: 448px;
+                        border-radius: 20px;
+                        background-color: #fff;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 20px;
+                        flex-direction: column;
+                    }
+                    &__info {
+                        width: 48px;
+                    }
+                    &__des {
+                        margin-top: 20px;
+                        font-weight: bold;
+                        font-size: 18px;
+                    }
+                    &__cta {
+                        margin-top: 30px;
+                        border: 0;
+                        padding: 10px 90px;
+                        border-radius: 20px;
+                        background: #000;
+                        font-size: 14px;
+                        font-weight: 700;
+                        transition: background 0.3s, color 0.3s;
+                        font-family: SamsungOne, Arial, sans-serif;
+                        cursor: pointer;
+                        .cta-text {
+                            color: #fff;
+                            text-transform: uppercase;
+                        }
+                        &:hover {
+                            color: #eee !important;
+                            background: #555 !important;
+                        }
+                    }
+                    &__close {
+                        position: absolute;
+                        right: 20px;
+                        top: 20px;
+                        display: block;
+                        width: 24px;
+                        border: 0;
+                        background: transparent;
+                        cursor: pointer;
+                    }
+                }
+                .login-layer {
+                    position: absolute;
+                    left: -197px;
+                    top: 32px;
+                    display: block;
+                    width: 216px;
+                    background-color: #fff;
+                    z-index: 1000;
+                    padding: 18px 16px;
+                    border-radius: 6px;
+                    box-shadow: 0 4px 10px -2px rgb(0 0 0 / 20%);
+                    transform: scale(0);
+                    opacity: 0;
+                    visibility: hidden;
+                    transform-origin: 100% 0;
+                    transition-delay: 0.15s;
+                    &__list {
+                        position: relative;
+                        display: block;
+                    }
+                    &__item {
+                        font-size: 14px;
+                        line-height: 1.3;
+                        margin-bottom: 15px;
+                        &:last-child {
+                            margin-bottom: 0px;
+                        }
+                        .layer-text {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            text-align: left;
+                        }
+                        .layer-icon {
+                            position: relative;
+                            display: inline-block;
+                            padding-right: 10px;
+                            line-height: 0px;
+                            svg {
+                                width: 16px;
+                                height: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+            .mobile-gnb {
+                display: none;
+            }
+        }
+    }
+}
+
+.pc-login:focus-within > .login-layer {
+    transition: all 0.2s;
+    transform: scale(1.0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.pc-login:hover .login-layer {
+    transition: all 0.2s;
+    transform: scale(1.0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.login-active {
+    transition: all 0.2s;
+    transform: scale(1.0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.gnb-item {
+    overflow: hidden !important;
+    border-radius: 20px;
+}
+.contents-title:hover::before {
+    width: 0 !important;
+}
+.contents-title:hover::after {
+    width: 100% !important;
+    transition: all 0.3s;
+}

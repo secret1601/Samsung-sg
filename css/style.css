@@ -16,17 +16,6 @@
   font-weight: bold;
   font-style: normal;
 }
-.border-box1 {
-  font-size: 2.0833333333vw!important;
-  font-size: 10px;
-  border: 1px solid red;
-}
-
-.border-box2 {
-  top: 4.1666666667vw;
-  border: 1px solid blue;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -254,7 +243,9 @@ legend {
   right: 0;
   top: 0;
   bottom: 0;
-  display: none;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
   z-index: 2001;
   font-size: 0;
   background-color: rgba(0, 0, 0, 0.75);
@@ -264,6 +255,11 @@ legend {
 
 .open {
   display: block !important;
+}
+
+.mo-gnb {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .badge, .red-badge, .blue-badge {
@@ -338,6 +334,9 @@ legend {
   display: -ms-flexbox;
   display: flex;
   margin-left: 200px;
+}
+.header__inner .nav .gnb__mobile-login {
+  display: none;
 }
 .header__inner .nav .gnb .contents-wrap {
   position: absolute;
@@ -2370,6 +2369,12 @@ legend {
   }
 }
 @media only screen and (min-width: 1280px) {
+  .gnb-item svg {
+    display: none;
+  }
+  .gnb--close {
+    display: none;
+  }
   .active .contents-wrap {
     top: 57.33px !important;
     display: block !important;
@@ -2445,13 +2450,16 @@ legend {
   }
   .nav {
     position: fixed;
-    right: 0;
+    right: -400px;
     top: 0;
-    display: block;
+    opacity: 0;
+    visibility: hidden;
     background-color: #fff;
     width: 340px;
     height: 100%;
     overflow: hidden;
+    -webkit-transition: all 0.2s cubic-bezier(0.31, 0.03, 1, 0.97);
+    transition: all 0.2s cubic-bezier(0.31, 0.03, 1, 0.97);
   }
   .nav .gnb {
     position: absolute;
@@ -2487,6 +2495,19 @@ legend {
   .nav .gnb__left-item:last-child {
     margin-bottom: 15px;
   }
+  .nav .gnb__left-item .gnb-item {
+    position: relative;
+  }
+  .nav .gnb__left-item .gnb-item svg {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
   .nav .gnb__right {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2505,10 +2526,23 @@ legend {
   .nav .gnb__right-item:last-child {
     margin-bottom: 15px;
   }
+  .nav .gnb__right-item .gnb-item {
+    position: relative;
+  }
+  .nav .gnb__right-item .gnb-item svg {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
   .nav .gnb__mobile-login {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -2516,8 +2550,23 @@ legend {
     margin-top: 30px;
   }
   .nav .gnb__mobile-login-item {
+    position: relative;
     width: 295px;
     height: 56px;
+  }
+  .nav .gnb__mobile-login-item a {
+    display: block;
+    width: 100%;
+    line-height: 56px;
+  }
+  .nav .gnb__mobile-login-item svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+  }
+  .nav .gnb__mobile-login-item:hover, .nav .gnb__mobile-login-item:focus {
+    color: black;
+    font-weight: bold;
   }
   .nav .gnb-item {
     display: block;
@@ -2530,6 +2579,36 @@ legend {
     color: black !important;
     background-color: transparent !important;
     font-weight: bold !important;
+  }
+  .nav .gnb--close {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: transparent;
+    border: 0;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  .nav .gnb--close svg {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+  .move-right {
+    right: 0px !important;
+    opacity: 1;
+    visibility: visible;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -2563,6 +2642,9 @@ legend {
     right: 5.5555555556vw!important;
     top: 5.5555555556vw!important;
     width: 6.9444444444vw!important;
+  }
+  .header__inner .utility {
+    margin-right: 20px;
   }
   .header__inner .utility__item .search-modal {
     right: 0;

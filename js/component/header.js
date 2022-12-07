@@ -19,8 +19,12 @@ export class Header {
         const basketModal = document.querySelector(".basket-modal");
         const basket = document.querySelector(".basket");
 
-        let activeContentsItem, domWidth;
-        domWidth = window.innerWidth;        
+        const gnbOpen = document.querySelector(".gnb-menu");
+        const gnbClose = document.querySelector(".gnb--close");
+        const moBackground = document.querySelector(".mo-background");
+        const nav = document.querySelector(".nav");
+
+        let activeContentsItem, domWidth;     
 
         // search modal
         searchModalCloseMo.addEventListener("click", function(){
@@ -134,17 +138,17 @@ export class Header {
         function gnbPc() {
             list.forEach( v => {
                 v.addEventListener("mouseover", function(){
-                        if(v.getAttribute("data-contents") === "true") {
-                            v.classList.add("active");
-                            addBackground();
-                        }
-                    });
+                    if(v.getAttribute("data-contents") === "true") {
+                        v.classList.add("active");
+                        addBackground();
+                    }
+                });
 
                 v.addEventListener("mouseleave", function(){
                     if(v.getAttribute("data-contents") === "true") {
                         v.classList.remove("active");
                         removeBackground();
-                        
+
                         activeContentsItem = v.querySelectorAll(".contents-item");
                         removeSelected(activeContentsItem);
                         activeContentsItem[0].classList.add("selected");
@@ -152,8 +156,50 @@ export class Header {
                 });
             });
         }
+        function gnbMobile() {
+            list.forEach( v => {
+                v.addEventListener("mouseover", function(){
+                    if(v.getAttribute("data-contents") === "true") {
+                        v.classList.remove("active");
+                        removeBackground();
+                    }
+                });
 
-        gnbPc();
+                v.addEventListener("mouseleave", function(){
+                    if(v.getAttribute("data-contents") === "true") {
+                        v.classList.remove("active");
+                        removeBackground();
+
+                        activeContentsItem = v.querySelectorAll(".contents-item");
+                        removeSelected(activeContentsItem);
+                        activeContentsItem[0].classList.add("selected");
+                    }
+                });
+            });
+        }
+        function breakPointGnb() {
+            domWidth = window.innerWidth;
+            ( domWidth > 1280 ) ? gnbPc() : gnbMobile();
+        }
+        function resize() {
+            window.addEventListener("resize", () => {
+                domWidth = window.innerWidth;
+                breakPointGnb();
+            })
+        }
+
+        gnbClose.addEventListener("click", () => {
+            nav.classList.remove("move-right");
+            moBackground.classList.remove("mo-gnb");
+        });
+        gnbOpen.addEventListener("click", () => {
+            nav.classList.add("move-right");
+            moBackground.classList.add("mo-gnb");
+        })
+
+        breakPointGnb();
+        resize();
+
         itemMove();
         closeClick();
         itemFocusMove();

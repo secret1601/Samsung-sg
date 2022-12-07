@@ -1,0 +1,127 @@
+.footer {
+    position: relative;
+    display: block;
+    padding-top: 100px;
+    &__inner {
+        @extend .container;
+    }
+    &-column {
+        position: relative;
+        display: flex;
+        &__item {
+            width: 20%;
+            max-height: 715px;
+            // height: 49.6528vw;
+            height: auto;
+            border-right: 1px solid #d9d9d9;
+            border-top: 1px solid #d9d9d9;
+            border-bottom: 1px solid #d9d9d9;
+            &:last-child {
+                border-right: 0;
+            }
+            .submenu__title {
+                display: block;
+                font-size: 18px;
+                font-weight: 700;
+                padding: 15px 20px;
+            }
+            .submenu__arrow {
+                display: none;
+            }
+            .submenu__list {
+                position: relative;
+                display: block;
+                margin-bottom: 25px;
+            }
+            .submenu__item {
+                display: block;
+                padding: 7px 24px;
+                font-size: 14px;
+                line-height: 1.33;
+                color: #000;
+                cursor: pointer;
+                &:hover, &:focus-within {
+                    text-decoration: underline;
+                    color: #1428a0 !important;
+                }
+            }
+        }
+    }
+    // 푸터 바텀영역
+    &-bottom {
+        position: relative;
+        display: block;
+        .copyright {
+            position: relative;
+            display: flex;
+            font-size: 12px;
+            text-align: left;
+            line-height: 1.33;
+            align-items: center;
+            height: 95px;
+            border-bottom: 1px solid #d9d9d9;
+            padding-left: 25px;
+        }
+        .information {
+            position: relative;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            padding: 0 25px;
+            height: 64px;
+            .language {
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 1.33;
+                color: #000;
+                margin-right: 24px;
+            }
+        }
+        .terms {
+            &-list {
+                position: relative;
+                display: flex;
+                column-gap: 25px;
+                padding-left: 24px;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    display: block;
+                    width: 1px;
+                    height: 12px;
+                    background-color: #d9d9d9;
+                }
+            }
+            &-item {
+                font-size: 12px;
+                line-height: 1.33;
+                color: #000;
+                text-transform: capitalize;
+            }
+        }
+        .sns {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            &-title {
+                font-size: 12px;
+                line-height: 1.33;
+            }
+            &-list {
+                position: relative;
+                display: flex;
+            }
+            &-item {
+                font-size: 24px;
+                margin-left: 17px;
+                .fa-brands {
+                    color: #000;
+                }
+            }
+        }
+    }
+}
