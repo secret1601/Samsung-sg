@@ -45,6 +45,15 @@ export class Header {
         basketModalClose.addEventListener("click", basketClose);
         basketModaCta.addEventListener("click", basketClose);
 
+        gnbClose.addEventListener("click", () => {
+            nav.classList.remove("move-right");
+            moBackground.classList.remove("mo-gnb");
+        });
+        gnbOpen.addEventListener("click", () => {
+            nav.classList.add("move-right");
+            moBackground.classList.add("mo-gnb");
+        })
+
         function yVisible() {
             body.style.overflowY = "visible";
         }
@@ -187,15 +196,6 @@ export class Header {
                 breakPointGnb();
             })
         }
-
-        gnbClose.addEventListener("click", () => {
-            nav.classList.remove("move-right");
-            moBackground.classList.remove("mo-gnb");
-        });
-        gnbOpen.addEventListener("click", () => {
-            nav.classList.add("move-right");
-            moBackground.classList.add("mo-gnb");
-        })
 
         breakPointGnb();
         resize();

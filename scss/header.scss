@@ -1,3 +1,5 @@
+@import './variable.scss';
+@import './common.scss';
 // 상단 
 .header {
     position: relative;
@@ -48,7 +50,7 @@
                     background-color: #fff !important;
                     width: 100vw;
                     z-index: 2001;
-                    transition: top 0.5s, display 0.1s;
+                    transition: all 0.3s;
                     .contents {
                         position: relative;
                         left: 50%;
@@ -213,7 +215,7 @@
                     }
                 }
                 .active .gnb__contents{
-                    height: 700px;
+                    height: 1700px;
                 }
             }
         }
