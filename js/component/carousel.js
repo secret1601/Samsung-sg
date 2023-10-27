@@ -174,12 +174,4 @@ export class Carousel {
         sw_carousel.on("slideChange", () => { progressActive(); skinColor(); videoAutoPlay(); });
         sw_carousel.on("transitionEnd", ctaFocus);
     }
-    // activeItem(){
-    // }
-
-    // onBreakPointChange(){
-    // }
-
-    // bindEvents(){
-    // }
 }
